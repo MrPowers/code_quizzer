@@ -7,7 +7,8 @@ class QuestionsController < ApplicationController
 
 	def update
 		@test = Test.find(params[:test_id])
-		@question = @test.questions.update_attributes(params[:question])
+		@question = @test.questions.find(params[:id])
+		@question.update_attributes(params[:question])
 		redirect_to test_path(@test)
 	end
 

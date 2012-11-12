@@ -1,5 +1,8 @@
 %h2 Learn programming by making practice tests and taking them until you can get 100%.  Master topics by acing practice tests created by your peers.
-%h3 #{link_to "Click here to make a new test", new_test_path}
+- if user_signed_in?
+  %h3 #{link_to "Click here to make a new test", new_test_path}
+- else
+  %h3 #{link_to "Log in to make your own tests", new_user_session_path}
 
 %h3 Tests
 %table
