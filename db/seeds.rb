@@ -10,3 +10,6 @@ Test.create(body: "Ruby")
 
 Question.create(body: "What is 2 + 2", answer: "Four", test_id: 1)
 Question.create(body: "What is the square root of 69", answer: "Eight sumptin", test_id: 1)
+
+User.create(email: "matt@example.com", password: "foobar", password_confirmation: "foobar")
+User.create(email: "ed@example.com", password: "foobar", password_confirmation: "foobar")
