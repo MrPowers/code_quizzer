@@ -1,7 +1,9 @@
 CompoundBlingApp::Application.routes.draw do
+  resources :tests
+
   devise_for :users
 
-  root :to => 'welcome#index'
+  root :to => 'tests#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

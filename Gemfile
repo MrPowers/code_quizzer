@@ -15,6 +15,7 @@ gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
 gem "simple_form", ">= 2.0.3"
 gem "quiet_assets", ">= 1.0.1", :group => :development
+gem "haml-rails"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
