@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-CompoundBlingApp::Application.load_tasks
+Compoundblingapplication::Application.load_tasks

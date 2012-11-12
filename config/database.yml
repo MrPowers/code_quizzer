@@ -15,7 +15,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: compound_bling_app_development
+  database: compound_bling_application_development
   pool: 5
   username: 
   password:
@@ -41,7 +41,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: compound_bling_app_test
+  database: compound_bling_application_test
   pool: 5
   username: 
   password:
@@ -49,7 +49,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: compound_bling_app_production
+  database: compound_bling_application_production
   pool: 5
   username: 
   password:
