@@ -1,5 +1,7 @@
+%h2 Learn programming by making practice tests and taking them until you can get 100%.  Master topics by acing practice tests created by your peers.
+
 %table
   - @tests.each do |test|
     %tr
       %td
-        = test.name
+        = link_to test.body, test
