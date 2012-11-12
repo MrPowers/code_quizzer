@@ -1,5 +1,7 @@
 Compoundblingapplication::Application.routes.draw do
-  resources :tests
+  resources :tests do
+    resources :questions
+  end
 
   devise_for :users
 

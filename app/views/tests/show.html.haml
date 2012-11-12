@@ -1,1 +1,18 @@
-= @test.body
+%h2= @test.body
+
+%table
+	%tr
+		%td Question
+		%td Answer
+		%td Edit
+		%td Destroy
+	- @test.questions.each do |question|
+		%tr
+			%td
+				%pre= question.body
+			%td
+				%pre= question.answer
+			%td= link_to "Edit", test_question_path(@test, question), :method => :put
+			%td= link_to 'Destroy', [question.test, question], :confirm => 'Are you sure?', :method => :delete
+
+= render "questions"
