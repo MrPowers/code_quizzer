@@ -8,6 +8,9 @@ class QuestionsController < ApplicationController
 		end
 	end
 
+	def edit
+	end
+
 	def update
 		if @question.update_attributes(params[:question])
 			redirect_to test_path(@test)

@@ -1,12 +1,11 @@
 %h2= @test.body
 
-%table
+%table.question_table
 	%tr
 		%td Question
 		%td Answer
 		%td Edit
 		%td Destroy
-		%td Show
 	- @test.questions.each do |question|
 		%tr
 			%td
@@ -17,7 +16,5 @@
 				%td= link_to "Edit", edit_test_question_path(:id => question.id, :test_id => @test.id)
 			= if can? :destroy, question
 				%td= link_to 'Destroy', [question.test, question], :confirm => 'Are you sure?', :method => :delete
-			= if can? :update, question
-				%td= link_to 'Show', test_question_path(:id => question.id, :test_id => @test.id)
 
 = render "questions"

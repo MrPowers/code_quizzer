@@ -9,13 +9,12 @@ class Ability
         can :manage, :all
       else
         can :read, :all
-        cannot :show, Question #to be deleted
         cannot :destroy, [Question, Test]
         cannot :update, [Question, Test]
         if user.role == "author"
-            can :create, Question
-            can :create, Question do |question|
-                question.try(:question) == user
+            can :create, [Question, Test]
+            can :update, Question do |question|
+                question.try(:user) == user
             end
         end
       end
