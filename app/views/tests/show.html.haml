@@ -6,7 +6,7 @@
 		%td.column2 Answer
 		%td.column3 
 		%td.column4 
-	- @test.questions.each do |question|
+	- @test.questions.sort_by {|question| question.created_at}.each do |question|
 		%tr
 			%td
 				%pre= question.body
