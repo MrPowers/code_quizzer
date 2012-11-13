@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
   load_and_authorize_resource :question, :through => :test
 
 	def create
+		@question.user = current_user
 		if @question.save
 			redirect_to test_path(@test)
 		end

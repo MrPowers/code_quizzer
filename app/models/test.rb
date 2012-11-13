@@ -1,4 +1,5 @@
 class Test < ActiveRecord::Base
-  attr_accessible :body
+  attr_accessible :body, :user_id
   has_many :questions, :dependent => :destroy
+  belongs_to :user
 end

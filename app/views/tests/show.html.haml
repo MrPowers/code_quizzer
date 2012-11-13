@@ -1,16 +1,16 @@
 %h2= @test.body
 
-%table.question_table
-	%tr
-		%td Question
-		%td Answer
-		%td Edit
-		%td Destroy
+%table
+	%thead
+		%td.column1 Question
+		%td.column2 Answer
+		%td.column3 
+		%td.column4 
 	- @test.questions.each do |question|
 		%tr
 			%td
 				%pre= question.body
-			%td
+			%td.answer_hide
 				%pre= question.answer
 			= if can? :update, question
 				%td= link_to "Edit", edit_test_question_path(:id => question.id, :test_id => @test.id)

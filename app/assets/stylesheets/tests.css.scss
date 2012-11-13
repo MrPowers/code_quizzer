@@ -2,3 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/************************
+TABLE PROGRAMMING CHALLENGES
+************************/
+
+table {
+	border-collapse: collapse;
+	/*width: 800px;*/
+}
+
+td {
+	/*border: 2px solid #545a71;*/
+	margin: 0;
+	padding: 3px 3px;
+}
+
+thead {
+	font-weight: bold;
+	text-align: center;
+}
+
+.column1 {
+	width: 350px;
+}
+
+.column2 {
+	width: 400px;
+}
+
+.column3, .column4 {
+	width: 50px;
+}
+
+.answer_hide {
+	opacity: 0.0;
+	cursor: pointer;
+}
+
+.answer_show {
+	opacity: 1.0;
+	cursor: pointer;
+}
