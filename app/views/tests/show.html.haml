@@ -1,4 +1,4 @@
-%h2= @test.body
+%h2.test_name= @test.body
 
 %table
 	%thead
@@ -8,9 +8,9 @@
 		%td.column4 
 	- @test.questions.sort_by {|question| question.created_at}.each do |question|
 		%tr
-			%td
+			%td.question
 				%pre= question.body
-			%td.answer_hide
+			%td.answer.answer_hide
 				%pre= question.answer
 			- if can? :update, question
 				%td= link_to "Edit", edit_test_question_path(:id => question.id, :test_id => @test.id)

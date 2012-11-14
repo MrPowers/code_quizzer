@@ -3,9 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /************************
-TABLE PROGRAMMING CHALLENGES
+INDEX PROGRAMMING CHALLENGES
 ************************/
 
+
+.button {
+	margin: 0 auto;
+	width: 250px;
+	margin-bottom: 20px;
+}
+
+.btn {
+	width: 250px;
+}
+
+/************************
+TABLE PROGRAMMING CHALLENGES
+************************/
+.test_name {
+	text-align: center;
+	/*border: red 2px solid;*/
+}
 
 table {
 	border-collapse: collapse;
@@ -53,6 +71,35 @@ pre {
 	border: none;
 }
 
-td {
+.question, .answer_show, .answer_hide {
 	border: lightgrey solid 1px;
+}
+
+/************************
+Questions Partial
+************************/
+.all_fields {
+	/*border: red 2px solid;*/
+	width: 500px;
+	margin: 0 auto;
+}
+
+.question_field {
+	width: 240px;
+	display: inline-block;
+	margin-top: 15px;
+	/*border: red 2px solid;*/
+}
+
+.answer_field {
+	width: 240px;
+	display: inline-block;
+	margin-top: 15px;
+	/*border: red 2px solid;*/
+}
+
+.submit_button {
+	width: 160px;
+	margin: 0 auto;
+	margin-top: 10px;
 }

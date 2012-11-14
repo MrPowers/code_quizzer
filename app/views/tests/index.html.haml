@@ -1,8 +1,9 @@
 %h2.hero Learn programming by making practice tests and taking them until you can get 100%.  Master topics by acing practice tests created by your peers.
-- if user_signed_in?
-  %a.btn.btn-large.btn-primary{:href => "tests/new"} Log in to make your own tests
-- else
-  %a.btn.btn-large.btn-primary{:href => "users/sign_up"} Log in to make your own tests
+.button
+  - if user_signed_in?
+    %a.btn.btn-large.btn-primary{:href => "tests/new"} Make a new test
+  - else
+    %a.btn.btn-large.btn-primary{:href => "users/sign_up"} Log in to make your own tests
 
 %table
   - @tests.each do |test|
