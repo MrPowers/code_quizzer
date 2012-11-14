@@ -12,9 +12,9 @@
 				%pre= question.body
 			%td.answer_hide
 				%pre= question.answer
-			= if can? :update, question
+			- if can? :update, question
 				%td= link_to "Edit", edit_test_question_path(:id => question.id, :test_id => @test.id)
-			= if can? :destroy, question
+			- if can? :destroy, question
 				%td= link_to 'Destroy', [question.test, question], :confirm => 'Are you sure?', :method => :delete
 
 = render "questions"

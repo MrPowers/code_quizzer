@@ -45,5 +45,14 @@ thead {
 	cursor: pointer;
 }
 
-pre {white-space: pre-wrap;}
+pre {
+	word-break: break-word;
+	margin: 0;
+	padding: 0;
+	background-color: #EEE;
+	border: none;
+}
 
+td {
+	border: lightgrey solid 1px;
+}
