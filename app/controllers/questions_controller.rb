@@ -1,11 +1,11 @@
 class QuestionsController < ApplicationController
-  load_and_authorize_resource :test
-  load_and_authorize_resource :question, :through => :test
+  load_and_authorize_resource :quiz
+  load_and_authorize_resource :question, :through => :quiz
 
 	def create
 		@question.user = current_user
 		if @question.save
-			redirect_to test_path(@test)
+			redirect_to quiz_path(@quiz)
 		end
 	end
 
@@ -14,13 +14,13 @@ class QuestionsController < ApplicationController
 
 	def update
 		if @question.update_attributes(params[:question])
-			redirect_to test_path(@test)
+			redirect_to quiz_path(@quiz)
 		end
 	end
 
 	 def destroy
     @question.destroy
-    redirect_to test_path(@test)
+    redirect_to quiz_path(@quiz)
   end
 
   def show

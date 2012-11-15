@@ -1,13 +1,13 @@
 Compoundblingapplication::Application.routes.draw do
   get "static_pages/about"
 
-  resources :tests do
+  resources :quizzes do
     resources :questions
   end
 
   devise_for :users
 
-  root :to => 'tests#index'
+  root :to => 'quizzes#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

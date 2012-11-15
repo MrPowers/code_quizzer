@@ -1,3 +1,7 @@
+- if user_signed_in?
+  - if current_user.quizzes.include? @quiz
+    = render "questions"
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create

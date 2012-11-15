@@ -1,0 +1,21 @@
+%h2.quiz_name= @quiz.body
+
+%table
+	%thead
+		%td.column1 Question
+		%td.column2 Answer
+		%td.column3 
+		%td.column4 
+	- @quiz.questions.sort_by {|question| question.created_at}.each do |question|
+		%tr
+			%td.question
+				%pre= question.body
+			%td.answer.answer_hide
+				%pre= question.answer
+			- if can? :update, question
+				%td= link_to "Edit", edit_quiz_question_path(:id => question.id, :quiz_id => @quiz.id)
+			- if can? :destroy, question
+				%td= link_to 'Destroy', [question.quiz, question], :confirm => 'Are you sure?', :method => :delete
+
+- if can? :create, @quiz.questions.build #if the user is allowed to create new questions
+	= render "questions"

@@ -9,11 +9,12 @@ class Ability
         can :manage, :all
       else
         can :read, :all
-        cannot :destroy, [Question, Test]
-        cannot :update, [Question, Test]
-        cannot :create, [Question, Test]
+        cannot :destroy, [Question, Quiz]
+        cannot :update, [Question, Quiz]
+        cannot :create, [Question, Quiz]
         if user.role == "author"
-            can :create, [Question, Test]
+            can :create, Quiz
+            can :create, Question, :quiz => { :user_id => user.id } #author can update if user_id in quizzes table equals the author's user_id
             can :update, Question do |question|
                 question.try(:user) == user
             end
