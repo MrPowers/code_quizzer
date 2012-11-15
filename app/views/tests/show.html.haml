@@ -17,4 +17,9 @@
 			- if can? :destroy, question
 				%td= link_to 'Destroy', [question.test, question], :confirm => 'Are you sure?', :method => :delete
 
-= render "questions"
+- if user_signed_in?
+	- if current_user.tests.include? @test
+		= render "questions"
+
+= current_user.questions
+= current_user.tests

@@ -13,3 +13,4 @@
   - else
     %li
       = link_to('Sign up', new_user_registration_path)
+  %li= current_user.email if user_signed_in?

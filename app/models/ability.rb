@@ -11,6 +11,7 @@ class Ability
         can :read, :all
         cannot :destroy, [Question, Test]
         cannot :update, [Question, Test]
+        cannot :create, [Question, Test]
         if user.role == "author"
             can :create, [Question, Test]
             can :update, Question do |question|
