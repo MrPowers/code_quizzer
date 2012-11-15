@@ -4,6 +4,7 @@ class QuizzesController < ApplicationController
 	end
 
 	def create
+		@quiz.user_id = current_user.id
 		if @quiz.save
 			redirect_to @quiz
 		end

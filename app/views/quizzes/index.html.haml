@@ -3,7 +3,7 @@
   - if user_signed_in?
     %a.btn.btn-large.btn-primary{:href => "quizzes/new"} Make a new quiz
   - else
-    %a.btn.btn-large.btn-primary{:href => "users/sign_up"} Log in to make your own quiz
+    %a.btn.btn-large.btn-primary{:href => "users/sign_up"} Sign up to make your own quiz
 
 %table
   - @quizzes.each do |quiz|
