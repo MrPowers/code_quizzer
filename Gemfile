@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.2.8'
 gem 'pg'
 
@@ -16,6 +17,8 @@ gem "cancan", ">= 1.6.8"
 gem "simple_form", ">= 2.0.3"
 gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "haml-rails"
+gem "heroku"
+gem 'thin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
