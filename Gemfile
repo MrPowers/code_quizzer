@@ -20,6 +20,10 @@ gem "haml-rails"
 gem "heroku"
 gem 'thin'
 
+group :development do
+	gem "taps"
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
