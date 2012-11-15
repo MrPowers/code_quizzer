@@ -21,7 +21,8 @@ gem "heroku"
 gem 'thin'
 
 group :development do
-	gem "taps", :require => false
+	gem "taps"
+	gem 'sqlite3'
 end
 
 # To use ActiveModel has_secure_password
