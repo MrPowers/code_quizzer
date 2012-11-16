@@ -1,0 +1,1 @@
+{"klass":"Taps::Push","database_url":"postgres://127.0.0.1/compound_bling_application_development?encoding=utf8","remote_url":"http://heroku:osui59a24am79x@taps19.heroku.com","session_uri":"/sessions/3689601485","stream_state":{},"completed_tables":["schema_migrations"],"table_filter":null,"local_tables_info":{"schema_migrations":8,"questions":104,"users":2,"quizzes":4}}
