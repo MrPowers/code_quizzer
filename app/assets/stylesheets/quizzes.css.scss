@@ -65,7 +65,8 @@ thead {
 }
 
 pre {
-	word-break: break-word;
+	word-break: normal;
+	word-wrap: normal;
 	margin: 0;
 	padding: 4px;
 	background-color: #EEE;
