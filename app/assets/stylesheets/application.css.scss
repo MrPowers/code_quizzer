@@ -27,7 +27,11 @@
 footer {
 	margin: 0 auto;
   margin-top: 15px;
-  width: 330px;
+  text-align: center;
+}
+
+footer a {
+  color: #333;
 }
 
 /*******************
@@ -36,6 +40,19 @@ Quiz#index
 .hero {
   padding-bottom: 15px;
   text-align: center;
+  font-size: 36px;
+}
+
+.bullet_point_list {
+  margin: 0 auto;
+  font-size: 24px;
+  text-align: center;
+  list-style: none;
+  /*width: 325px;*/
+}
+
+.bullet_point {
+  padding-bottom: 20px;
 }
 
 table {
@@ -51,4 +68,19 @@ Users/sign_up
   color: #555;
   text-decoration: none;
   text-shadow: 0 1px 0 white;
+}
+
+
+/*******************
+ABOUT
+*******************/
+#social {
+  width: 170px;
+  margin: 0 auto;
+  /*border: red 2px solid;*/
+}
+
+.social_icon {
+  float: right;
+  margin-right: 20px;
 }

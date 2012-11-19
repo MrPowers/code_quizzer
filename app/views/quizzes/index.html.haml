@@ -1,4 +1,8 @@
-%h2.hero Learn programming by making practice quizzes and taking them until you can get 100%.  Master topics by acing practice quizzes created by your peers.
+%h2.hero Learn by doing, not by reading
+%ul.bullet_point_list
+  %li.bullet_point Drill problems to learn
+  %li.bullet_point Make quizzes to help others
+
 .button
   - if user_signed_in?
     %a.btn.btn-large.btn-primary{:href => "quizzes/new"} Make a new quiz
