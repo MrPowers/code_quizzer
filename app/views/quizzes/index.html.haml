@@ -4,7 +4,7 @@
   %li.bullet_point Make quizzes to help others
 
 .button
-  - if user_signed_in?
+  - if can? :create, Quiz
     %a.btn.btn-large.btn-primary{:href => "quizzes/new"} Make a new quiz
   - else
     %a.btn.btn-large.btn-primary{:href => "users/sign_up"} Sign up to make your own quiz
