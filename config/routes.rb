@@ -1,4 +1,6 @@
 Compoundblingapplication::Application.routes.draw do
+  resources :topics
+
   get "static_pages/about"
 
   resources :quizzes do
