@@ -13,4 +13,8 @@
   - else
     %li
       = link_to('Sign up', new_user_registration_path)
-  %li.email_header= current_user.email if user_signed_in?
+
+%ul.nav.pull-right
+  %li.navigation-items{:style => "padding-top: 10px;"}
+    .fb-like{"data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "125"}
+  %li.navigation_items= current_user.email if user_signed_in?

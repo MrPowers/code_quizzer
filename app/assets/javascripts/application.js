@@ -13,4 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require masonry/jquery.masonry
 //= require_tree .
+
+$(function(){
+
+  $('.masonry_container').masonry({
+    itemSelector: '.thumbnail',
+    gutterWidth: 15,
+    isFitWidth: true
+  });
+
+});
