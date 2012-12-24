@@ -1,7 +1,9 @@
 Compoundblingapplication::Application.routes.draw do
-  resources :topics
-
   get "static_pages/about"
+
+  resources :topics do
+    resources :quizzes
+  end
 
   resources :quizzes do
     resources :questions
@@ -9,7 +11,9 @@ Compoundblingapplication::Application.routes.draw do
 
   devise_for :users
 
-  root :to => 'quizzes#index'
+  root :to => 'topics#index'
+
+  match 'quizzes/:id/admin_update' => 'quizzes#admin_update'  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

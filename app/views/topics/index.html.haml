@@ -1,0 +1,23 @@
+%h2.hero Learn by doing, not by reading
+%ul.bullet_point_list
+  %li.bullet_point Drill problems to learn
+  %li.bullet_point Make quizzes to help others
+
+.button
+  - if can? :create, Quiz
+    %a.btn.btn-large.btn-primary{:href => "quizzes/new"} Make a new quiz
+  - else
+    %a.btn.btn-large.btn-primary{:href => "users/sign_up"} Sign up to make your own quiz
+
+- @topics.each do |topic|
+  %h3= topic.name
+  %ul
+  - topic.quizzes.each do |quiz|
+    %li= link_to quiz.body, topic_quiz_path(:topic_id => topic, :id => quiz)
+    = quiz.description
+  -if can? :create, Quiz  
+    %br/
+    =link_to "Create a new #{topic.name} quiz", new_topic_quiz_path(:topic_id => topic)
+
+- if can? :create, Topic
+  =link_to "Create new topic", new_topic_path
