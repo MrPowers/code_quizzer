@@ -24,4 +24,6 @@ $(function(){
     isFitWidth: true
   });
 
+  $(".alert").fadeToggle(3000);
+
 });
