@@ -13,6 +13,7 @@ class TopicsController < ApplicationController
 	end
 
 	def index
+		@topics = Topic.includes(:quizzes).all
 		@quiz = Quiz.new
 	end
 
