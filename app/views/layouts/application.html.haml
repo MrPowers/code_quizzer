@@ -2,27 +2,23 @@
 %html
   
   %head
+    = favicon_link_tag
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-      %title= content_for?(:title) ? yield(:title) : "CodeQuizzes"
-      %meta{:content => content_for?(:description) ? yield(:description) : "App_Name", :name => "description"}
-        = stylesheet_link_tag "application", :media => "all"
-        = javascript_include_tag "application"
-        = csrf_meta_tags
-        = yield(:head)
+    %meta{:name => "keywords", :content => "programming practice problems, ruby practice problems, rails practice problems, ruby on rails practice problems, javascript practice problems, jquery practice problems, ruby, rails, ruby on rails, rspec, javascript, jquery, git, github, code quizzes, programming quizzes, programming tests, heroku, devise, cancan, polymorphism, nested resources"}
+    %meta{:name => "description", :content => "Practice programming and web development with these HTML, CSS, Ruby, Rails, JavaScript and jQuery questions."}
+    %meta{:name => "author", :content => "Matthew Powers"}
+
+    %title "CodeQuizzes"
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = yield(:head)
   
   %body
     %header.navbar.navbar-fixed-top
       %nav.navbar-inner
         .container
-          #fb-root
-            :javascript
-              (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-                fjs.parentNode.insertBefore(js, fjs);
-              }(document, 'script', 'facebook-jssdk'));
+          = render 'layouts/facebook'
           = render 'layouts/navigation'
     #main{:role => "main"}
       .container
