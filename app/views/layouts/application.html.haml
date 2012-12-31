@@ -8,13 +8,15 @@
     %meta{:name => "description", :content => "Practice programming and web development with these HTML, CSS, Ruby, Rails, JavaScript and jQuery questions."}
     %meta{:name => "author", :content => "Matthew Powers"}
 
-    %title "CodeQuizzes"
+    %title CodeQuizzes
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
     = yield(:head)
 
     =render 'layouts/google_analytics'
+
+
   
   %body
     %header.navbar.navbar-fixed-top
@@ -23,6 +25,19 @@
           = render 'layouts/facebook'
           = render 'layouts/navigation'
     #main{:role => "main"}
+      %script{:charset => "utf-8", :type => "text/javascript"}
+        var is_ssl = ("https:" == document.location.protocol);
+        var asset_host = is_ssl ? "https://d3rdqalhjaisuu.cloudfront.net/" : "http://d3rdqalhjaisuu.cloudfront.net/";
+        document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+      %script{:charset => "utf-8", :type => "text/javascript"}
+        var feedback_widget_options = {};
+        feedback_widget_options.display = "overlay";
+        feedback_widget_options.company = "CodeQuizzes";
+        feedback_widget_options.placement = "right";
+        feedback_widget_options.color = "#F2385A";
+        feedback_widget_options.style = "idea";
+        var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+
       .container
         .content
           .row
