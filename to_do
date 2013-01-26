@@ -1,0 +1,16 @@
+Create a family table in the database
+Update the topics, so they belong to the programming family and so family_id is included in the topics table
+Make the site root to the programming family, but include links to the other families in a drop down at the top
+
+
+
+Naming convention:
+
+family
+  |
+topic
+  |
+quiz
+  |
+question
+
