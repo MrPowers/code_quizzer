@@ -1,11 +1,22 @@
+# Controls access of different parts of the site for different users
+#
+# * Users that are not logged in can read everything
+# * Users that are "admin" (I set this in the command line) can do anything to the app
+# * Users that logged in and create a test can edit, destroy, and create new tests
 class Ability
   include CanCan::Ability
 
   def initialize(user)
+    # Users that are not logged in don't exist so they are nil.  These users can only read.
     if user.nil?
       can :read, :all
+    # Users that are logged in and are admin can read, create, and delete anything.
     elsif user.role == "admin"
       can :manage, :all
+    # Users that are logged in and are not admin can create quizzes, 
+    # create questions for the quizzes they create, delete questions,
+    # for the quizzes they create, and update questions for the 
+    # quizzes they create
     elsif user.role == "author"
       can :read, :all
       can :create, Quiz

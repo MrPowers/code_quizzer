@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.11'
 gem 'pg'
 gem 'masonry-rails'
 
@@ -19,6 +19,7 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "haml-rails"
 gem "heroku"
 gem 'thin'
+gem "rdoc"
 
 
 # To use ActiveModel has_secure_password

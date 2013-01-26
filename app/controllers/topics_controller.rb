@@ -36,4 +36,8 @@ class TopicsController < ApplicationController
 		@topic.destroy
 		redirect_to topics_path		
 	end
+
+	def admin_update
+		@topic = Topic.find(params[:id])
+	end
 end
