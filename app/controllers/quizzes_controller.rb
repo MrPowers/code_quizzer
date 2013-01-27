@@ -7,7 +7,7 @@ class QuizzesController < ApplicationController
 	def create
 		@quiz.user_id = current_user.id
 		if @quiz.save
-			redirect_to topics_path
+			redirect_to @quiz.topic.family
 		end
 	end
 

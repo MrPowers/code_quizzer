@@ -12,3 +12,8 @@
           .description= quiz.description
         -if can? :create, Quiz  
           .create_quiz=link_to "Create a new #{topic.name} quiz", new_topic_quiz_path(:topic_id => topic)
+- if can? :create, Topic
+  =link_to "Create new topic", new_family_topic_path(:family_id => params[:id])
+%br
+- if can? :create, Family
+  =link_to "Create new family", new_family_path

@@ -17,16 +17,23 @@ class Ability
     # create questions for the quizzes they create, delete questions,
     # for the quizzes they create, and update questions for the 
     # quizzes they create
+    elsif user.role = "caitlin"
+      author_rights(user)
+      can :create, Topic
     elsif user.role == "author"
-      can :read, :all
-      can :create, Quiz
-      can :create, Question, :quiz => { :user_id => user.id } #author can update if user_id in quizzes table equals the author's user_id
-      can :destroy, Question do |question|
-        question.try(:user) == user
-      end
-      can :update, Question do |question|
-        question.try(:user) == user
-      end
+      author_rights(user)
+    end
+  end
+
+  def author_rights(user)
+    can :read, :all
+    can :create, Quiz
+    can :create, Question, :quiz => { :user_id => user.id } #author can update if user_id in quizzes table equals the author's user_id
+    can :destroy, Question do |question|
+      question.try(:user) == user
+    end
+    can :update, Question do |question|
+      question.try(:user) == user
     end
   end
 end

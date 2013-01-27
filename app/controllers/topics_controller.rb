@@ -1,12 +1,13 @@
 class TopicsController < ApplicationController
-	load_and_authorize_resource
+	load_and_authorize_resource :family
+	load_and_authorize_resource :topic, :through => :family, :shallow => true
 	def new
 	end
 
 	def create
-		@topic.update_attributes(:user_id => current_user.id)
+		@topic.user_id = current_user.id
 		if @topic.save
-			redirect_to topics_path
+			redirect_to @family
 		else
 			flash[:error] = "Something went wrong"
 		end

@@ -1,6 +1,20 @@
 %h1= link_to "CodeQuizzes", root_path, :class => 'brand'
 %ul.nav
+  %li.dropdown-navbar
+    .dropdown
+      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Categories
+      %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
+        %li
+          %a{:href => "/programming", :tabindex => "-1"} Programming
+        %li
+          %a{:href => "/books", :tabindex => "-1"} Books
+        - if user_signed_in? && (current_user.role == "admin" || current_user.role == "caitlin")
+          %li
+            %a{:href => "/caitlin", :tabindex => "-1"} Caitlin
+
   %li= link_to "About", static_pages_about_path
+
+%ul.nav.pull-right
   - if user_signed_in?
     %li
       = link_to('Logout', destroy_user_session_path, :method=>'delete')
@@ -14,7 +28,6 @@
     %li
       = link_to('Sign up', new_user_registration_path)
 
-%ul.nav.pull-right
   - if request.fullpath == "/"
     %li.navigation-items{:style => "padding-top: 10px;"}
       .fb-like{"data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "125"}

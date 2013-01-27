@@ -27,3 +27,4 @@ $(function(){
   $(".alert").fadeToggle(3000);
 
 });
+
