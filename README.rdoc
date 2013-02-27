@@ -1,1 +1,5 @@
 This app lets users create code quizzes.
+
+The website can be found at http://codequizzes.com
+
+Please let me know if you have any suggestions on how to improve the website.  Thanks.
