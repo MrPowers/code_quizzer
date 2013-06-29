@@ -31,4 +31,6 @@
   - if request.fullpath == "/"
     %li.navigation-items{:style => "padding-top: 10px;"}
       .fb-like{"data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "125"}
+    %li.navigation-items{:style => "padding-top: 10px; padding-left: 8px;"}
+      = render 'layouts/twitter'
   %li.navigation_items= current_user.email if user_signed_in?
