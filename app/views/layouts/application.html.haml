@@ -1,6 +1,6 @@
 !!!
 %html
-  
+
   %head
     = favicon_link_tag
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
@@ -15,7 +15,7 @@
     = yield(:head)
 
     =render 'layouts/google_analytics'
-  
+
   %body
     %header.navbar.navbar-fixed-top
       %nav.navbar-inner
@@ -36,6 +36,7 @@
         feedback_widget_options.style = "idea";
         var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
 
+      = render 'layouts/announcement' if params[:controller] == "families"
       .container
         .content
           .row
