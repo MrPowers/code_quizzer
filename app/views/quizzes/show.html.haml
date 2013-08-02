@@ -3,7 +3,7 @@
 %table
 	%thead
 		%td.column1 Question
-		%td.column2 Answer
+		%td.column2 Click to View Answer
 		%td.column3 
 		%td.column4 
 	- @quiz.questions.sort_by {|question| question.created_at}.each do |question|
