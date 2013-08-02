@@ -10,6 +10,7 @@ class Ability
     # Users that are not logged in don't exist so they are nil.  These users can only read.
     if user.nil?
       can :read, :all
+      cannot :read, Family.where("name = ? OR name = ?", "Books", "Caitlin")
     # Users that are logged in and are admin can read, create, and delete anything.
     elsif user.role == "admin"
       can :manage, :all
@@ -27,6 +28,7 @@ class Ability
 
   def author_rights(user)
     can :read, :all
+    cannot :read, Family.where("name = ? OR name = ?", "Books", "Caitlin")
     can :create, Quiz
     can :create, Question, :quiz => { :user_id => user.id } #author can update if user_id in quizzes table equals the author's user_id
     can :destroy, Question do |question|

@@ -17,6 +17,7 @@ Compoundblingapplication::Application.routes.draw do
 
   root :to => 'families#show', :id => 1
   match 'programming' => 'families#show', :id => 1
+  match 'more_programming' => 'families#show', :id => Family.find_by_name("More Programming").id
   match 'books' => 'families#show', :id => 2
   match 'caitlin' => 'families#show', :id => 3
   match 'quizzes/:id/admin_update' => 'quizzes#admin_update'

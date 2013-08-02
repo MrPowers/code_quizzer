@@ -7,10 +7,7 @@
         %li
           %a{:href => "/programming", :tabindex => "-1"} Programming
         %li
-          %a{:href => "/books", :tabindex => "-1"} Books
-        - if user_signed_in? && (current_user.role == "admin" || current_user.role == "caitlin")
-          %li
-            %a{:href => "/caitlin", :tabindex => "-1"} Caitlin
+          %a{:href => "/more_programming", :tabindex => "-1"} More Programming
 
   %li= link_to "About", static_pages_about_path
 
