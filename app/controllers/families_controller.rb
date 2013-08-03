@@ -17,7 +17,8 @@ class FamiliesController < ApplicationController
 
 	def show
 		@family = Family.find(params[:id])
-		@topics = @family.topics.includes(:quizzes)
+		topics = @family.topics.includes(:quizzes)
+    @topics = topics.select(&:priority).sort_by(&:priority) + topics.reject(&:priority)
 		@topic = Topic.new
 	end
 end

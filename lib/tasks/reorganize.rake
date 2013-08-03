@@ -10,4 +10,14 @@ namespace :reorganize do
       end
     end
   end
+
+  desc "Add priority for sorting for topics on 'Programming' page"
+  task :add_priority_to_topics => :environment do
+    desired_order = ["Basic Ruby", "Ruby", "Core CS", "Rails", "jQuery", "RSpec", "JavaScript", "HTML / CSS", "Unix / Bash", "Git/Github", "CoffeeScript"]
+    desired_order.each_with_index do |name, index|
+      topic = Topic.find_by_name(name)
+      puts "Topic #{name} not found" unless topic
+      topic.update_attribute(:priority, index)
+    end
+  end
 end
