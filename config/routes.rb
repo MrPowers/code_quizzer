@@ -1,4 +1,7 @@
 Compoundblingapplication::Application.routes.draw do
+  resources :comments
+
+
   get "static_pages/about"
 
   resources :families do
@@ -11,6 +14,10 @@ Compoundblingapplication::Application.routes.draw do
 
   resources :quizzes do
     resources :questions
+  end
+
+  resources :quizzes do
+    resources :comments
   end
 
   devise_for :users

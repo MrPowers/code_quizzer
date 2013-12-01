@@ -19,3 +19,12 @@
 
 - if can? :create, @quiz.questions.build #if the user is allowed to create new questions
 	= render "questions"
+
+= form_for [@quiz, @quiz.comments.build] do |f|
+	= f.label :body
+	= f.text_area :body, :rows => "10", :cols => "50"
+	= f.submit "Create Comment", :class => 'btn btn-info'
+
+- @quiz.comments.each do |comment|
+	%p= comment.user.email if comment.user
+	%p= comment.body
