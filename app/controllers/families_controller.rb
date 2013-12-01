@@ -12,9 +12,6 @@ class FamiliesController < ApplicationController
 		end
 	end
 
-	def index
-	end
-
 	def show
 		@family = Family.find(params[:id])
 		topics = @family.topics.includes(:quizzes)
