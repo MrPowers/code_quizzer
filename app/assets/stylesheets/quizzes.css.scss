@@ -77,6 +77,19 @@ pre {
 	border: lightgrey solid 1px;
 }
 
+.time_ago {
+  font-size: 0.65em;
+}
+
+.comment_body {
+  background-color: white;
+  width: 60%;
+}
+
+.comment_form_box textarea {
+  width: 40%;
+}
+
 /************************
 Questions Partial
 ************************/
