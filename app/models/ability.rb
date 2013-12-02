@@ -12,6 +12,7 @@ class Ability
     elsif user.role == "author"
       can :read, :all
       cannot :read, Family.where("name = ? OR name = ?", "Books", "Caitlin")
+      can :create, Comment
     end
   end
 end

@@ -19,3 +19,22 @@
 
 - if can? :create, @quiz.questions.build #if the user is allowed to create new questions
 	= render "questions"
+
+%br
+
+- if can? :create, @quiz.comments.build && current_user && current_user.username
+	= form_for [@quiz, @quiz.comments.build] do |f|
+		.comment_form_box= f.text_area :body, :rows => "5"
+		= f.submit "Create Comment", :class => 'btn btn-info'
+- elsif can? :create, @quiz.comments.build && current_user
+	%h3= link_to "Add a username to your account to comment", edit_user_registration_path
+- else
+	%h3= link_to "Create an account to comment", new_user_registration_path
+
+- @quiz.comments.reverse.each do |comment|
+	- if comment.user
+		= comment.user.username
+		%span.time_ago= " * #{time_ago_in_words(comment.created_at)} ago"
+		%br
+		%pre.comment_body= comment.body
+		%br
