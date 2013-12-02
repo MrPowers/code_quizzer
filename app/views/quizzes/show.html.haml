@@ -22,11 +22,11 @@
 
 %br
 
-- if can? :create, @quiz.comments.build && current_user && current_user.username
+- if can?(:create, Comment) && current_user.username
 	= form_for [@quiz, @quiz.comments.build] do |f|
 		.comment_form_box= f.text_area :body, :rows => "5"
 		= f.submit "Create Comment", :class => 'btn btn-info'
-- elsif can? :create, @quiz.comments.build && current_user
+- elsif can?(:create, Comment)
 	%h3= link_to "Add a username to your account to comment", edit_user_registration_path
 - else
 	%h3= link_to "Create an account to comment", new_user_registration_path

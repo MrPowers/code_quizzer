@@ -8,7 +8,6 @@ class Ability
     # Admin users can read, create, and delete anything.
     elsif user.role == "admin"
       can :manage, :all
-    # authors have same rights as guests that are not logged in
     elsif user.role == "author"
       can :read, :all
       cannot :read, Family.where("name = ? OR name = ?", "Books", "Caitlin")

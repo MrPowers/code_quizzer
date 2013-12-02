@@ -1,7 +1,4 @@
 Compoundblingapplication::Application.routes.draw do
-  resources :comments
-
-
   get "static_pages/about"
 
   resources :families do

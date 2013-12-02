@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role, :username
 
   validates :username, :uniqueness => true
+  validates :username, :presence => true
 
   has_many :quizzes
   has_many :questions
