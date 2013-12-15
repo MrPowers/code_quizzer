@@ -8,73 +8,73 @@ INDEX PROGRAMMING CHALLENGES
 
 
 .button {
-	margin: 0 auto;
-	width: 250px;
-	margin-bottom: 20px;
-	margin-top: 10px;
+  margin: 0 auto;
+  width: 250px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .btn {
-	width: 250px;
+  width: 250px;
 }
 
 /************************
 TABLE PROGRAMMING CHALLENGES
 ************************/
 .quiz_name {
-	text-align: center;
-	/*border: red 2px solid;*/
+  text-align: center;
+  /*border: red 2px solid;*/
 }
 
 table {
-	border-collapse: collapse;
-	/*width: 800px;*/
+  border-collapse: collapse;
+  /*width: 800px;*/
 }
 
 td {
-	/*border: 2px solid #545a71;*/
-	margin: 0;
-	padding: 3px 3px;
+  /*border: 2px solid #545a71;*/
+  margin: 0;
+  padding: 3px 3px;
 }
 
 thead {
-	font-weight: bold;
-	text-align: center;
+  font-weight: bold;
+  text-align: center;
 }
 
 .column1 {
-	width: 350px;
+  width: 350px;
 }
 
 .column2 {
-	width: 500px;
+  width: 500px;
 }
 
 .column3, .column4 {
-	width: 50px;
+  width: 50px;
 }
 
 .answer_hide {
-	opacity: 0.0;
-	cursor: pointer;
+  opacity: 0.0;
+  cursor: pointer;
 }
 
 .answer_show {
-	opacity: 1.0;
-	cursor: pointer;
+  opacity: 1.0;
+  cursor: pointer;
 }
 
 pre {
-	word-break: normal;
-	word-wrap: normal;
-	margin: 0;
-	padding: 4px;
-	background-color: transparent;
-	border: none;
+  word-break: normal;
+  word-wrap: normal;
+  margin: 0;
+  padding: 4px;
+  background-color: transparent;
+  border: none;
 }
 
 .question, .answer_show, .answer_hide {
-	border: lightgrey solid 1px;
+  border: lightgrey solid 1px;
 }
 
 .time_ago {
@@ -94,27 +94,27 @@ pre {
 Questions Partial
 ************************/
 .all_fields {
-	/*border: red 2px solid;*/
-	width: 500px;
-	margin: 0 auto;
+  /*border: red 2px solid;*/
+  width: 500px;
+  margin: 0 auto;
 }
 
 .question_field {
-	width: 240px;
-	display: inline-block;
-	margin-top: 15px;
-	/*border: red 2px solid;*/
+  width: 240px;
+  display: inline-block;
+  margin-top: 15px;
+  /*border: red 2px solid;*/
 }
 
 .answer_field {
-	width: 240px;
-	display: inline-block;
-	margin-top: 15px;
-	/*border: red 2px solid;*/
+  width: 240px;
+  display: inline-block;
+  margin-top: 15px;
+  /*border: red 2px solid;*/
 }
 
 .submit_button {
-	width: 160px;
-	margin: 0 auto;
-	margin-top: 10px;
+  width: 160px;
+  margin: 0 auto;
+  margin-top: 10px;
 }

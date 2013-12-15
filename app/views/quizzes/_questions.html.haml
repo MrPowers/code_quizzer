@@ -1,10 +1,10 @@
 = form_for [@quiz, @quiz.questions.build] do |f|
-	.all_fields
-		.question_field
-			= f.label :question
-			= f.text_area :body, :rows => "10", :cols => "50"
-		.answer_field
-			= f.label :answer
-			= f.text_area :answer, :rows => "10" 
-		.submit_button
-			= f.submit "Create Question", :class => 'btn btn-info'
+  .all_fields
+    .question_field
+      = f.label :question
+      = f.text_area :body, :rows => "10", :cols => "50"
+    .answer_field
+      = f.label :answer
+      = f.text_area :answer, :rows => "10" 
+    .submit_button
+      = f.submit "Create Question", :class => 'btn btn-info'

@@ -1,40 +1,40 @@
 %h2.quiz_name= @quiz.body
 
 %table
-	%thead
-		%td.column1 Question
-		%td.column2 Click to View Answer
-		%td.column3 
-		%td.column4 
-	- @quiz.questions.sort_by {|question| question.created_at}.each do |question|
-		%tr
-			%td.question
-				%pre= question.body
-			%td.answer.answer_hide
-				%pre= question.answer
-			- if can? :update, question
-				%td= link_to "Edit", edit_quiz_question_path(:id => question.id, :quiz_id => @quiz.id)
-			- if can? :destroy, question
-				%td= link_to 'Destroy', [question.quiz, question], :confirm => 'Are you sure?', :method => :delete
+  %thead
+    %td.column1 Question
+    %td.column2 Click to View Answer
+    %td.column3 
+    %td.column4 
+  - @quiz.questions.sort_by {|question| question.created_at}.each do |question|
+    %tr
+      %td.question
+        %pre= question.body
+      %td.answer.answer_hide
+        %pre= question.answer
+      - if can? :update, question
+        %td= link_to "Edit", edit_quiz_question_path(:id => question.id, :quiz_id => @quiz.id)
+      - if can? :destroy, question
+        %td= link_to 'Destroy', [question.quiz, question], :confirm => 'Are you sure?', :method => :delete
 
 - if can? :create, @quiz.questions.build #if the user is allowed to create new questions
-	= render "questions"
+  = render "questions"
 
 %br
 
 - if can?(:create, Comment) && current_user.username
-	= form_for [@quiz, @quiz.comments.build] do |f|
-		.comment_form_box= f.text_area :body, :rows => "5"
-		= f.submit "Create Comment", :class => 'btn btn-info'
+  = form_for [@quiz, @quiz.comments.build] do |f|
+    .comment_form_box= f.text_area :body, :rows => "5"
+    = f.submit "Create Comment", :class => 'btn btn-info'
 - elsif can?(:create, Comment)
-	%h3= link_to "Add a username to your account to comment", edit_user_registration_path
+  %h3= link_to "Add a username to your account to comment", edit_user_registration_path
 - else
-	%h3= link_to "Create an account to comment", new_user_registration_path
+  %h3= link_to "Create an account to comment", new_user_registration_path
 
 - @quiz.comments.reverse.each do |comment|
-	- if comment.user
-		= comment.user.username
-		%span.time_ago= " * #{time_ago_in_words(comment.created_at)} ago"
-		%br
-		%pre.comment_body= comment.body
-		%br
+  - if comment.user
+    = comment.user.username
+    %span.time_ago= " * #{time_ago_in_words(comment.created_at)} ago"
+    %br
+    %pre.comment_body= comment.body
+    %br
