@@ -1,7 +1,3 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
-// You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
-
 $(document).ready(function(){
   $('.answer_hide').toggle(
     function(){
@@ -13,6 +9,8 @@ $(document).ready(function(){
   );
 
   var questionRows = $(".question-row");
+  var checkMark = "\u2713";
+  var cross = "\u2718";
 
   $.each(questionRows, function(index, questionRow){
     var rightButton = $(questionRow).find(".right-answer");
@@ -25,6 +23,7 @@ $(document).ready(function(){
 
   function setButtonListener(button, questionId, examId, answerStatus) {
     $(button).click(function(){
+      var self = this;
       $.ajax({
         url: "/set_answer_status",
         type: "POST",
@@ -37,12 +36,19 @@ $(document).ready(function(){
         },
         dataType: "json",
         success: function(data){
+          var unicode = $(self).hasClass("right-answer") ? checkMark : cross
+          hideButtons($(self).parent(), unicode);
         },
         error: function() {
           alert("failure")
         }
       });
     }); //end click()
+  }
+
+  function hideButtons(cell, unicode) {
+    $(cell).children().toggleClass("hide");
+    $(cell).text(unicode);
   }
 
 });

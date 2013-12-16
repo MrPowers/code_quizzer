@@ -18,8 +18,8 @@
         %pre= question.answer
       - if can? :update, question.answer
         %td
-          %button.right-answer Correct
-          %button.wrong-answer Wrong
+          %button.btn.btn-success.right-answer Correct
+          %button.btn.btn-danger.wrong-answer Wrong
       - if can? :update, question
         %td= link_to "Edit", edit_quiz_question_path(:id => question.id, :quiz_id => @quiz.id)
       - if can? :destroy, question
