@@ -19,7 +19,32 @@ $(document).ready(function(){
     var examId = $(".exam-information").data("exam-id");
     setButtonListener(rightButton, questionId, examId, "right");
     setButtonListener(wrongButton, questionId, examId, "wrong");
+    getAnswer(examId, questionId, questionRow);
   }); //end each()
+
+  function getAnswer(examId, questionId, questionRow) {
+    $.ajax({
+      url: "/get_answer",
+      type: "GET",
+      data: {
+        answer: {
+          exam_id: examId,
+          question_id: questionId,
+        }
+      },
+      dataType: "json",
+      success: function(data){
+        if (data) {
+          var cell = $(questionRow).find(".user-answer");
+          var unicode = data["status"] === "right" ? checkMark : cross
+          hideButtons(cell, unicode);
+        }
+      },
+      error: function() {
+        alert("failure")
+      }
+    });
+  }
 
   function setButtonListener(button, questionId, examId, answerStatus) {
     $(button).click(function(){
@@ -47,7 +72,7 @@ $(document).ready(function(){
   }
 
   function hideButtons(cell, unicode) {
-    $(cell).children().toggleClass("hide");
+    $(cell).children().addClass("hide");
     $(cell).text(unicode);
   }
 

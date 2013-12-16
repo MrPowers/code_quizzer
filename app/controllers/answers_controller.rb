@@ -10,4 +10,11 @@ class AnswersController < ApplicationController
       end
     end
   end
+
+  def get_answer
+    @answer = Answer.where(:exam_id => params[:answer][:exam_id], :question_id => params[:answer][:question_id]).first
+    respond_to do |format|
+      format.json { render :json => @answer }
+    end
+  end
 end
