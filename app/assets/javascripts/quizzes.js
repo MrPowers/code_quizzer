@@ -16,18 +16,23 @@ $(document).ready(function(){
 
   $.each(questionRows, function(index, questionRow){
     var rightButton = $(questionRow).find(".right-answer");
+    var wrongButton = $(questionRow).find(".wrong-answer");
     var questionId = $(questionRow).data("question-id");
     var examId = $(".exam-information").data("exam-id");
-    $(rightButton).click(function(){
+    setButtonListener(rightButton, questionId, examId, "right");
+    setButtonListener(wrongButton, questionId, examId, "wrong");
+  }); //end each()
+
+  function setButtonListener(button, questionId, examId, answerStatus) {
+    $(button).click(function(){
       $.ajax({
         url: "/set_answer_status",
-        type: "PUT",
+        type: "POST",
         data: {
-          id: 10,
           answer: {
             exam_id: examId,
             question_id: questionId,
-            status: "right"
+            status: answerStatus
           }
         },
         dataType: "json",
@@ -38,7 +43,6 @@ $(document).ready(function(){
         }
       });
     }); //end click()
-  }); //end each()
+  }
 
 });
-

@@ -15,10 +15,7 @@ class QuizzesController < ApplicationController
   end
 
   def show
-    if current_user
-      @exam = Exam.where(:quiz_id => @quiz.id, :user_id => current_user.id).first_or_create
-      @exam.create_answers if @exam.answers.blank?
-    end
+    @exam = Exam.where(:quiz_id => @quiz.id, :user_id => current_user.id).first_or_create if current_user
   end
 
   def edit
