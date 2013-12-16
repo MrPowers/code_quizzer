@@ -47,4 +47,5 @@
     %pre.comment_body= comment.body
     %br
 
-%div.exam-information{:data => {"exam-id" => @exam.id}}
+- if @exam
+  %div.exam-information{:data => {"exam-id" => @exam.id}}

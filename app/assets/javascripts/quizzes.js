@@ -2,7 +2,7 @@ $(document).ready(function(){
   $('.answer_hide').toggle(
     function(){
       $(this).attr('class', 'answer_show')
-    }, 
+    },
     function(){
       $(this).attr('class', 'answer_hide')
     }
@@ -73,6 +73,8 @@ $(document).ready(function(){
 
   function hideButtons(cell, unicode) {
     $(cell).children().addClass("hide");
+    var cellClassName = unicode === "\u2713" ? "correct" : "incorrect"
+    $(cell).addClass(cellClassName);
     $(cell).text(unicode);
   }
 

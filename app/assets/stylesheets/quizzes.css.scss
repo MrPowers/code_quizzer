@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.user-answer {
+  text-align: center;
+}
+
+.correct {
+  font-size: 2.5em;
+  color: #5bb65b;
+}
+
+.incorrect {
+  @extend .correct;
+  color: #da4e49;
+}
+
 /************************
 TABLE PROGRAMMING CHALLENGES
 ************************/
