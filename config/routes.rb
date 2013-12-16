@@ -1,6 +1,9 @@
 Compoundblingapplication::Application.routes.draw do
   get "static_pages/about"
 
+  match 'set_answer_status', :to => 'answers#set_answer_status', :via => [:put]
+  resources :answers
+
   resources :families do
     resources :topics
   end

@@ -4,16 +4,22 @@
   %thead
     %td.column1 Question
     %td.column2 Click to View Answer
+    - if can? :update, Answer
+      %td Your Answer
     - if can? :update, Question
       %td.column3
     - if can? :destroy, Question
       %td.column4
   - @quiz.questions.sort_by {|question| question.created_at}.each do |question|
-    %tr
+    %tr.question-row{:data => {"question-id" => question.id}}
       %td.question
         %pre= question.body
       %td.answer.answer_hide
         %pre= question.answer
+      - if can? :update, question.answer
+        %td
+          %button.right-answer Correct
+          %button.wrong-answer Wrong
       - if can? :update, question
         %td= link_to "Edit", edit_quiz_question_path(:id => question.id, :quiz_id => @quiz.id)
       - if can? :destroy, question
@@ -40,3 +46,5 @@
     %br
     %pre.comment_body= comment.body
     %br
+
+%div.exam-information{:data => {"exam-id" => @exam.id}}

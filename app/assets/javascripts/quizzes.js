@@ -10,5 +10,35 @@ $(document).ready(function(){
     function(){
       $(this).attr('class', 'answer_hide')
     }
-  ); //end toggle  
-}); //end ready
+  );
+
+  var questionRows = $(".question-row");
+
+  $.each(questionRows, function(index, questionRow){
+    var rightButton = $(questionRow).find(".right-answer");
+    var questionId = $(questionRow).data("question-id");
+    var examId = $(".exam-information").data("exam-id");
+    $(rightButton).click(function(){
+      $.ajax({
+        url: "/set_answer_status",
+        type: "PUT",
+        data: {
+          id: 10,
+          answer: {
+            exam_id: examId,
+            question_id: questionId,
+            status: "right"
+          }
+        },
+        dataType: "json",
+        success: function(data){
+        },
+        error: function() {
+          alert("failure")
+        }
+      });
+    }); //end click()
+  }); //end each()
+
+});
+
