@@ -41,7 +41,6 @@ $(document).ready(function(){
         }
       },
       error: function() {
-        alert("failure")
       }
     });
   }
@@ -65,7 +64,6 @@ $(document).ready(function(){
           hideButtons($(self).parent(), unicode);
         },
         error: function() {
-          alert("failure");
         }
       });
     }); //end click()
@@ -98,7 +96,6 @@ $(document).ready(function(){
         $(".unanswered-questions").text(unansweredQuestions);
       },
       error: function() {
-        alert("failure");
       }
     });
   });
