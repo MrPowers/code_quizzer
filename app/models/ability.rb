@@ -12,6 +12,15 @@ class Ability
       can :read, :all
       cannot :read, Family.where("name = ? OR name = ?", "Books", "Caitlin")
       can :create, Comment
+      can :create, Exam
+      can :update, Exam do |exam|
+        exam.try(:user) == user
+      end
+      can :show, Answer
+      can :create, Answer
+      can :update, Answer do |answer|
+        answer.try(:exam).try(:user) == user
+      end
     end
   end
 end

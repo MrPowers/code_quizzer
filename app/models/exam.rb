@@ -2,6 +2,7 @@ class Exam < ActiveRecord::Base
   attr_accessible :quiz_id, :status, :user_id, :correct_answers, :incorrect_answers, :unanswered_questions
   has_many :answers
   belongs_to :quiz
+  belongs_to :user
 
   def grade
     attributes = self.quiz.questions.inject({:unanswered_questions => 0, :correct_answers => 0, :incorrect_answers => 0}) do |memo, question|
