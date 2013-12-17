@@ -1,6 +1,6 @@
 class Exam < ActiveRecord::Base
   attr_accessible :quiz_id, :status, :user_id, :correct_answers, :incorrect_answers, :unanswered_questions
-  has_many :answers
+  has_many :answers, :dependent => :destroy
   belongs_to :quiz
   belongs_to :user
 
@@ -9,9 +9,9 @@ class Exam < ActiveRecord::Base
       answer = Answer.where(:exam_id => self.id, :question_id => question.id).first
       if answer.blank?
         memo[:unanswered_questions] += 1
-      elsif answer.status == "right"
+      elsif answer.status == "correct"
         memo[:correct_answers] += 1
-      elsif answer.status == "wrong"
+      elsif answer.status == "incorrect"
         memo[:incorrect_answers] += 1
       end
       memo

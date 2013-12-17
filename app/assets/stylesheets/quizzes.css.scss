@@ -40,6 +40,10 @@ td {
   padding: 3px 3px;
 }
 
+table, td, th {
+  border: lightgrey 1px solid;
+}
+
 thead {
   font-weight: bold;
   text-align: center;
@@ -74,10 +78,6 @@ pre {
   padding: 4px;
   background-color: transparent;
   border: none;
-}
-
-.question, .answer_show, .answer_hide {
-  border: lightgrey solid 1px;
 }
 
 .time_ago {

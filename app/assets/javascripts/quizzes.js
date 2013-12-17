@@ -13,12 +13,12 @@ $(document).ready(function(){
   var cross = "\u2718";
 
   $.each(questionRows, function(index, questionRow){
-    var rightButton = $(questionRow).find(".right-answer");
-    var wrongButton = $(questionRow).find(".wrong-answer");
+    var correctButton = $(questionRow).find(".correct-answer");
+    var incorrectButton = $(questionRow).find(".incorrect-answer");
     var questionId = $(questionRow).data("question-id");
     var examId = $(".exam-information").data("exam-id");
-    setButtonListener(rightButton, questionId, examId, "right");
-    setButtonListener(wrongButton, questionId, examId, "wrong");
+    setButtonListener(correctButton, questionId, examId, "correct");
+    setButtonListener(incorrectButton, questionId, examId, "incorrect");
     getAnswer(examId, questionId, questionRow);
   }); //end each()
 
@@ -36,7 +36,7 @@ $(document).ready(function(){
       success: function(data){
         if (data) {
           var cell = $(questionRow).find(".user-answer");
-          var unicode = data["status"] === "right" ? checkMark : cross
+          var unicode = data["status"] === "correct" ? checkMark : cross
           hideButtons(cell, unicode);
         }
       },
@@ -61,7 +61,7 @@ $(document).ready(function(){
         },
         dataType: "json",
         success: function(data){
-          var unicode = $(self).hasClass("right-answer") ? checkMark : cross
+          var unicode = $(self).hasClass("correct-answer") ? checkMark : cross
           hideButtons($(self).parent(), unicode);
         },
         error: function() {
