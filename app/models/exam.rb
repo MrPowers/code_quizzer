@@ -4,7 +4,7 @@ class Exam < ActiveRecord::Base
   belongs_to :quiz
 
   def grade
-    attributes = self.quiz.questions.inject(Hash.new(0)) do |memo, question|
+    attributes = self.quiz.questions.inject({:unanswered_questions => 0, :correct_answers => 0, :incorrect_answers => 0}) do |memo, question|
       answer = Answer.where(:exam_id => self.id, :question_id => question.id).first
       if answer.blank?
         memo[:unanswered_questions] += 1

@@ -16,7 +16,7 @@ class QuizzesController < ApplicationController
 
   def show
     if current_user
-      @exam = Exam.where(:quiz_id => @quiz.id, :user_id => current_user.id).where("status != ?", "graded").order("id desc").first_or_create
+      @exam = Exam.where(:quiz_id => @quiz.id, :user_id => current_user.id).where("status IS NULL").order("id desc").first_or_create
     end
   end
 
