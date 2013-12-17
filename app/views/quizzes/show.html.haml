@@ -25,7 +25,12 @@
       - if can? :destroy, question
         %td= link_to 'Destroy', [question.quiz, question], :confirm => 'Are you sure?', :method => :delete
 
-- if can? :create, @quiz.questions.build #if the user is allowed to create new questions
+%br
+
+- if @exam
+  %button.btn.btn-large.grade-exam Grade this Exam
+
+- if can? :create, @quiz.questions.build
   = render "questions"
 
 %br

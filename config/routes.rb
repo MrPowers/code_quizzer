@@ -3,7 +3,8 @@ Compoundblingapplication::Application.routes.draw do
 
   match 'set_answer_status', :to => 'answers#set_answer_status', :via => [:post]
   match 'get_answer', :to => 'answers#get_answer', :via => [:get]
-  resources :answers
+
+  match 'grade_exam', :to => 'exams#grade_exam', :via => [:post]
 
   resources :families do
     resources :topics

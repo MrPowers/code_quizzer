@@ -15,7 +15,9 @@ class QuizzesController < ApplicationController
   end
 
   def show
-    @exam = Exam.where(:quiz_id => @quiz.id, :user_id => current_user.id).first_or_create if current_user
+    if current_user
+      @exam = Exam.where(:quiz_id => @quiz.id, :user_id => current_user.id).where("status != ?", "graded").order("id desc").first_or_create
+    end
   end
 
   def edit

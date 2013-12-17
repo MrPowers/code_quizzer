@@ -65,7 +65,7 @@ $(document).ready(function(){
           hideButtons($(self).parent(), unicode);
         },
         error: function() {
-          alert("failure")
+          alert("failure");
         }
       });
     }); //end click()
@@ -77,5 +77,23 @@ $(document).ready(function(){
     $(cell).addClass(cellClassName);
     $(cell).text(unicode);
   }
+
+  $(".grade-exam").click(function() {
+    var examId = $(".exam-information").data("exam-id");
+    $.ajax({
+      url: "/grade_exam",
+      type: "POST",
+      data: {
+        id: examId
+      },
+      dataType: "json",
+      success: function(data){
+        console.log(data);
+      },
+      error: function() {
+        alert("failure");
+      }
+    });
+  });
 
 });
