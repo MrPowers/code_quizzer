@@ -19,4 +19,12 @@ class Exam < ActiveRecord::Base
     self.update_attributes(attributes.merge({:status => "graded"}))
   end
 
+  def total_questions
+    correct_answers + incorrect_answers + unanswered_questions
+  end
+
+  def percent_correct
+    correct_answers.to_f / total_questions
+  end
+
 end

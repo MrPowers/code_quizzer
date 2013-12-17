@@ -1,0 +1,32 @@
+%div.span-5.recently-completed-exams
+  %h3 Recently Completed Exams
+  %table.table.table-hover
+    %thead
+      %td Topic
+      %td Quiz
+      %td User
+      %td % Correct
+      %td Completed
+    - @completed_exams.each do |exam|
+      %tr
+        %td= exam.quiz.topic.name
+        %td= link_to exam.quiz.body, topic_quiz_path(topic_id: exam.quiz.topic.id, id: exam.quiz.id)
+        %td= exam.user.username
+        %td= (exam.percent_correct * 100).round(2).to_s + "%"
+        %td= time_ago_in_words(exam.updated_at) + " ago"
+
+%div.span-5.exams-in-progress
+  %h3 Exams In Progress
+  %table.table.table-hover
+    %thead
+      %td Topic
+      %td Quiz
+      %td User
+      %td Started
+    - @exams_in_progress.each do |exam|
+      %tr
+        %td= exam.quiz.topic.name
+        %td= link_to exam.quiz.body, topic_quiz_path(topic_id: exam.quiz.topic.id, id: exam.quiz.id)
+        %td= exam.user.username
+        %td= time_ago_in_words(exam.created_at)
+
