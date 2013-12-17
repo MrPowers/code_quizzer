@@ -27,30 +27,31 @@
 
 %br
 
-%div
-  %button.btn.btn-large.btn-primary.grade-exam{"data-target" => "#examResults", "data-toggle" => "modal"} Grade this Exam
+- if can? :create, Exam
+  %div
+    %button.btn.btn-large.btn-primary.grade-exam{"data-target" => "#examResults", "data-toggle" => "modal"} Grade this Exam
 
-#examResults.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "examResultsLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#examResultsLabel.modal-title Exam Results
-      .modal-body
-        %h4
-          Percent Correct: 
-          %span.percent-correct
-        %h5
-          Correct Answers: 
-          %span.correct-answers
-        %h5
-          Incorrect Answers: 
-          %span.incorrect-answers
-        %h5
-          Not Answered: 
-          %span.unanswered-questions
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+  #examResults.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "examResultsLabel", role: "dialog", tabindex: "-1"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+          %h4#examResultsLabel.modal-title Exam Results
+        .modal-body
+          %h4
+            Percent Correct: 
+            %span.percent-correct
+          %h5
+            Correct Answers: 
+            %span.correct-answers
+          %h5
+            Incorrect Answers: 
+            %span.incorrect-answers
+          %h5
+            Not Answered: 
+            %span.unanswered-questions
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
 
 %br
 
