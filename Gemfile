@@ -20,6 +20,7 @@ gem "haml-rails"
 gem "heroku"
 gem 'thin'
 gem "rdoc"
+gem "faker"
 
 group :development, :test do
   gem 'rspec-rails'
