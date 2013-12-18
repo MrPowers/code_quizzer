@@ -6,6 +6,7 @@ Compoundblingapplication::Application.routes.draw do
 
   match 'grade_exam', :to => 'exams#grade_exam', :via => [:post]
   resources :exams, :only => [:index]
+  match 'user_exams' => 'exams#user_exams'
 
   resources :families do
     resources :topics
