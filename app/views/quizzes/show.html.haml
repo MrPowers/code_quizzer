@@ -50,6 +50,7 @@
           %h5
             Not Answered: 
             %span.unanswered-questions
+          =button_to('Back To All Quizzes', root_path, :class => 'btn btn-primary', :method => :get)
         .modal-footer
           %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
 
