@@ -28,4 +28,4 @@
         %td= exam.quiz.topic.name
         %td= link_to exam.quiz.body, topic_quiz_path(topic_id: exam.quiz.topic.id, id: exam.quiz.id)
         %td= exam.user.username
-        %td= time_ago_in_words(exam.created_at)
+        %td= time_ago_in_words(exam.created_at) + " ago"
