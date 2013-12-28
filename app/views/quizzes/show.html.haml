@@ -14,6 +14,7 @@
     %tr.question-row{:data => {"question-id" => question.id}}
       %td.question
         %pre= question.body
+        %h3= question.id
       %td.answer.answer_hide
         %pre= question.answer
       - if can? :update, Answer
