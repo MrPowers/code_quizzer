@@ -12,6 +12,11 @@
  *= require 'masonry/basic'
  *= require_tree .
  */
+
+.center {
+  text-align: center;
+}
+
  html body{
   background-image:url('paper.jpg');
  }

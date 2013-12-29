@@ -1,4 +1,7 @@
 %h2.quiz_name= @quiz.body
+- unless current_user
+  %div.center
+    =button_to('Sign Up to Track Your Progress', new_user_registration_path, :class => 'btn btn-primary btn-large', :method => :get)
 
 %table
   %thead
