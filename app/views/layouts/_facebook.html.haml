@@ -1,9 +1,10 @@
+.fb-like{"data-action" => "like", "data-href" => "http://www.codequizzes.com/", "data-layout" => "button_count", "data-share" => "true", "data-show-faces" => "true", "data-width" => "150"}
 #fb-root
   :javascript
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));

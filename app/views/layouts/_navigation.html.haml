@@ -13,9 +13,8 @@
           %a{:href => "http://codequizzes.wordpress.com/2013/10/06/argument-order-dependencies/", :tabindex => "-1"} Argument Order Dependencies
 
 %ul.nav.pull-right
-  - if request.fullpath == "/"
-    %li.navigation-items{:style => "padding-top: 10px;"}
-      .fb-like{"data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "125"}
+  %li.navigation-items{:style => "padding-top: 10px;"}
+    = render 'layouts/facebook'
 
   %li.navigation-items{:style => "padding-top: 10px; padding-left: 8px;"}
     = render 'layouts/twitter'
