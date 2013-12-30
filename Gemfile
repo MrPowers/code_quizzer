@@ -19,7 +19,6 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "haml-rails"
 gem "heroku"
 gem 'thin'
-gem "rdoc"
 gem "faker"
 
 group :development, :test do

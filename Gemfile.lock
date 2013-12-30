@@ -177,7 +177,6 @@ DEPENDENCIES
   pg
   quiet_assets (>= 1.0.1)
   rails (= 3.2.11)
-  rdoc
   rspec-rails
   sass-rails (~> 3.2.3)
   simple_form (>= 2.0.3)
