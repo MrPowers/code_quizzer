@@ -15,7 +15,32 @@ class FamiliesController < ApplicationController
   def show
     @family = Family.find(params[:id])
     topics = @family.topics.includes(:quizzes)
-    @topics = topics.select(&:priority).sort_by(&:priority) + topics.reject(&:priority)
+    @topics = sorted_topics(topics)
     @topic = Topic.new
+  end
+
+  private
+
+  def sorted_topics(topics)
+    topics.select{|t| topic_order.index(t.name)}.sort_by {|t| topic_order.index(t.name)} + topics.reject{|t| topic_order.index(t.name)}
+  end
+
+  def topic_order
+    [
+      "Basic Ruby",
+      "Intermediate Ruby",
+      "Basic JavaScript",
+      "Rails",
+      "Ruby",
+      "Core CS",
+      "CSS",
+      "jQuery",
+      "Git/Github",
+      "HTML / CSS",
+      "Unix / Bash",
+      "JavaScript",
+      "CoffeeScript",
+      "RSpec"
+    ]
   end
 end

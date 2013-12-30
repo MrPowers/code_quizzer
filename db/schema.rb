@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131216201249) do
+ActiveRecord::Schema.define(:version => 20131230022808) do
 
   create_table "answers", :force => true do |t|
     t.integer  "exam_id"
@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(:version => 20131216201249) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "family_id"
-    t.integer  "priority"
   end
 
   create_table "users", :force => true do |t|
