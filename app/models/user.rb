@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
     if total == 0
       ""
     else
-      "x#{total}"
+      total
     end
   end
 end
