@@ -10,4 +10,13 @@ class User < ActiveRecord::Base
 
   has_many :quizzes
   has_many :questions
+
+  def count_completed_exams_by_quiz(quiz)
+    total = quiz.exams.where("user_id = #{self.id} AND status = 'graded'").count
+    if total == 0
+      ""
+    else
+      "x#{total}"
+    end
+  end
 end

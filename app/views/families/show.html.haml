@@ -8,6 +8,8 @@
         %h3= topic.name
         - topic.quizzes.each do |quiz|
           = link_to quiz.body, topic_quiz_path(:topic_id => topic, :id => quiz)
+          - if current_user
+            %span.label.label-success= current_user.count_completed_exams_by_quiz(quiz)
           %br/
           .description= quiz.description
         -if can? :create, Quiz  
