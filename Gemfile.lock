@@ -170,7 +170,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 2.1.0.0)
+  bootstrap-sass (>= 2.1.0.0)
   cancan (>= 1.6.8)
   coffee-rails (~> 3.2.1)
   devise (>= 2.1.2)

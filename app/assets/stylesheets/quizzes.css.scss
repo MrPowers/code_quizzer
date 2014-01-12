@@ -61,14 +61,12 @@ thead {
   width: 50px;
 }
 
-.answer_hide {
-  opacity: 0.0;
+.answer {
   cursor: pointer;
 }
 
-.answer_show {
-  opacity: 1.0;
-  cursor: pointer;
+.no-opacity {
+  opacity: 0.0;
 }
 
 pre {

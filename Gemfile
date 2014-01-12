@@ -11,7 +11,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "bootstrap-sass", "~> 2.1.0.0"
+gem "bootstrap-sass", ">= 2.1.0.0"
 gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
 gem "simple_form", ">= 2.0.3"

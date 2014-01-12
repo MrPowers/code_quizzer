@@ -1,12 +1,7 @@
 $(document).ready(function(){
-  $('.answer_hide').toggle(
-    function(){
-      $(this).attr('class', 'answer_show')
-    },
-    function(){
-      $(this).attr('class', 'answer_hide')
-    }
-  );
+ $('.answer').click(function() {
+   $(this).toggleClass('no-opacity');
+ });
 
   var questionRows = $(".question-row");
   var checkMark = "\u2713";

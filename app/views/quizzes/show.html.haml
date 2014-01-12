@@ -17,7 +17,7 @@
     %tr.question-row{:data => {"question-id" => question.id}}
       %td.question
         %pre= question.body
-      %td.answer.answer_hide
+      %td.answer.no-opacity
         %pre= question.answer
       - if can? :update, Answer
         %td.user-answer
