@@ -7,14 +7,10 @@
       .thumbnail
         %h3= topic.name
         - topic.quizzes.each do |quiz|
-          = link_to quiz.body, topic_quiz_path(:topic_id => topic, :id => quiz)
-          - if current_user
-            - count = current_user.count_completed_exams_by_quiz(quiz)
-            - if count > 0
-              %span.label.label-success= count
+          %span.quiz{:data => {:quiz_id => quiz.id}}= link_to quiz.body, topic_quiz_path(:topic_id => topic, :id => quiz)
           %br/
           .description= quiz.description
-        -if can? :create, Quiz  
+        -if can? :create, Quiz
           .create_quiz=link_to "Create a new #{topic.name} quiz", new_topic_quiz_path(:topic_id => topic)
 - if can? :create, Topic
   =link_to "Create new topic", new_family_topic_path(@family)
