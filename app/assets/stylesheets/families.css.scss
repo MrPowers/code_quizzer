@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.exam-count {
-  margin-left: 0.75em;
+.label {
+  margin-left: 0.5em;
+}
+
+.cancel-exam, .in-progress {
+  cursor: pointer;
 }

@@ -5,6 +5,7 @@ Compoundblingapplication::Application.routes.draw do
   match 'get_answer', :to => 'answers#get_answer', :via => [:get]
 
   match 'grade_exam', :to => 'exams#grade_exam', :via => [:post]
+  match 'cancel_exam', :to => 'exams#cancel_exam', :via => [:post]
   match 'graded_count', :to => 'exams#graded_count', :via => [:get]
   resources :exams, :only => [:index]
   match 'user_exams' => 'exams#user_exams'
