@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   def create
     @question.user = current_user
     if @question.save
-      redirect_to quiz_path(@quiz)
+      redirect_to topic_quiz_path(topic_id: @quiz.topic.id, id: @quiz, anchor: "new_question")
     end
   end
 
@@ -14,13 +14,13 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update_attributes(params[:question])
-      redirect_to quiz_path(@quiz)
+      redirect_to topic_quiz_path(topic_id: @quiz.topic.id, id: @quiz)
     end
   end
 
    def destroy
     @question.destroy
-    redirect_to quiz_path(@quiz)
+    redirect_to topic_quiz_path(topic_id: @quiz.topic.id, id: @quiz)
   end
 
   def show
