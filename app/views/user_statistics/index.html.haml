@@ -1,8 +1,12 @@
 %table
   %thead
-    %td.column1 Date
-    %td.column2 Sign Up Count
-  - @grouped_users.each do |date, count|
+    %td Date
+    %td Sign Up Count
+    %td Graded Exams
+    %td Cancelled Exams
+  - @grouped_users.keys.each do |date|
     %tr
       %td= date
-      %td= count
+      %td= @grouped_users[date]
+      %td= @grouped_graded_exams[date]
+      %td= @grouped_cancelled_exams[date]
