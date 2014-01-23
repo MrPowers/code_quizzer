@@ -1,0 +1,8 @@
+%table
+  %thead
+    %td.column1 Date
+    %td.column2 Sign Up Count
+  - @grouped_users.each do |date, count|
+    %tr
+      %td= date
+      %td= count
