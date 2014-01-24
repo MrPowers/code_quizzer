@@ -1,5 +1,10 @@
 class UserStatisticsController < ApplicationController
   def index
+    @total_users = User.all.count
+    @total_exams = Exam.all.count
+    @graded_exams = Exam.where(:status => "graded").count
+    @cancelled_exams = Exam.where(:status => "cancelled").count
+
     @grouped_users = grouped_count(User, {created_at: 90.days.ago..Time.now})
     @grouped_graded_exams = grouped_count(Exam, {created_at: 90.days.ago..Time.now, status: "graded"})
     @grouped_cancelled_exams = grouped_count(Exam, {created_at: 90.days.ago..Time.now, status: "cancelled"})
