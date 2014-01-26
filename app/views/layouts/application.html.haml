@@ -4,7 +4,7 @@
   %head
     = favicon_link_tag
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-    %meta{:name => "keywords", :content => "programming practice problems, ruby practice problems, rails practice problems, ruby on rails practice problems, javascript practice problems, jquery practice problems, ruby, rails, ruby on rails, rspec, javascript, jquery, git, github, code quizzes, programming quizzes, programming tests, heroku, devise, cancan, polymorphism, nested resources"}
+    %meta{:name => "keywords", :content => "learn programming, learn ruby, learn javascript, programming practice problems, ruby practice problems, rails practice problems, ruby on rails practice problems, javascript practice problems, jquery practice problems, ruby, rails, ruby on rails, rspec, javascript, jquery, git, github, code quizzes, programming quizzes, programming tests, heroku, devise, cancan, polymorphism, nested resources"}
     %meta{:name => "description", :content => "Practice programming and web development with these HTML, CSS, Ruby, Rails, JavaScript and jQuery questions."}
     %meta{:name => "author", :content => "Matthew Powers"}
 
@@ -29,4 +29,7 @@
             .span12
               = render 'layouts/messages'
               = yield
-          %footer= link_to "Made by Powers", static_pages_about_path
+          %footer
+            = link_to "Made by Powers", static_pages_about_path
+            |
+            %a{href: "https://plus.google.com/106447578781585716639", rel: "publisher"} Google+
