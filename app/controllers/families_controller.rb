@@ -27,10 +27,10 @@ class FamiliesController < ApplicationController
 
   def topic_order
     [
-      "Basic Ruby",
+      "Learn Ruby",
       "Intermediate Ruby",
-      "Basic JavaScript",
-      "Rails",
+      "Learn JavaScript",
+      "Learn Rails",
       "Ruby",
       "Core CS",
       "CSS",
