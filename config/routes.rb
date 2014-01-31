@@ -16,8 +16,8 @@ Compoundblingapplication::Application.routes.draw do
     resources :topics
   end
 
-  resources :topics do
-    resources :quizzes
+  resources :topics, :only => [] do
+    resources :quizzes, :only => [:show]
   end
 
   resources :quizzes do
@@ -33,6 +33,4 @@ Compoundblingapplication::Application.routes.draw do
   root :to => 'families#show', :id => 1
   match 'programming' => 'families#show', :id => 1
   match 'more_programming' => 'families#show', :id => (Family.find_by_name("More Programming") ? Family.find_by_name("More Programming").id : 2)
-  match 'quizzes/:id/admin_update' => 'quizzes#admin_update'
-  match 'topics/:id/admin_update' => 'topics#admin_update'
 end
