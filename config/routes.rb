@@ -22,8 +22,8 @@ Compoundblingapplication::Application.routes.draw do
     resources :questions
   end
 
-  resources :quizzes do
-    resources :comments
+  resources :quizzes, :only => [] do
+    resources :comments, :only => [:create]
   end
 
   devise_for :users
