@@ -7,6 +7,6 @@
       .thumbnail
         %h3= topic.name
         - topic.quizzes.each do |quiz|
-          %span.quiz{:data => {:quiz_id => quiz.id}}= link_to quiz.body, topic_quiz_path(:topic_id => topic, :id => quiz)
+          %span.quiz{:data => {:quiz_id => quiz.id}}= link_to quiz.body, topic_quiz_path(:topic_id => topic.slug, :id => quiz.slug)
           %br/
           .description= quiz.description

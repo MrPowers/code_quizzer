@@ -5,4 +5,8 @@ class Quiz < ActiveRecord::Base
   has_many :exams
   belongs_to :user
   belongs_to :topic
+
+  def to_param
+    "#{slug}".parameterize
+  end
 end

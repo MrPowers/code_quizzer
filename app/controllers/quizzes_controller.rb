@@ -1,8 +1,8 @@
 class QuizzesController < ApplicationController
   def show
-    @topic = Topic.find(params[:topic_id])
+    @topic = Topic.where(slug: params[:topic_id]).first
     authorize! :show, @topic
-    @quiz = Quiz.find(params[:id])
+    @quiz = Quiz.where(slug: params[:id]).first
     authorize! :show, @quiz
     if current_user
       authorize! :create, Exam

@@ -24,11 +24,7 @@ class FamiliesController < ApplicationController
       "CSS",
       "jQuery",
       "Git/Github",
-      "HTML / CSS",
-      "Unix / Bash",
-      "JavaScript",
-      "CoffeeScript",
-      "RSpec"
+      "Unix / Bash"
     ]
   end
 end

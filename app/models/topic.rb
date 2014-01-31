@@ -3,4 +3,8 @@ class Topic < ActiveRecord::Base
   has_many :quizzes
   belongs_to :family
   belongs_to :user
+
+  def to_param
+    "#{slug}".parameterize
+  end
 end
