@@ -12,15 +12,13 @@ Compoundblingapplication::Application.routes.draw do
   resources :exams, :only => [:index]
   match 'user_exams' => 'exams#user_exams'
 
-  resources :families do
-    resources :topics
-  end
+  resources :families, :only => [:show]
 
   resources :topics, :only => [] do
     resources :quizzes, :only => [:show]
   end
 
-  resources :quizzes do
+  resources :quizzes, :only => [] do
     resources :questions
   end
 
@@ -31,6 +29,4 @@ Compoundblingapplication::Application.routes.draw do
   devise_for :users
 
   root :to => 'families#show', :id => 1
-  match 'programming' => 'families#show', :id => 1
-  match 'more_programming' => 'families#show', :id => (Family.find_by_name("More Programming") ? Family.find_by_name("More Programming").id : 2)
 end
