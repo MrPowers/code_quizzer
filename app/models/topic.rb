@@ -3,6 +3,7 @@ class Topic < ActiveRecord::Base
   has_many :quizzes
   belongs_to :family
   belongs_to :user
+  validates :slug, presence: true
 
   def to_param
     "#{slug}".parameterize

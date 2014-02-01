@@ -5,6 +5,7 @@ class Quiz < ActiveRecord::Base
   has_many :exams
   belongs_to :user
   belongs_to :topic
+  validates :slug, presence: true
 
   def to_param
     "#{slug}".parameterize
