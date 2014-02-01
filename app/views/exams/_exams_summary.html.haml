@@ -10,7 +10,7 @@
     - @completed_exams.each do |exam|
       %tr
         %td= exam.quiz.topic.name
-        %td= link_to exam.quiz.body, topic_quiz_path(topic_id: exam.quiz.topic.id, id: exam.quiz.id)
+        %td= link_to exam.quiz.body, topic_quiz_path(topic_id: exam.quiz.topic.slug, id: exam.quiz.slug) rescue "old quiz"
         %td= exam.user ? exam.user.username : "a_dude"
         %td= (exam.percent_correct * 100).round(2).to_s + "%"
         %td= time_ago_in_words(exam.updated_at) + " ago"
@@ -26,6 +26,6 @@
     - @exams_in_progress.each do |exam|
       %tr
         %td= exam.quiz.topic.name
-        %td= link_to exam.quiz.body, topic_quiz_path(topic_id: exam.quiz.topic.id, id: exam.quiz.id)
+        %td= link_to exam.quiz.body, topic_quiz_path(topic_id: exam.quiz.topic.slug, id: exam.quiz.slug) rescue "old quiz"
         %td= exam.user ? exam.user.username : "a_dude"
         %td= time_ago_in_words(exam.created_at) + " ago"
