@@ -1,7 +1,7 @@
 - content_for :title do
   = @quiz.page_title
 
-%h2.quiz_name= @quiz.body
+%h1.center= (@quiz.page_title || @topic.name)
 - unless current_user
   %div.center
     =button_to('Sign Up to Track Your Progress', new_user_registration_path, :class => 'btn btn-primary btn-large', :method => :get)
@@ -23,7 +23,7 @@
       %td.answer.no-opacity
         %pre= question.answer
       - if can? :update, Answer
-        %td.user-answer
+        %td.user-answer.center
           %button.btn.btn-success.correct-answer Correct
           %button.btn.btn-danger.incorrect-answer Wrong
       - if can? :update, question
