@@ -7,7 +7,8 @@
     %meta{:name => "description", :content => "Learn programming with Ruby, JavaScript, and Rails code quizzes."}
     %meta{:name => "author", :content => "Matthew Powers"}
 
-    %title CodeQuizzes | Learn Programming
+    %title
+      #{content_for?(:title) ? yield(:title) : "Learn Programming - How To Code"} | CodeQuizzes
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags

@@ -1,3 +1,6 @@
+- content_for :title do
+  = @quiz.page_title
+
 %h2.quiz_name= @quiz.body
 - unless current_user
   %div.center

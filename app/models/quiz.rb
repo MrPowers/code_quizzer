@@ -5,7 +5,9 @@ class Quiz < ActiveRecord::Base
   has_many :exams
   belongs_to :user
   belongs_to :topic
+
   validates :slug, presence: true
+  validates :page_title, length: {maximum: 45}
 
   def to_param
     "#{slug}".parameterize

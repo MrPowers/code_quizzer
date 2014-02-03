@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140131233558) do
+ActiveRecord::Schema.define(:version => 20140203011029) do
 
   create_table "answers", :force => true do |t|
     t.integer  "exam_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20140131233558) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "page_title"
   end
 
   create_table "questions", :force => true do |t|
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20140131233558) do
     t.text     "description"
     t.integer  "topic_id"
     t.string   "slug"
+    t.string   "page_title"
   end
 
   add_index "quizzes", ["slug"], :name => "index_quizzes_on_slug"
