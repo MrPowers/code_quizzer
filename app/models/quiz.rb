@@ -1,5 +1,5 @@
 class Quiz < ActiveRecord::Base
-  attr_accessible :body, :user_id, :description, :topic_id
+  attr_accessible :body, :user_id, :description, :topic_id, :slug, :page_title
   has_many :questions, :dependent => :destroy
   has_many :comments, :dependent => :destroy
   has_many :exams
