@@ -19,6 +19,7 @@ class FamiliesController < ApplicationController
       "Intermediate Ruby",
       "Learn JavaScript",
       "Learn Rails",
+      "Ruby TDD Practice",
       "Ruby",
       "Core CS",
       "CSS",
