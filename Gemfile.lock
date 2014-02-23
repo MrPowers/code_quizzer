@@ -147,7 +147,7 @@ GEM
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
     rubyzip (1.1.0)
-    sass (3.2.13)
+    sass (3.2.14)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -199,7 +199,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 3.2.17)
   rspec-rails
-  sass-rails (~> 3.2.3)
+  sass-rails
   simple_form (>= 2.0.3)
   thin
-  uglifier (>= 1.0.3)
+  uglifier
