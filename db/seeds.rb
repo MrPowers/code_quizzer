@@ -1,9 +1,9 @@
 # bare bones seeds
 
-author = User.create email: 'bob@example.com', password: 'Password1', password_confirmation: 'Password1', username: Faker::Internet.user_name/
+author = User.create email: 'bob@example.com', password: 'Password1', password_confirmation: 'Password1', username: Faker::Internet.user_name
 
 # create admin
-# admin = User.create email: 'you@example.com', password: 'password', password_confirmation: 'password', username: Faker::Internet.user_name, role: 'admin'
+admin = User.create email: 'you@example.com', password: 'password', password_confirmation: 'password', username: Faker::Internet.user_name, role: 'admin'
 
 f1 = Family.create name: 'Programming Family', description: 'A family description'
 t1 = f1.topics.create! name: 'Rails Topic', user_id: admin.id, slug: 'topic-slug', family_id: f1.id
