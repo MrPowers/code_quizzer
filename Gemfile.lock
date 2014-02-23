@@ -54,7 +54,7 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.3)
+    coffee-script-source (1.7.0)
     columnize (0.3.6)
     daemons (1.1.9)
     debug_inspector (0.0.2)
@@ -191,7 +191,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.1.1)
   byebug
   cancan
-  coffee-rails (~> 3.2.1)
+  coffee-rails
   devise
   faker
   haml-rails

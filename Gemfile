@@ -14,7 +14,7 @@ gem 'simple_form'
 gem 'thin'
 
 group :assets do
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'coffee-rails'
   gem 'sass-rails'
   gem 'uglifier'
 end
