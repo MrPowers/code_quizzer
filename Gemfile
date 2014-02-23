@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'bootstrap-sass', '>= 2.1.0.0'
+gem 'bootstrap-sass', '~> 3.1.1'
 gem 'cancan'
 gem 'devise'
 gem 'faker'
