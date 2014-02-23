@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass', '>= 2.1.0.0'
-gem 'cancan', '>= 1.6.8'
-gem 'devise', '>= 2.1.2'
+gem 'cancan'
+gem 'devise'
 gem 'faker'
 gem 'haml-rails'
 gem 'heroku'
@@ -26,7 +26,14 @@ group :development do
   gem 'quiet_assets'
 end
 
+group :test do
+  # gem 'database_cleaner'
+  # gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  # gem 'timecop'
+  # gem 'webmock'
+end
+
 group :development, :test do
   gem 'byebug'
-  gem 'rspec-rails'
 end
