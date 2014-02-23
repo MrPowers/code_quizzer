@@ -1,18 +1,18 @@
 Compoundblingapplication::Application.routes.draw do
   root :to => 'families#show', :id => 1
 
-  match 'stats' => 'user_statistics#index'
+  get 'stats' => 'user_statistics#index'
 
   get "static_pages/about"
 
-  match 'set_answer_status', :to => 'answers#set_answer_status', :via => [:post]
-  match 'get_answer', :to => 'answers#get_answer', :via => [:get]
+  post 'set_answer_status', :to => 'answers#set_answer_status'
+  get 'get_answer', :to => 'answers#get_answer'
 
-  match 'grade_exam', :to => 'exams#grade_exam', :via => [:post]
-  match 'cancel_exam', :to => 'exams#cancel_exam', :via => [:post]
-  match 'graded_count', :to => 'exams#graded_count', :via => [:get]
+  post 'grade_exam', :to => 'exams#grade_exam'
+  post 'cancel_exam', :to => 'exams#cancel_exam'
+  get 'graded_count', :to => 'exams#graded_count'
   resources :exams, :only => [:index]
-  match 'user_exams' => 'exams#user_exams'
+  get 'user_exams' => 'exams#user_exams'
 
   resources :families, :only => [:show]
 
