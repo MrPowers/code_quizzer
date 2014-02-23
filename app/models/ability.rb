@@ -6,9 +6,9 @@ class Ability
       can :read, :all
       cannot :read, Family.where("name = ? OR name = ?", "Books", "Caitlin")
     # Admin users can read, create, and delete anything.
-    elsif user.role == "admin"
+    elsif user.role == 'admin'
       can :manage, :all
-    elsif user.role == "author"
+    elsif user.role == 'author'
       can :read, :all
       cannot :read, Family.where("name = ? OR name = ?", "Books", "Caitlin")
       can :create, Comment
