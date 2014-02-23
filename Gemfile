@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'masonry-rails'
 gem 'pg'
 gem 'rails', '3.2.17' # need to stay here until ready for rails 4 upgrade
-gem 'simple_form', '>= 2.0.3'
+gem 'simple_form'
 gem 'thin'
 
 group :assets do

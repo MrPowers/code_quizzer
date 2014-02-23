@@ -203,6 +203,6 @@ DEPENDENCIES
   rails (= 3.2.17)
   rspec-rails
   sass-rails
-  simple_form (>= 2.0.3)
+  simple_form
   thin
   uglifier
