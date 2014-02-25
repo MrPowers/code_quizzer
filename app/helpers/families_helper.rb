@@ -1,2 +1,0 @@
-module FamiliesHelper
-end

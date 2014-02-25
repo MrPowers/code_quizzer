@@ -1,26 +1,39 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
-gem 'pg'
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'cancan'
+gem 'devise'
+gem 'faker'
+gem 'haml-rails'
+gem 'heroku'
+gem 'jquery-rails'
 gem 'masonry-rails'
+gem 'pg'
+gem 'rails', '3.2.17' # need to stay here until ready for rails 4 upgrade
+gem 'simple_form'
+gem 'thin'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'coffee-rails'
+  gem 'sass-rails'
+  gem 'uglifier'
 end
 
-gem 'jquery-rails'
-gem "bootstrap-sass", ">= 2.1.0.0"
-gem "devise", ">= 2.1.2"
-gem "cancan", ">= 1.6.8"
-gem "simple_form", ">= 2.0.3"
-gem "quiet_assets", ">= 1.0.1", :group => :development
-gem "haml-rails"
-gem "heroku"
-gem 'thin'
-gem "faker"
+group :development do
+  gem 'awesome_print'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
+end
+
+group :test do
+  # gem 'database_cleaner'
+  # gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  # gem 'timecop'
+  # gem 'webmock'
+end
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'byebug'
 end
