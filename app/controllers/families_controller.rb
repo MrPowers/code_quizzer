@@ -18,15 +18,18 @@ class FamiliesController < ApplicationController
       "Learn Ruby",
       "Intermediate Ruby",
       "Learn JavaScript",
-      "Rails TDD",
+      "Learn Bash",
+      "Learn MySQL",
       "Learn SQL with Rails 4",
       "Learn Rails 3",
+      "Rails TDD",
       "Advanced Ruby",
-      "Ruby",
       "Core CS",
-      "CSS",
-      "jQuery",
+      "Ruby TDD",
+      "Learn CSS",
       "Git/Github",
+      "Ruby",
+      "jQuery",
       "Unix / Bash"
     ]
   end
