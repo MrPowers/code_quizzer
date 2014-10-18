@@ -18,7 +18,7 @@ class FamiliesController < ApplicationController
       "Learn Ruby",
       "Intermediate Ruby",
       "Learn JavaScript",
-      "Learn Bash",
+      "Intermediate JavaScript",
       "Learn MySQL",
       "Learn SQL with Rails 4",
       "Learn Rails 3",
@@ -28,6 +28,7 @@ class FamiliesController < ApplicationController
       "Ruby TDD",
       "Learn CSS",
       "Git/Github",
+      "Learn Bash",
       "Ruby",
       "jQuery",
       "Unix / Bash"
