@@ -1,6 +1,6 @@
 = form_for [@quiz, @question] do |f|
   %p= f.label :body
-  %p= f.text_area :body, :rows => "10" 
+  %p= f.text_area :body, :rows => "15", :class => "edit-question-form"
   %p= f.label :answer
-  %p= f.text_area :answer, :rows => "10" 
+  %p= f.text_area :answer, :rows => "15", :class => "edit-question-form"
   %p= f.submit
