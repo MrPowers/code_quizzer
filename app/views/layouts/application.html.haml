@@ -22,7 +22,7 @@
         .container
           = render 'layouts/navigation'
     #main{:role => "main"}
-      -#= render 'layouts/announcement' if params[:controller] == "families"
+      = render 'layouts/announcement'
       .container
         .content
           .row
