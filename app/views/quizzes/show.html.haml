@@ -19,9 +19,9 @@
   - @quiz.questions.sort_by {|question| question.created_at}.each do |question|
     %tr.question-row{:data => {"question-id" => question.id}}
       %td.question
-        %pre= question.body
+        = markdownify(question.body)
       %td.answer.no-opacity
-        %pre= question.answer
+        = markdownify(question.answer)
       - if can? :update, Answer
         %td.user-answer.center
           %button.btn.btn-success.correct-answer Correct
@@ -45,16 +45,16 @@
           %h4#examResultsLabel.modal-title Exam Results
         .modal-body
           %h4
-            Percent Correct: 
+            Percent Correct:
             %span.percent-correct
           %h5
-            Correct Answers: 
+            Correct Answers:
             %span.correct-answers
           %h5
-            Incorrect Answers: 
+            Incorrect Answers:
             %span.incorrect-answers
           %h5
-            Not Answered: 
+            Not Answered:
             %span.unanswered-questions
           =button_to('Back To All Quizzes', root_path, :class => 'btn btn-primary', :method => :get)
         .modal-footer

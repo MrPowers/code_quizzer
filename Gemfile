@@ -12,6 +12,8 @@ gem 'pg'
 gem 'rails', '3.2.17' # need to stay here until ready for rails 4 upgrade
 gem 'simple_form'
 gem 'thin'
+gem 'redcarpet'
+gem 'pygments.rb'
 
 group :assets do
   gem 'coffee-rails'
