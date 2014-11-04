@@ -10,6 +10,11 @@
       .thumbnail
         %h3= topic.name
         - topic.quizzes.sort_by(&:created_at).each do |quiz|
-          %span.quiz{:data => {:quiz_id => quiz.id}}= link_to quiz.body, topic_quiz_path(:topic_id => topic.slug, :id => quiz.slug)
-          %br/
-          .description= quiz.description
+          .quiz-wrapper
+            %span.quiz{:data => {:quiz_id => quiz.id}}= link_to quiz.body, topic_quiz_path(:topic_id => topic.slug, :id => quiz.slug)
+            %br/
+            .description= quiz.description
+            - unless quiz.videos.blank?
+              .videos
+                Videos:
+                = quiz.videos.map {|v| link_to(v.description, v.link)}.join(", ").html_safe

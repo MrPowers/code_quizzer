@@ -3,6 +3,7 @@ class Quiz < ActiveRecord::Base
   has_many :questions, :dependent => :destroy
   has_many :comments, :dependent => :destroy
   has_many :exams
+  has_many :videos
   belongs_to :user
   belongs_to :topic
 
