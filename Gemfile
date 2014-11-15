@@ -7,7 +7,6 @@ gem 'faker'
 gem 'haml-rails'
 gem 'heroku'
 gem 'jquery-rails'
-gem 'masonry-rails'
 gem 'pg'
 gem 'rails', '3.2.17' # need to stay here until ready for rails 4 upgrade
 gem 'simple_form'

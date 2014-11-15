@@ -13,15 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require masonry/jquery.masonry
+//= require masonry.pkgd.js
 //= require_tree .
 
 $(function(){
 
   $('.hero-masonry').masonry({
     itemSelector: '.hero-item',
-    gutterWidth: 15,
-    isFitWidth: true
+    columnWidth: 125,
+    gutter: 15,
   });
 
   $(".alert").fadeToggle(3000);

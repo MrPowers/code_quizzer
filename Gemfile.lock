@@ -99,8 +99,6 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    masonry-rails (0.2.1)
-      rails
     mime-types (1.25.1)
     multi_json (1.8.4)
     netrc (0.7.7)
@@ -202,7 +200,6 @@ DEPENDENCIES
   haml-rails
   heroku
   jquery-rails
-  masonry-rails
   pg
   pygments.rb
   quiet_assets
