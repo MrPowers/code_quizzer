@@ -67,15 +67,6 @@ footer a {
   color: #333;
 }
 
-/*******************
-Quiz#index
-*******************/
-.hero {
-  padding-bottom: 15px;
-  text-align: center;
-  font-size: 36px;
-}
-
 
 /*******************
 ABOUT
@@ -121,10 +112,10 @@ generic styles
 
 
 /*******************
-from topics.css.scss
+families page
 *******************/
 
-body .thumbnail {
+.hero-item {
   background-color: white;
   width: 225px;
   margin: 0 2px 15px;
@@ -136,7 +127,13 @@ body .thumbnail {
   padding-bottom: 8px;
 }
 
-.masonry {
+.hero-masonry {
   margin: 0 auto;
+}
+
+.hero {
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 36px;
 }
 

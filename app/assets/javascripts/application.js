@@ -18,8 +18,8 @@
 
 $(function(){
 
-  $('.masonry_container').masonry({
-    itemSelector: '.thumbnail',
+  $('.hero-masonry').masonry({
+    itemSelector: '.hero-item',
     gutterWidth: 15,
     isFitWidth: true
   });
