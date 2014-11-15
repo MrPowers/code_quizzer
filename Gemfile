@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'bootstrap-sass', '~> 2.1.0.0'
+gem 'bootstrap-sass', '~> 3.3.1'
 gem 'cancan'
 gem 'devise'
 gem 'faker'
@@ -9,14 +9,14 @@ gem 'heroku'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '3.2.17' # need to stay here until ready for rails 4 upgrade
-gem 'simple_form'
+gem 'simple_form' # used by Devise views
 gem 'thin'
 gem 'redcarpet'
 gem 'pygments.rb'
 
 group :assets do
   gem 'coffee-rails'
-  gem 'sass-rails'
+  gem 'sass-rails', '>= 3.2'
   gem 'uglifier'
 end
 

@@ -60,7 +60,7 @@ $(document).ready(function(){
   }
 
   function cancelExamHtml() {
-    return "<span class='label label-important cancel-exam' title='Cancel Exam In Progress'>&#x2718</span>"
+    return "<span class='label label-danger cancel-exam' title='Cancel Exam In Progress'>&#x2718</span>"
   }
 
 });

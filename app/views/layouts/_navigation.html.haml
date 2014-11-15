@@ -1,40 +1,12 @@
-%h2= link_to "CodeQuizzes", root_path, :class => 'brand'
-%ul.nav
-  %li= link_to "Recent Exams", exams_path
-  %li.dropdown-navbar
-    .dropdown
-      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Blog
-      %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
-        %li
-          %a{:href => "http://codequizzes.wordpress.com/2013/10/05/dependency-injection/", :tabindex => "-1"} Dependency Injection
-        %li
-          %a{:href => "http://codequizzes.wordpress.com/2013/10/06/reversing-dependency-direction/", :tabindex => "-1"} Reversing Dependency Direction
-        %li
-          %a{:href => "http://codequizzes.wordpress.com/2013/10/06/argument-order-dependencies/", :tabindex => "-1"} Argument Order Dependencies
-
-%ul.nav.pull-right
-  %li.navigation-items{:style => "padding-top: 10px;"}
-    = render 'layouts/google_plus'
-
-  %li.navigation-items{:style => "padding-top: 10px;"}
-    = render 'layouts/facebook'
-
-  %li.navigation-items{:style => "padding-top: 10px; padding-left: 8px;"}
-    = render 'layouts/twitter'
-
-  - if user_signed_in?
-    %li.dropdown-navbar
-      .dropdown
-        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{current_user.username}
-        %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
-          %li
-            = link_to('My Exams', "/user_exams")
-          %li
-            = link_to('Edit account', edit_user_registration_path)
-          %li
-            = link_to('Logout', destroy_user_session_path, :method=>'delete')
-  - else
-    %li
-      = link_to('Login', new_user_session_path)
-    %li
-      = link_to('Sign up', new_user_registration_path)
+- if user_signed_in?
+  .nav-options= "Logged in as #{current_user.username}"
+  .nav-options= link_to('Logout', destroy_user_session_path, :method=>'delete')
+  .nav-options.hidden-xs= link_to('Edit account', edit_user_registration_path)
+  .nav-options.hidden-xs= link_to('My Exams', "/user_exams")
+- else
+  %p.nav-options= link_to('Login', new_user_session_path)
+  %p.nav-options= link_to('Sign up', new_user_registration_path)
+%p.nav-options.hidden-xs= link_to('Recent Exams', exams_path)
+#facebook.hidden-xs= render 'layouts/facebook'
+#twitter.hidden-xs= render 'layouts/twitter'
+.nav-options.hidden-xs= render 'layouts/github'

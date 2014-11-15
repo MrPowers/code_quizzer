@@ -22,6 +22,7 @@ $(function(){
     itemSelector: '.hero-item',
     columnWidth: 125,
     gutter: 15,
+    isFitWidth: true
   });
 
   $(".alert").fadeToggle(3000);

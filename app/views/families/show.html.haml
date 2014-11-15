@@ -1,11 +1,15 @@
 - content_for :title do
   = @family.page_title
 
-%h1.hero Learn programming by doing, not by reading
+.container-fluid
+  = render "layouts/navigation"
 
-.hero-masonry
+.hero-masonry.span12
+  .hero-item.has-title.bg-primary
+    %h1 CodeQuizzes
+    %p.tagline Learn by doing
   - @topics.each do |topic|
-    .hero-item
+    .hero-item.topic
       %h3= topic.name
       - topic.quizzes.sort_by(&:created_at).each do |quiz|
         .quiz-wrapper

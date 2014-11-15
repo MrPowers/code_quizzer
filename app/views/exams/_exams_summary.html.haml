@@ -1,4 +1,4 @@
-%div.span-5.recently-completed-exams
+%div.col-md-7.recently-completed-exams
   %h3 Recently Completed Exams
   %table.table.table-hover
     %thead
@@ -15,7 +15,7 @@
         %td= (exam.percent_correct * 100).round(2).to_s + "%"
         %td= time_ago_in_words(exam.updated_at) + " ago"
 
-%div.span-5.exams-in-progress
+%div.col-md-7.exams-in-progress
   %h3 Exams In Progress
   %table.table.table-hover
     %thead
