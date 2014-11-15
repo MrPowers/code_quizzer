@@ -115,9 +115,24 @@ generic styles
 families page
 *******************/
 
+.has-title {
+  width: 500px;
+}
+
+.has-title h1 {
+  font-size: 60px;
+}
+
+.tagline {
+  font-size: 32px;
+}
+
+.topic {
+  width: 240px;
+}
+
 .hero-item {
   background-color: white;
-  width: 225px;
   margin: 0 2px 15px;
   padding: 15px;
   box-shadow: 3px 3px 8px #999;

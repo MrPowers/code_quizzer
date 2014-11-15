@@ -9,7 +9,7 @@ gem 'heroku'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '3.2.17' # need to stay here until ready for rails 4 upgrade
-gem 'simple_form'
+gem 'simple_form' # used by Devise views
 gem 'thin'
 gem 'redcarpet'
 gem 'pygments.rb'

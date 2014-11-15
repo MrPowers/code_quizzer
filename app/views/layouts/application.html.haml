@@ -22,15 +22,10 @@
         .container
           = render 'layouts/navigation'
     =render "layouts/github"
-    #main{:role => "main"}
-      -#= render 'layouts/announcement'
-      .container
-        .content
-          .row
-            .span12
-              = render 'layouts/messages'
-              = yield
-          %footer
-            = link_to "Made by Powers", static_pages_about_path
-            |
-            %a{href: "https://plus.google.com/106447578781585716639", rel: "publisher"} Google+
+    .container
+      = render 'layouts/messages'
+      = yield
+    %footer
+      = link_to "Made by Powers", static_pages_about_path
+      |
+      %a{href: "https://plus.google.com/106447578781585716639", rel: "publisher"} Google+
