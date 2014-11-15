@@ -9,34 +9,53 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require 'masonry/basic'
  *= require_tree .
  */
 
-.center {
-  text-align: center;
-}
 
- html body{
+/*******************
+html elements
+*******************/
+
+body {
+  padding-top: 60px;
   background-image:url('paper.jpg');
- }
-
- header {
-  background-color: #FAF7F7;
- }
-
-.content {
-  
-  /*background-color: #eee;*/
-  padding: 20px;
-  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
-/*  -webkit-border-radius: 0 0 6px 6px;
-  -moz-border-radius: 0 0 6px 6px;
-  border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-*/  /*box-shadow: 0 1px 2px rgba(0,0,0,.15);*/
 }
+
+table {
+  margin: 0 auto;
+}
+
+
+/*******************
+navbar
+*******************/
+
+header {
+  background-color: #FAF7F7;
+}
+
+.navigation_items {
+  padding: 10px 15px 10px;
+  color: #555;
+  text-decoration: none;
+  text-shadow: 0 1px 0 white;
+}
+
+.dropdown-navbar {
+  padding: 10px 15px 10px;
+  color: #555;
+  text-decoration: none;
+}
+
+.dropdown-navbar a {
+  color: #777777;
+}
+
+
+/*******************
+footer
+*******************/
 
 footer {
   margin: 0 auto;
@@ -57,42 +76,6 @@ Quiz#index
   font-size: 36px;
 }
 
-.bullet_point_list {
-  margin: 0 auto;
-  font-size: 24px;
-  text-align: center;
-  list-style: none;
-  /*width: 325px;*/
-}
-
-.bullet_point {
-  padding-bottom: 20px;
-}
-
-table {
-  margin: 0 auto;
-}
-
-/*******************
-Users/sign_up
-*******************/
-
-.navigation_items {
-  padding: 10px 15px 10px;
-  color: #555;
-  text-decoration: none;
-  text-shadow: 0 1px 0 white;
-}
-
-.dropdown-navbar {
-  padding: 10px 15px 10px;
-  color: #555;
-  text-decoration: none;
-}
-
-.dropdown-navbar a {
-  color: #777777;
-}
 
 /*******************
 ABOUT
@@ -100,13 +83,13 @@ ABOUT
 #social {
   width: 170px;
   margin: 0 auto;
-  /*border: red 2px solid;*/
 }
 
 .social_icon {
   float: right;
   margin-right: 20px;
 }
+
 
 /*******************
 layouts/application.html.haml
@@ -117,3 +100,43 @@ layouts/application.html.haml
   padding: 10px 0;
   text-align: center;
 }
+
+
+/*******************
+bootstrap overrides
+*******************/
+
+body .navbar .brand {
+  padding: 0;
+}
+
+
+/*******************
+generic styles
+*******************/
+
+.center {
+  text-align: center;
+}
+
+
+/*******************
+from topics.css.scss
+*******************/
+
+body .thumbnail {
+  background-color: white;
+  width: 225px;
+  margin: 0 2px 15px;
+  padding: 15px;
+  box-shadow: 3px 3px 8px #999;
+}
+
+.quiz-wrapper {
+  padding-bottom: 8px;
+}
+
+.masonry {
+  margin: 0 auto;
+}
+
