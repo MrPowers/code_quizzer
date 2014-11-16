@@ -8,30 +8,31 @@
   %div.center
     =button_to('Sign Up to Track Your Progress', new_user_registration_path, :class => 'btn btn-primary btn-large', :method => :get)
 
-%table
-  %thead
-    %td Question
-    %td Click to View Answer
-    - if can? :update, Answer
-      %td Your Answer
-    - if can? :update, Question
-      %td
-    - if can? :destroy, Question
-      %td
-  - @quiz.questions.sort_by {|question| question.created_at}.each do |question|
-    %tr.question-row{:data => {"question-id" => question.id}}
-      %td.question
-        = markdownify(question.body)
-      %td.answer.no-opacity
-        = markdownify(question.answer)
+.table-responsive
+  %table.table.table-bordered
+    %thead
+      %td.ask-question Question
+      %td Click to View Answer
       - if can? :update, Answer
-        %td.user-answer.center
-          %button.btn.btn-success.correct-answer Correct
-          %button.btn.btn-danger.incorrect-answer Wrong
-      - if can? :update, question
-        %td= link_to "Edit", edit_quiz_question_path(:id => question.id, :quiz_id => @quiz.id)
-      - if can? :destroy, question
-        %td= link_to 'Destroy', [question.quiz, question], :confirm => 'Are you sure?', :method => :delete
+        %td Your Answer
+      - if can? :update, Question
+        %td
+      - if can? :destroy, Question
+        %td
+    - @quiz.questions.sort_by {|question| question.created_at}.each do |question|
+      %tr.question-row{:data => {"question-id" => question.id}}
+        %td.question
+          = markdownify(question.body)
+        %td.answer.no-opacity
+          = markdownify(question.answer)
+        - if can? :update, Answer
+          %td.user-answer.center
+            %button.btn.btn-success.correct-answer Correct
+            %button.btn.btn-danger.incorrect-answer Wrong
+        - if can? :update, question
+          %td= link_to "Edit", edit_quiz_question_path(:id => question.id, :quiz_id => @quiz.id)
+        - if can? :destroy, question
+          %td= link_to 'Destroy', [question.quiz, question], :confirm => 'Are you sure?', :method => :delete
 
 %br
 
