@@ -2,10 +2,7 @@
   = @family.page_title
 
 .container-fluid
-  .nav-options= link_to('Login', new_user_session_path)
-  .nav-options= link_to('Sign up', new_user_registration_path)
-  .nav-options= link_to('Recent Exams', exams_path)
-  .nav-options.hidden-xs= render 'layouts/github'
+  = render "layouts/navigation"
 
 .hero-masonry.span12
   .hero-item.has-title.bg-primary

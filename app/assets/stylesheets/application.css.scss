@@ -119,22 +119,21 @@ families page
 *******************/
 
 .nav-options {
+  font-size: 18px;
   padding: 15px;
   display: inline-block;
   text-decoration: none;
 }
 
-.nav-options a {
-  color: #333;
-  font-size: 18px;
-}
+.nav-options
 
 .has-title {
-  width: 550px;
+  padding: 40px;
 }
 
 .has-title h1 {
   font-size: 60px;
+  width: 510px;
 }
 
 .tagline {
@@ -142,7 +141,7 @@ families page
 }
 
 .topic {
-  width: 270px;
+  width: 260px;
 }
 
 .hero-item {
@@ -160,13 +159,42 @@ families page
   margin: 0 auto;
 }
 
-.hero {
-  padding-bottom: 15px;
-  text-align: center;
-  font-size: 36px;
-}
+/*.hero {*/
+  /*padding-bottom: 15px;*/
+  /*text-align: center;*/
+  /*font-size: 36px;*/
+/*}*/
 
 .github-fork img {
   z-index: 1;
 }
 
+/*#google-plus {*/
+  /*display: inline-block;*/
+  /*height: 20px !important;*/
+  /*width: 65px !important;*/
+/*}*/
+
+#facebook {
+  display: inline-block;
+}
+
+#twitter {
+  display: inline-block;
+  height: 20px !important;
+  width: 80px !important;
+  margin-left: 10px;
+}
+
+iframe { vertical-align: top; }
+
+.brand-name {
+  display: inline-block;
+  font-size: 36px;
+  padding: 15px;
+  height: 75px;
+}
+
+.nav-options.brand-name a {
+  color: white;
+}

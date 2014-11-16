@@ -27,11 +27,5 @@ $(function(){
 
   $(".alert").fadeToggle(3000);
 
-  $(".nav-options").hover(function() {
-    $(this).addClass("bg-info");
-  }, function() {
-    $(this).removeClass("bg-info");
-  });
-
 });
 

@@ -1,6 +1,8 @@
 - content_for :title do
   = @quiz.page_title
 
+= render "layouts/full_navigation"
+
 %h1.center= (@quiz.page_title || @topic.name)
 - unless current_user
   %div.center
@@ -8,14 +10,14 @@
 
 %table
   %thead
-    %td.column1 Question
-    %td.column2 Click to View Answer
+    %td.col-md-4 Question
+    %td Click to View Answer
     - if can? :update, Answer
-      %td Your Answer
+      %td.col-md-2 Your Answer
     - if can? :update, Question
-      %td.column3
+      %td
     - if can? :destroy, Question
-      %td.column4
+      %td
   - @quiz.questions.sort_by {|question| question.created_at}.each do |question|
     %tr.question-row{:data => {"question-id" => question.id}}
       %td.question
