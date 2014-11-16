@@ -22,9 +22,16 @@ $(function(){
     itemSelector: '.hero-item',
     columnWidth: 125,
     gutter: 15,
+    isFitWidth: true
   });
 
   $(".alert").fadeToggle(3000);
+
+  $(".nav-options").hover(function() {
+    $(this).addClass("bg-info");
+  }, function() {
+    $(this).removeClass("bg-info");
+  });
 
 });
 

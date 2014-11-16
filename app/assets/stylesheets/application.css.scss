@@ -18,7 +18,6 @@ html elements
 *******************/
 
 body {
-  padding-top: 60px;
   background-image:url('paper.jpg');
 }
 
@@ -33,6 +32,10 @@ navbar
 
 header {
   background-color: #FAF7F7;
+}
+
+.navbar a {
+  display: inline-block;
 }
 
 .navigation_items {
@@ -115,13 +118,23 @@ generic styles
 families page
 *******************/
 
+.nav-options {
+  padding: 15px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.nav-options a {
+  color: #333;
+  font-size: 18px;
+}
+
 .has-title {
-  width: 520px;
+  width: 550px;
 }
 
 .has-title h1 {
   font-size: 60px;
-  color: #2c3e50;
 }
 
 .tagline {
@@ -129,7 +142,7 @@ families page
 }
 
 .topic {
-  width: 240px;
+  width: 270px;
 }
 
 .hero-item {
@@ -151,5 +164,9 @@ families page
   padding-bottom: 15px;
   text-align: center;
   font-size: 36px;
+}
+
+.github-fork img {
+  z-index: 1;
 }
 

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'bootstrap-sass', '~> 2.1.0.0'
+gem 'bootstrap-sass', '~> 3.3.1'
 gem 'cancan'
 gem 'devise'
 gem 'faker'
@@ -16,7 +16,7 @@ gem 'pygments.rb'
 
 group :assets do
   gem 'coffee-rails'
-  gem 'sass-rails'
+  gem 'sass-rails', '>= 3.2'
   gem 'uglifier'
 end
 

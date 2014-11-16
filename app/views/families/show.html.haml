@@ -1,10 +1,16 @@
 - content_for :title do
   = @family.page_title
 
+.container-fluid
+  .nav-options= link_to('Login', new_user_session_path)
+  .nav-options= link_to('Sign up', new_user_registration_path)
+  .nav-options= link_to('Recent Exams', exams_path)
+  .nav-options.hidden-xs= render 'layouts/github'
+
 .hero-masonry.span12
-  .hero-item.has-title
+  .hero-item.has-title.bg-primary
     %h1 CodeQuizzes
-    %p.tagline Learn programming by doing
+    %p.tagline Learn by doing
   - @topics.each do |topic|
     .hero-item.topic
       %h3= topic.name
