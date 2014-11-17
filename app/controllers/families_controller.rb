@@ -34,4 +34,8 @@ class FamiliesController < ApplicationController
       "Unix / Bash"
     ]
   end
+
+  #def family_params
+    #params.require(:family).permit(:description, :name)
+  #end
 end

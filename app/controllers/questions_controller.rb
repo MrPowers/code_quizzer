@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
 
   def create
     @quiz = Quiz.where(slug: params[:quiz_id]).first
-    @question = @quiz.questions.new(params[:question])
+    @question = @quiz.questions.new(question_params)
     @question.user = current_user
     authorize! :create, @question
     if @question.save
@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
   def update
     @quiz = Quiz.where(slug: params[:quiz_id]).first
     authorize! :update, @question
-    if @question.update_attributes(params[:question])
+    if @question.update_attributes(question_params)
       redirect_to topic_quiz_path(topic_id: @quiz.topic.slug, id: @quiz)
     end
   end
@@ -35,5 +35,9 @@ class QuestionsController < ApplicationController
 
   def find_question
     @question = Question.find(params[:id])
+  end
+
+  def question_params
+    params.require(:question).permit(:answer, :body, :quiz_id, :user_id)
   end
 end
