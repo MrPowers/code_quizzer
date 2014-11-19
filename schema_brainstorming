@@ -1,0 +1,18 @@
+answers.status should be a boolean field.  Answers are either correct or incorrect.
+
+comments should be deleted and replaced with Disqus
+
+exams.status is either "graded" or NULL and should be a boolean field.
+exams.correct_answers, exams.incorrect_answers, exams.unanswered_questions should all be deleted.  This will require more database queries when the visitor hits the "Recent Exams" page, but that shouldn't be a problem.  Double check the performance before making this change.
+
+questions.quiz_id should be deleted.  The field is no longer needed.
+
+quizzes.user_id should be deleted.  The database changes outlined below should be completed first.
+
+topics.user_id should be deleted.
+
+
+Database changes
+Delete everything in the "Caitlin" family (make sure there's a dependent => destroy)
+Delete everything in the "books" family
+Perhaps resurrect the "More programming" page and try to give it some decent content.  Some quizzes were terrible from the start and these should be deleted.
