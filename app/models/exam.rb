@@ -4,27 +4,26 @@ class Exam < ActiveRecord::Base
   belongs_to :quiz
   belongs_to :user
 
-  def grade
-    attributes = self.quiz.questions.inject({:unanswered_questions => 0, :correct_answers => 0, :incorrect_answers => 0}) do |memo, question|
-      answer = Answer.where(:exam_id => self.id, :question_id => question.id).first
-      if answer.blank?
-        memo[:unanswered_questions] += 1
-      elsif answer.status == "correct"
-        memo[:correct_answers] += 1
-      elsif answer.status == "incorrect"
-        memo[:incorrect_answers] += 1
-      end
-      memo
-    end
-    self.update_attributes(attributes.merge({:status => "graded"}))
-  end
-
-  def total_questions
-    correct_answers + incorrect_answers + unanswered_questions
-  end
-
   def percent_correct
-    correct_answers.to_f / total_questions
+    correct_answers_count.to_f / questions.count
+  end
+
+  def correct_answers_count
+    Answer.where(exam_id: id, status: "correct").count
+  end
+
+  def incorrect_answers_count
+    Answer.where(exam_id: id, status: "incorrect").count
+  end
+
+  def blank_answers_count
+    questions.count - correct_answers_count - incorrect_answers_count
+  end
+
+  private
+
+  def questions
+    quiz.questions
   end
 
 end

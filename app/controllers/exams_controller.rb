@@ -2,9 +2,9 @@ class ExamsController < ApplicationController
   def grade_exam
     @exam = Exam.find(params[:id])
     authorize! :update, @exam
-    @exam.grade
     respond_to do |format|
-      format.json { render :json => @exam }
+      methods = [:percent_correct, :correct_answers_count, :incorrect_answers_count, :blank_answers_count]
+      format.json { render :json => @exam.to_json(methods: methods) }
     end
   end
 
@@ -48,4 +48,5 @@ class ExamsController < ApplicationController
       end
     end
   end
+
 end

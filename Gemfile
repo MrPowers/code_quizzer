@@ -22,6 +22,7 @@ gem 'thin'
 gem 'redcarpet'
 gem 'pygments.rb'
 gem 'pry'
+gem 'spring'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'sass-rails', '~> 4.0.3'
@@ -39,11 +40,11 @@ group :development do
 end
 
 group :test do
-  # gem 'database_cleaner'
-  # gem 'factory_girl_rails'
+  gem 'minitest'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
   gem 'rspec-rails'
-  # gem 'timecop'
-  # gem 'webmock'
+  gem 'shoulda-matchers'
 end
 
 group :development, :test do

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
  $('.answer').click(function() {
    $(this).toggleClass('no-opacity');
  });
@@ -61,7 +62,7 @@ $(document).ready(function(){
         error: function() {
         }
       });
-    }); //end click()
+    });
   }
 
   function hideButtons(cell, unicode) {
@@ -81,10 +82,10 @@ $(document).ready(function(){
       },
       dataType: "json",
       success: function(data){
-        var correctAnswers = data.correct_answers || 0;
-        var incorrectAnswers = data.incorrect_answers || 0;
-        var unansweredQuestions = data.unanswered_questions || 0;
-        var percentCorrect = (correctAnswers / (correctAnswers + incorrectAnswers + unansweredQuestions) * 100).toFixed(1);
+        var correctAnswers = data.correct_answers_count;
+        var incorrectAnswers = data.incorrect_answers_count;
+        var unansweredQuestions = data.blank_answers_count;
+        var percentCorrect = ((data.percent_correct) * 100).toFixed(1);
         $(".percent-correct").text(percentCorrect + "%");
         $(".correct-answers").text(correctAnswers);
         $(".incorrect-answers").text(incorrectAnswers);
