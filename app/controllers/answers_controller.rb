@@ -3,7 +3,7 @@ class AnswersController < ApplicationController
     authorize! :create, Answer
     @answer = Answer.where(:exam_id => params[:answer][:exam_id], :question_id => params[:answer][:question_id]).first_or_initialize
     authorize! :update, @answer
-    @answer.status = params[:answer][:status]
+    @answer.is_correct = params[:answer][:is_correct]
     respond_to do |format|
       if @answer.save
         format.json { render :json => @answer }

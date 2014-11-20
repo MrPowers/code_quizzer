@@ -1,8 +1,10 @@
 $(document).ready(function(){
 
- $('.answer').click(function() {
+
+  // when an answer is clicked, it is viewable
+  $('.answer').click(function() {
    $(this).toggleClass('no-opacity');
- });
+  });
 
   var questionRows = $(".question-row");
   var checkMark = "\u2713";
@@ -13,10 +15,10 @@ $(document).ready(function(){
     var incorrectButton = $(questionRow).find(".incorrect-answer");
     var questionId = $(questionRow).data("question-id");
     var examId = $(".exam-information").data("exam-id");
-    setButtonListener(correctButton, questionId, examId, "correct");
-    setButtonListener(incorrectButton, questionId, examId, "incorrect");
+    setButtonListener(correctButton, questionId, examId, true);
+    setButtonListener(incorrectButton, questionId, examId, false);
     getAnswer(examId, questionId, questionRow);
-  }); //end each()
+  });
 
   function getAnswer(examId, questionId, questionRow) {
     $.ajax({
@@ -32,7 +34,7 @@ $(document).ready(function(){
       success: function(data){
         if (data) {
           var cell = $(questionRow).find(".user-answer");
-          var unicode = data["status"] === "correct" ? checkMark : cross
+          var unicode = data["is_correct"] === true ? checkMark : cross
           hideButtons(cell, unicode);
         }
       },
@@ -41,7 +43,7 @@ $(document).ready(function(){
     });
   }
 
-  function setButtonListener(button, questionId, examId, answerStatus) {
+  function setButtonListener(button, questionId, examId, isCorrect) {
     $(button).click(function(){
       var self = this;
       $.ajax({
@@ -51,7 +53,7 @@ $(document).ready(function(){
           answer: {
             exam_id: examId,
             question_id: questionId,
-            status: answerStatus
+            is_correct: isCorrect
           }
         },
         dataType: "json",

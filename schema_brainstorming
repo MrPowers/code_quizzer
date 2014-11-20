@@ -1,4 +1,4 @@
-answers.status should be a boolean field.  Answers are either correct or incorrect.
+answers.status should be a boolean field.  Answers are either correct or incorrect.  Create an is_correct field that can be either true or false.  Create a rake task that populates is_correct with 1 if answers.status = "correct" and 0 if answers.status = "incorrect".  Make sure there aren't any values in answers.status other than "correct" and "incorrect" and then delete answers.status.
 
 comments should be deleted and replaced with Disqus
 

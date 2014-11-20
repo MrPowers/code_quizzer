@@ -9,11 +9,11 @@ class Exam < ActiveRecord::Base
   end
 
   def correct_answers_count
-    Answer.where(exam_id: id, status: "correct").count
+    Answer.where(exam_id: id, is_correct: true).count
   end
 
   def incorrect_answers_count
-    Answer.where(exam_id: id, status: "incorrect").count
+    Answer.where(exam_id: id, is_correct: false).count
   end
 
   def blank_answers_count
