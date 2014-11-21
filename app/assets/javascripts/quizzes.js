@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-
-  // when an answer is clicked, it is viewable
   $('.answer').click(function() {
    $(this).toggleClass('no-opacity');
   });
@@ -92,8 +90,6 @@ $(document).ready(function(){
         $(".correct-answers").text(correctAnswers);
         $(".incorrect-answers").text(incorrectAnswers);
         $(".unanswered-questions").text(unansweredQuestions);
-      },
-      error: function() {
       }
     });
   });

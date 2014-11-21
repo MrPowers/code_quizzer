@@ -31,8 +31,6 @@ $(document).ready(function(){
             });
           }
         }
-      },
-      error: function() {
       }
     });
   }
@@ -49,8 +47,6 @@ $(document).ready(function(){
         var quiz = $('*[data-quiz-id=' + quizId + ']');
         $(quiz).find(".in-progress").remove();
         $(quiz).find(".cancel-exam").remove();
-      },
-      error: function() {
       }
     });
   }

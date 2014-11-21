@@ -2,6 +2,7 @@ class ExamsController < ApplicationController
   def grade_exam
     @exam = Exam.find(params[:id])
     authorize! :update, @exam
+    @exam.update_attribute(:is_graded, true)
     respond_to do |format|
       methods = [:percent_correct, :correct_answers_count, :incorrect_answers_count, :blank_answers_count]
       format.json { render :json => @exam.to_json(methods: methods) }
@@ -9,22 +10,22 @@ class ExamsController < ApplicationController
   end
 
   def cancel_exam
-    @exam = Exam.where(:quiz_id => params[:quiz_id], :user_id => current_user.id, :status => nil).first
+    @exam = Exam.where(:quiz_id => params[:quiz_id], :user_id => current_user.id, :is_canceled => nil).first
     authorize! :update, @exam
-    @exam.update_attribute(:status, "cancelled")
+    @exam.update_attribute(:is_canceled, true)
     respond_to do |format|
       format.json { render :json => @exam }
     end
   end
 
   def index
-    @completed_exams = Exam.where(:status => "graded").limit(50).order("id desc")
-    @exams_in_progress = Exam.where("status IS NULL").limit(50).order("id desc")
+    @completed_exams = Exam.where(:is_graded => true).limit(50).order("updated_at desc")
+    @exams_in_progress = Exam.where("is_graded IS NULL").limit(50).order("created_at desc")
   end
 
   def user_exams
-    @completed_exams = Exam.where(:user_id => current_user.id, :status => "graded").limit(50).order("id desc")
-    @exams_in_progress = Exam.where(:user_id => current_user.id).where("status IS NULL").limit(50).order("id desc")
+    @completed_exams = Exam.where(:user_id => current_user.id, :is_graded => true).limit(50).order("updated_at desc")
+    @exams_in_progress = Exam.where(:user_id => current_user.id).where("is_graded IS NULL").limit(50).order("created_at desc")
   end
 
   def graded_count
@@ -33,9 +34,9 @@ class ExamsController < ApplicationController
         quiz_id = params[:quiz_id]
         exams = Exam.where(:user_id => current_user.id, :quiz_id => quiz_id)
         result = exams.inject({"graded" => 0, "cancelled" => 0, "not_graded" => 0}) do |memo, exam|
-          if exam.status == "graded"
+          if exam.is_graded == true
             memo["graded"] += 1
-          elsif exam.status == "cancelled"
+          elsif exam.is_canceled == true
             memo["cancelled"] += 1
           else
             memo["not_graded"] += 1

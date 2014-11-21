@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121020552) do
+ActiveRecord::Schema.define(version: 20141121021828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20141121020552) do
     t.integer  "correct_answers"
     t.integer  "incorrect_answers"
     t.integer  "unanswered_questions"
+    t.boolean  "is_graded"
+    t.boolean  "is_canceled"
   end
 
   create_table "families", force: true do |t|
