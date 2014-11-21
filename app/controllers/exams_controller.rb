@@ -10,11 +10,11 @@ class ExamsController < ApplicationController
   end
 
   def cancel_exam
-    @exam = Exam.where(:quiz_id => params[:quiz_id], :user_id => current_user.id, :is_canceled => nil).first
-    authorize! :update, @exam
-    @exam.update_attribute(:is_canceled, true)
+    exams = Exam.where(:quiz_id => params[:quiz_id], :user_id => current_user.id, :is_canceled => nil)
+    authorize! :update, exams.first
+    exams.each { |e| e.update_attribute(:is_canceled, true) }
     respond_to do |format|
-      format.json { render :json => @exam }
+      format.json { render :json => exams }
     end
   end
 

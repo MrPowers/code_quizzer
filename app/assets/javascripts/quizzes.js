@@ -35,8 +35,6 @@ $(document).ready(function(){
           var unicode = data["is_correct"] === true ? checkMark : cross
           hideButtons(cell, unicode);
         }
-      },
-      error: function() {
       }
     });
   }
