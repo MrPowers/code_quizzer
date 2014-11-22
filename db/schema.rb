@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121021828) do
+ActiveRecord::Schema.define(version: 20141122121836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,12 +35,8 @@ ActiveRecord::Schema.define(version: 20141121021828) do
   create_table "exams", force: true do |t|
     t.integer  "quiz_id"
     t.integer  "user_id"
-    t.string   "status"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.integer  "correct_answers"
-    t.integer  "incorrect_answers"
-    t.integer  "unanswered_questions"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.boolean  "is_graded"
     t.boolean  "is_canceled"
   end
@@ -59,14 +55,12 @@ ActiveRecord::Schema.define(version: 20141121021828) do
     t.integer  "quiz_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
   end
 
   create_table "quizzes", force: true do |t|
     t.string   "body"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "user_id"
     t.text     "description"
     t.integer  "topic_id"
     t.string   "slug"
@@ -77,7 +71,6 @@ ActiveRecord::Schema.define(version: 20141121021828) do
 
   create_table "topics", force: true do |t|
     t.text     "name"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "family_id"

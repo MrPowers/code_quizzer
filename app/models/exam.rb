@@ -1,5 +1,5 @@
 class Exam < ActiveRecord::Base
-  attr_accessible :quiz_id, :status, :user_id, :correct_answers, :incorrect_answers, :unanswered_questions, :is_graded, :is_canceled
+  attr_accessible :quiz_id, :user_id, :is_graded, :is_canceled
   has_many :answers, :dependent => :destroy
   belongs_to :quiz
   belongs_to :user
