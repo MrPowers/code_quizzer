@@ -31,18 +31,7 @@ class ExamsController < ApplicationController
   def graded_count
     respond_to do |format|
       if current_user
-        quiz_id = params[:quiz_id]
-        exams = Exam.where(:user_id => current_user.id, :quiz_id => quiz_id)
-        result = exams.inject({"graded" => 0, "cancelled" => 0, "not_graded" => 0}) do |memo, exam|
-          if exam.is_graded == true
-            memo["graded"] += 1
-          elsif exam.is_canceled == true
-            memo["cancelled"] += 1
-          else
-            memo["not_graded"] += 1
-          end
-          memo
-        end
+        result = Exam.status_counts(current_user.id)
         format.json { render :json => result }
       else
         format.json { head :no_content }
