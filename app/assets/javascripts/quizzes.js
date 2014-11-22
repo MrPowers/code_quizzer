@@ -1,74 +1,24 @@
 $(document).ready(function(){
 
   $('.answer').click(function() {
-   $(this).toggleClass('no-opacity');
+    $(this).toggleClass('no-opacity');
   });
 
-  var questionRows = $(".question-row");
-  var checkMark = "\u2713";
-  var cross = "\u2718";
-
-  $.each(questionRows, function(index, questionRow){
-    var correctButton = $(questionRow).find(".correct-answer");
-    var incorrectButton = $(questionRow).find(".incorrect-answer");
-    var questionId = $(questionRow).data("question-id");
-    var examId = $(".exam-information").data("exam-id");
-    setButtonListener(correctButton, questionId, examId, true);
-    setButtonListener(incorrectButton, questionId, examId, false);
-    getAnswer(examId, questionId, questionRow);
-  });
-
-  function getAnswer(examId, questionId, questionRow) {
-    $.ajax({
-      url: "/get_answer",
-      type: "GET",
-      data: {
-        answer: {
-          exam_id: examId,
-          question_id: questionId,
-        }
-      },
-      dataType: "json",
-      success: function(data){
-        if (data) {
-          var cell = $(questionRow).find(".user-answer");
-          var unicode = data["is_correct"] === true ? checkMark : cross
-          hideButtons(cell, unicode);
-        }
-      }
-    });
-  }
-
-  function setButtonListener(button, questionId, examId, isCorrect) {
-    $(button).click(function(){
-      var self = this;
-      $.ajax({
-        url: "/set_answer_status",
-        type: "POST",
-        data: {
-          answer: {
-            exam_id: examId,
-            question_id: questionId,
-            is_correct: isCorrect
-          }
-        },
-        dataType: "json",
-        success: function(data){
-          var unicode = $(self).hasClass("correct-answer") ? checkMark : cross
-          hideButtons($(self).parent(), unicode);
-        },
-        error: function() {
-        }
+  function addButtonListeners (buttons, html, elementClass)  {
+    $.each(buttons, function(index, button) {
+      $(button).closest('form').on('ajax:success', function() {
+        $(this).closest("td").html(html).addClass(elementClass);
       });
     });
   }
 
-  function hideButtons(cell, unicode) {
-    $(cell).children().addClass("hide");
-    var cellClassName = unicode === "\u2713" ? "correct" : "incorrect"
-    $(cell).addClass(cellClassName);
-    $(cell).text(unicode);
-  }
+  var checkMark = "\u2713";
+  var correctAnswers = $('.correct-answer');
+  addButtonListeners(correctAnswers, checkMark, "correct");
+
+  var cross = "\u2718";
+  var incorrectAnswers = $('.incorrect-answer');
+  addButtonListeners(incorrectAnswers, cross, "incorrect");
 
   $(".grade-exam").click(function() {
     var examId = $(".exam-information").data("exam-id");

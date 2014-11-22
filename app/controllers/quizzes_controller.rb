@@ -3,6 +3,7 @@ class QuizzesController < ApplicationController
     @topic = Topic.where(slug: params[:topic_id]).first
     authorize! :show, @topic
     @quiz = Quiz.where(slug: params[:id]).first
+    @questions = @quiz.questions.sort_by {|question| question.created_at}
     authorize! :show, @quiz
     if current_user
       authorize! :create, Exam
