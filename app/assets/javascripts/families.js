@@ -10,7 +10,7 @@ $(document).ready(function(){
 
         $.each($(".quiz"), function( index, quiz ) {
           var quizId = $(quiz).data("quiz-id");
-          if (counts[quizId]) {
+          if (counts && counts[quizId]) {
             if (counts[quizId]["graded"] > 0) {
               $(quiz).append("<span class='label label-success exam-count' title='Number of times exam has been completed'>" + counts[quizId]["graded"] + "</span>");
             }
