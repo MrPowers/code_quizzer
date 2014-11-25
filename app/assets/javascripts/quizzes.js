@@ -4,6 +4,8 @@ $(document).ready(function(){
     $(this).toggleClass('no-opacity');
   });
 
+  // Adds a correct check or an incorrect cross if the answer is marked
+  // as right or wrong
   function addButtonListeners (buttons, html, elementClass)  {
     $.each(buttons, function(index, button) {
       $(button).closest('form').on('ajax:success', function() {
@@ -20,6 +22,7 @@ $(document).ready(function(){
   var incorrectAnswers = $('.incorrect-answer');
   addButtonListeners(incorrectAnswers, cross, "incorrect");
 
+  // Displays a modal summarizing the exam after its been graded
   $(".grade-exam").click(function() {
     var examId = $(".exam-information").data("exam-id");
     $.ajax({
