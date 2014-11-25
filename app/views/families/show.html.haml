@@ -14,6 +14,14 @@
       - topic.quizzes.sort_by(&:created_at).each do |quiz|
         .quiz-wrapper
           %span.quiz{:data => {:quiz_id => quiz.id}}= link_to quiz.body, topic_quiz_path(:topic_id => topic.slug, :id => quiz.slug)
+          - if @exam_counts[quiz.id]
+            - if @exam_counts[quiz.id]["graded"] > 0
+              %span.label.label-success.exam-count{:title => "Number of times exam has been completed"}= @exam_counts[quiz.id]["graded"]
+            - if @exam_counts[quiz.id]["in_progress"] > 0
+              = link_to(topic_quiz_path(:topic_id => topic.slug, :id => quiz.slug), class: "exam-counts") do
+                %span.label.label-info.in-progress{:title => "In Progress"} &#x274B
+              = link_to(cancel_exam_path(quiz_id: quiz.id), class: "exam-counts", remote: true, method: :post, data: { confirm: "Are you sure you want to cancel this in progress exam?" }) do
+                %span.label.label-danger.cancel-exam{:title => "Cancel Exam In Progress"} &#x2718
           %br/
           .description= quiz.description
           - unless quiz.videos.blank?

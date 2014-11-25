@@ -5,6 +5,7 @@ class FamiliesController < ApplicationController
     topics = @family.topics.includes(:quizzes => :videos)
     @topics = sorted_topics(topics)
     @topic = Topic.new
+    @exam_counts = Family.exam_counts(current_user)
   end
 
   private

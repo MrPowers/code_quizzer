@@ -3,7 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .label {
-  margin-left: 0.5em;
+  margin-left: 0.2em;
+}
+
+.quiz-wrapper .exam-counts {
+  text-decoration: none;
 }
 
 .cancel-exam, .in-progress {
