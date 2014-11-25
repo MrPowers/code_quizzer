@@ -26,8 +26,15 @@
         = markdownify(question.answer)
       - if can? :update, Answer
         %td.user-answer.center
-          = button_to('Correct', set_answer_status_path(exam_id: @exam.id, question_id: question.id, is_correct: true), :class => 'btn btn-success correct-answer', :method => :post, :remote => true)
-          = button_to('Wrong', set_answer_status_path(exam_id: @exam.id, question_id: question.id, is_correct: false), :class => 'btn btn-danger incorrect-answer', :method => :post, :remote => true)
+          - answer = @exam.answers.find { |a| a.exam_id == @exam.id && a.question_id == question.id }
+          - if answer
+            - if answer.is_correct
+              .correct &#x2713;
+            - else
+              .incorrect &#x2718;
+          - else
+            = button_to('Correct', set_answer_status_path(exam_id: @exam.id, question_id: question.id, is_correct: true), :class => 'btn btn-success correct-answer', :method => :post, :remote => true)
+            = button_to('Wrong', set_answer_status_path(exam_id: @exam.id, question_id: question.id, is_correct: false), :class => 'btn btn-danger incorrect-answer', :method => :post, :remote => true)
       - if can? :update, question
         %td= link_to "Edit", edit_quiz_question_path(:id => question.id, :quiz_id => @quiz.id)
       - if can? :destroy, question
