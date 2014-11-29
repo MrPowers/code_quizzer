@@ -10,10 +10,6 @@ GEM
       activesupport (= 4.1.8)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    actionpack-action_caching (1.1.1)
-      actionpack (>= 4.0.0, < 5.0)
-    actionpack-page_caching (1.0.2)
-      actionpack (>= 4.0.0, < 5)
     actionview (4.1.8)
       activesupport (= 4.1.8)
       builder (~> 3.1)
@@ -211,8 +207,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionpack-action_caching
-  actionpack-page_caching
   awesome_print
   better_errors
   binding_of_caller

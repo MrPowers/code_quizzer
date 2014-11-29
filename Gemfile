@@ -3,11 +3,6 @@ source 'https://rubygems.org'
 ruby "2.1.2"
 gem 'rails', '4.1.8'
 
-# add these gems to help with the transition:
-gem 'actionpack-page_caching'
-gem 'actionpack-action_caching'
-
-
 gem 'cancan'
 gem 'devise'
 gem 'faker'
