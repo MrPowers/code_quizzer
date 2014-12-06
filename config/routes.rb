@@ -3,8 +3,9 @@ Compoundblingapplication::Application.routes.draw do
 
   root :to => 'families#show', :id => 1
 
-  get  'blog' => 'blogs#index'
-  get  'about' => 'blogs#about'
+  get 'blog' => 'blogs#index'
+  get 'about' => 'blogs#about'
+  get 'contact' => 'blogs#contact'
 
   get 'stats' => 'user_statistics#index'
   get 'static_pages/about'
