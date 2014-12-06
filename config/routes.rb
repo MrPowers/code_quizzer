@@ -1,5 +1,10 @@
 Compoundblingapplication::Application.routes.draw do
+  get 'blogs/index'
+
   root :to => 'families#show', :id => 1
+
+  get  'blog' => 'blogs#index'
+  get  'about' => 'blogs#about'
 
   get 'stats' => 'user_statistics#index'
   get 'static_pages/about'
@@ -8,10 +13,10 @@ Compoundblingapplication::Application.routes.draw do
   get 'get_answer', :to => 'answers#get_answer'
 
   resources :exams, :only => [:index]
-  post 'grade_exam'   => 'exams#grade_exam'
-  post 'cancel_exam'  => 'exams#cancel_exam'
-  get  'graded_count' => 'exams#graded_count'
-  get  'user_exams'   => 'exams#user_exams'
+  post 'grade_exam' => 'exams#grade_exam'
+  post 'cancel_exam' => 'exams#cancel_exam'
+  get 'graded_count' => 'exams#graded_count'
+  get 'user_exams' => 'exams#user_exams'
 
   resources :families, :only => [:show]
 
