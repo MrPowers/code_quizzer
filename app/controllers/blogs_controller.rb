@@ -4,4 +4,6 @@ class BlogsController < ApplicationController
   def about; end
 
   def contact; end
+
+  def font_awesome; end
 end

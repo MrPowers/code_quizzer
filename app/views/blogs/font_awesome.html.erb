@@ -1,0 +1,66 @@
+<%= render 'navbar' %>
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header post-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Adding Font Awesome to a Rails Application</h1>
+          <h2 class="subheading">Without the Rails asset pipeline driving you crazy</h2>
+          <span class="meta">Posted by Powers</a> on December 6, 2014</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p><a href="http://fortawesome.github.io/Font-Awesome/" >Font Awesome</a> is a great open-source icon library.  There's a <a href="http://fortawesome.github.io/Font-Awesome/get-started/#ruby-gem-sass" >Ruby gem</a> to include Font Awesome in Rails application, but <a href="https://github.com/bokmann/font-awesome-rails/issues/88" >I couldn't get it to work</a> with the asset pipeline.  This blog post describes how to add Font Awesome to a Rails application without the 'font-awesome-sass' gem.</p>
+
+        <h2 class="section-heading">Some Examples</h2>
+
+        <p>Let's look at some Font Awesome examples before we dig into the code.</p>
+
+        <ul class="list-inline text-center">
+
+          <li>
+            <span class="fa-stack fa-2x">
+              <i class="fa fa-camera-retro fa-2x"></i>
+            </span>
+          </li>
+
+          <li>
+            <span class="fa-stack fa-2x">
+              <i class="fa fa-area-chart fa-2x"></i>
+            </span>
+          </li>
+
+          <li>
+            <span class="fa-stack fa-2x">
+              <i class="fa fa-spinner fa-spin fa-2x"></i>
+            </span>
+          </li>
+
+        </ul>
+
+        <p>The spinner uses CSS3 animations and doesn't even require JavaScript!</p>
+
+        <h2 class="section-heading">Adding Font Awesome to Rails</h2>
+
+        <p>Clone the <a href="https://github.com/FortAwesome/Font-Awesome" >Font Awesome repo</a> and copy the /css/font-awesome.css file in the vendor directory of your application.</p>
+
+        <p>Copy all the fonts in thte Font Awesome repository in the public/fonts directory of your application.</p>
+
+        <p>Restart your web server and you should have no problem adding icons to your application.  You can inspect this page for some valid Font Awesome HTML snippets.</p>
+
+      </div>
+    </div>
+  </div>
+</article>
+
+<%= render 'social_links' %>
