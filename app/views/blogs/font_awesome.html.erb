@@ -54,7 +54,40 @@
 
         <p>Clone the <a href="https://github.com/FortAwesome/Font-Awesome" >Font Awesome repo</a> and copy the /css/font-awesome.css file in the vendor directory of your application.</p>
 
+<%= markdownify(
+"
+```
+git clone git@github.com:FortAwesome/Font-Awesome.git
+cp font-awesome.css app_path/vendor/assets/stylesheets/font_awesome.css
+```
+"
+) %>
+
+        <br/>
+
         <p>Copy all the fonts in thte Font Awesome repository in the public/fonts directory of your application.</p>
+
+<%= markdownify(
+"
+```
+cp fonts app_path/public
+```
+"
+) %>
+
+        <br/>
+
+        <p>Don't forget to require the font_awesome.css file in your application.css.scss file.</p>
+
+<%= markdownify(
+"
+```
+*= require font_awesome
+```
+"
+) %>
+
+        <br/>
 
         <p>Restart your web server and you should have no problem adding icons to your application.  You can inspect this page for some valid Font Awesome HTML snippets.</p>
 
