@@ -1,0 +1,49 @@
+<%= render 'navbar' %>
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header post-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Learning Vim</h1>
+          <h2 class="subheading">Simple & Rapid Text Editing</h2>
+          <span class="meta">Posted by Powers on December 7, 2014</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        <p>Vim is an powerful text editor that's <a href="http://robots.thoughtbot.com/the-vim-learning-curve-is-a-myth" >easy to learn</a> and let's you write code with fewer keystrokes.  It can be overwhelming to <a href="http://yehudakatz.com/2010/07/29/everyone-who-tried-to-convince-me-to-use-vim-was-wrong/" >learn everthing Vim has to offer right off the bat</a> so it's important to <strong>stick with the basics when you're starting out</strong>.</p>
+
+        <h2 class="section-heading">Vimtutor</h2>
+
+        <p>The best tutorial for learning Vim is already on your computer - just type $ vimtutor in the terminal.  The tutorial takes about 30 minutes and after finishing it, you'll understand the power of modal text editing.  Repetition is the key to learn Vim, and a StackOverflow commentor suggests <a href="http://stackoverflow.com/questions/597077/is-learning-vim-worth-the-effort" >taking the tutorial every way for a week to learn the basics</a>.  Just remember to always exit insert mode immediately after editing text by pressing the escape key.</p>
+
+        <h2 class="section-heading">Just Do It</h2>
+
+        <p>It amazes me how many programmers haven't even tried Vim.  It's an amazing text editor that's already installed on your computer and might make you more productive for the rest of your career.  Try it at least!</p>
+
+        <h2 class="section-heading">My Confession</h2>
+
+        <p>Full disclosure: I've been meaning to try Emacs for about a year and haven't gotten around to it.  Matz, the creator of Ruby, said Emacs <a href="http://www.slideshare.net/yukihiro_matz/how-emacs-changed-my-life" >"changed his life" and "made him a hacker"</a> and it's obviously worthwhile to follow in the footsteps of a programmer I admire.  I'm going to start learning Emacs after finishing this blog post, so I'm not a hypocrite.</p>
+
+        <p>Check back with me in a week to see if I look like Richard Stallman, a saint in the <a href="https://stallman.org/saint.html" >Church of Emacs.</a></p>
+
+        <%= image_tag "richard-stallman.jpg", class: "img-responsive" %>
+        <span class="caption text-muted">Stallman in his Saint IGNUcius garb</span>
+
+      </div>
+    </div>
+  </div>
+</article>
+
+<%= render 'social_links' %>
+

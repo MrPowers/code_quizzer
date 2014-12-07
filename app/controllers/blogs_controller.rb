@@ -6,4 +6,6 @@ class BlogsController < ApplicationController
   def contact; end
 
   def font_awesome; end
+
+  def learning_vim; end
 end

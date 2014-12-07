@@ -6,7 +6,8 @@ Compoundblingapplication::Application.routes.draw do
   get 'blog' => 'blogs#index'
   get 'about' => 'blogs#about'
   get 'contact' => 'blogs#contact'
-  get 'font-awesome-in-rails' => 'blogs#font_awesome'
+  get 'blog/font-awesome-in-rails' => 'blogs#font_awesome'
+  get 'blog/learning-vim' => 'blogs#learning_vim'
 
   get 'stats' => 'user_statistics#index'
   get 'static_pages/about'

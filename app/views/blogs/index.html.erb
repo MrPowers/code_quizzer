@@ -22,27 +22,30 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <div class="post-preview">
-        <a href="post.html">
+        <%= link_to blog_learning_vim_path do %>
+          <h2 class="post-title">
+            Learning Vim
+          </h2>
+          <h3 class="post-subtitle">
+            Simple & Rapid Text Editing
+          </h3>
+        <% end %>
+        <p class="post-meta">Posted by Powers on December 7, 2014</p>
+      </div>
+
+      <div class="post-preview">
+        <%= link_to blog_font_awesome_in_rails_path do %>
           <h2 class="post-title">
             Adding Font Awesome to a Rails application
           </h2>
           <h3 class="post-subtitle">
             Without the Rails asset pipeline driving you crazy
           </h3>
-        </a>
-        <p class="post-meta">Posted by Powers</a> on December 6, 2014</p>
+        <% end %>
+        <p class="post-meta">Posted by Powers on December 6, 2014</p>
       </div>
 
       <hr>
-
-      <div class="post-preview">
-        <a href="post.html">
-          <h2 class="post-title">
-            I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
-          </h2>
-        </a>
-        <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
-      </div>
 
     </div>
   </div>

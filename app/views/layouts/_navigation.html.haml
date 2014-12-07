@@ -6,6 +6,7 @@
 - else
   %p.nav-options= link_to('Login', new_user_session_path)
   %p.nav-options= link_to('Sign up', new_user_registration_path)
+%p.nav-options= link_to('Blog', blog_path)
 %p.nav-options.hidden-xs= link_to('Recent Exams', exams_path)
 #facebook.hidden-xs= render 'layouts/facebook'
 #twitter.hidden-xs= render 'layouts/twitter'
