@@ -1,13 +1,14 @@
+%ul
 - if user_signed_in?
-  .nav-options= "Logged in as #{current_user.username}"
-  .nav-options= link_to('Logout', destroy_user_session_path, :method=>'delete')
-  .nav-options.hidden-xs= link_to('Edit account', edit_user_registration_path)
-  .nav-options.hidden-xs= link_to('My Exams', "/user_exams")
+  %li.nav-options= "Logged in as #{current_user.username}"
+  %li.nav-options= link_to('Logout', destroy_user_session_path, :method=>'delete')
+  %li.nav-options.hidden-xs= link_to('Edit account', edit_user_registration_path)
+  %li.nav-options.hidden-xs= link_to('My Exams', "/user_exams")
 - else
-  %p.nav-options= link_to('Login', new_user_session_path)
-  %p.nav-options= link_to('Sign up', new_user_registration_path)
-%p.nav-options= link_to('Blog', blog_path)
-%p.nav-options.hidden-xs= link_to('Recent Exams', exams_path)
+  %li.nav-options= link_to('Login', new_user_session_path)
+  %li.nav-options= link_to('Sign up', new_user_registration_path)
+%li.nav-options= link_to('Blog', blog_path)
+%li.nav-options.hidden-xs= link_to('Recent Exams', exams_path)
 #facebook.hidden-xs= render 'layouts/facebook'
 #twitter.hidden-xs= render 'layouts/twitter'
 .nav-options.hidden-xs= render 'layouts/github'
