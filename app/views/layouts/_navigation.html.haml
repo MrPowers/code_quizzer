@@ -1,4 +1,3 @@
-%ul
 - if user_signed_in?
   %li.nav-options= "Logged in as #{current_user.username}"
   %li.nav-options= link_to('Logout', destroy_user_session_path, :method=>'delete')
