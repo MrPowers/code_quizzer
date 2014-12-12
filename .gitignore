@@ -15,6 +15,7 @@
 /tmp
 
 *.dump
+blog/
 
 ar_create_template
 
