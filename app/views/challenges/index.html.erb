@@ -1,0 +1,5 @@
+<ol>
+  <% @challenges.each do |challenge| %>
+    <li><%= markdownify_text(challenge.question) %></li>
+  <% end %>
+</ol>

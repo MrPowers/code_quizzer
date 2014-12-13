@@ -1,4 +1,6 @@
 Compoundblingapplication::Application.routes.draw do
+  resources :challenges
+
   get 'blogs/index'
 
   root :to => 'families#show', :id => 1

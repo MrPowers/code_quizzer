@@ -1,0 +1,19 @@
+<%= form_for @challenge do |f| %>
+  <%= f.label :question %>
+  <br />
+  <%= f.text_area :question, :rows => "15", :class => "edit-question-form" %>
+  <br />
+  <br />
+  <%= f.label :answer_description %>
+  <br />
+  <%= f.text_area :answer_description, :rows => "15", :class => "edit-question-form" %>
+  <br />
+  <br />
+  <%= f.label :answer %>
+  <br />
+  <%= f.text_field :answer %>
+  <br />
+  <br />
+  <%= f.submit %>
+<% end %>
+
