@@ -1,13 +1,25 @@
 <ul>
+
   <% unless controller_name == "families" %>
     <li class="brand-name nav-options bg-primary"><%= link_to "CodeQuizzes", root_path %></li>
   <% end %>
 
   <% if user_signed_in? %>
-    <li class="nav-options">Logged in as <%= current_user.username %></li>
-    <li class="nav-options"><%= link_to("Logout", destroy_user_session_path, method: :delete) %></li>
-    <li class="nav-options hidden-xs"><%= link_to('Edit account', edit_user_registration_path) %></li>
-    <li class="nav-options hidden-xs"><%= link_to('My Exams', "/user_exams") %></li>
+    <li class="nav-options">
+      <%= link_to(user_exams_path) do %>
+        <strong><%= current_user.username %></strong>
+      <% end %>
+    </li>
+    <li class="nav-options">
+      <%= link_to(edit_user_registration_path) do %>
+        <i class="fa fa-gear"></i>
+      <% end %>
+    </li>
+    <li class="nav-options">
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fa fa-sign-out"></i>
+      <% end %>
+    </li>
   <% else %>
     <li class="nav-options"><%= link_to('Login', new_user_session_path) %></li>
     <li class="nav-options"><%= link_to('Sign up', new_user_registration_path) %></li>

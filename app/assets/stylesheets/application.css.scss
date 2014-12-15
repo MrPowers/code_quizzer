@@ -133,7 +133,9 @@ families page
   text-decoration: none;
 }
 
-.nav-options
+.nav-options a {
+  color: #333;
+}
 
 .has-title {
   padding: 40px;
