@@ -1,0 +1,29 @@
+<% unless controller_name == "families" %>
+  <li class="brand-name nav-options bg-primary"><%= link_to "CodeQuizzes", root_path %></li>
+<% end %>
+
+<% if user_signed_in? %>
+  <li class="nav-options">Logged in as <%= current_user.username %></li>
+  <li class="nav-options"><%= link_to("Logout", destroy_user_session_path, method: :delete) %></li>
+  <li class="nav-options hidden-xs"><%= link_to('Edit account', edit_user_registration_path) %></li>
+  <li class="nav-options hidden-xs"><%= link_to('My Exams', "/user_exams") %></li>
+<% else %>
+  <li class="nav-options"><%= link_to('Login', new_user_session_path) %></li>
+  <li class="nav-options"><%= link_to('Sign up', new_user_registration_path) %></li>
+<% end %>
+
+<li class="nav-options"><%= link_to('Blog', blog_path) %></li>
+<li class="nav-options hidden-xs"><%= link_to('Recent Exams', exams_path) %></li>
+
+<div id="facebook" class="hidden-xs">
+  <%= render 'layouts/facebook' %>
+</div>
+
+<div id="twitter" class="hidden-xs">
+  <%= render 'layouts/twitter' %>
+</div>
+
+<div class="nav-options hidden-xs">
+  <%= render 'layouts/github' %>
+</div>
+

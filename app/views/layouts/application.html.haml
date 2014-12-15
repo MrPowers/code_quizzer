@@ -18,10 +18,7 @@
 
   %body
     .container-fluid
-      = render "layouts/navigation"
+      - unless controller_name == "blogs"
+        = render "layouts/navigation"
       = render 'layouts/messages'
       = yield
-    %footer
-      = link_to "Made by Powers", about_path
-      |
-      %a{href: "https://plus.google.com/106447578781585716639", rel: "publisher"} Google+
