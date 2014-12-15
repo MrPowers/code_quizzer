@@ -1,8 +1,6 @@
 - content_for :title do
   = @quiz.page_title
 
-= render "layouts/full_navigation"
-
 %h1.center= (@quiz.page_title || @topic.name)
 - unless current_user
   %div.center

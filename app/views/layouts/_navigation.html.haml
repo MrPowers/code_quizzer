@@ -1,3 +1,5 @@
+- if controller_name != "families"
+  %li.brand-name.nav-options.bg-primary= link_to "CodeQuizzes", root_path
 - if user_signed_in?
   %li.nav-options= "Logged in as #{current_user.username}"
   %li.nav-options= link_to('Logout', destroy_user_session_path, :method=>'delete')
@@ -11,5 +13,3 @@
 #facebook.hidden-xs= render 'layouts/facebook'
 #twitter.hidden-xs= render 'layouts/twitter'
 .nav-options.hidden-xs= render 'layouts/github'
-
-= render 'layouts/messages'
