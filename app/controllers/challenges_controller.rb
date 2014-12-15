@@ -32,10 +32,10 @@ class ChallengesController < ApplicationController
   def check_answer
     @challenge = Challenge.where(slug: params[:id]).first
     if params[:challenge_answer] == @challenge.answer
-      flash[:notice] = "Correct answer!"
+      flash[:success] = "Correct answer!"
       redirect_to challenge_answer_path(id: @challenge.slug)
     else
-      flash[:success] = "Incorrect, try again"
+      flash[:error] = "Incorrect, try again"
       redirect_to @challenge
     end
   end
