@@ -1,23 +1,24 @@
-<h2>Please sign in</h2>
+<div class="row col-md-4 col-md-offset-4">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <%= f.label :email, class: "sr-only" %>
-  <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email address" %>
+  <h2>Please sign in</h2>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= f.label :email, class: "sr-only" %>
+    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email address" %>
 
-  <%= f.label :password, class: "sr-only" %>
-  <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+    <%= f.label :password, class: "sr-only" %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="checkbox">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <% if devise_mapping.rememberable? -%>
+      <div class="checkbox">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end -%>
+
+    <div class="actions">
+      <%= f.submit "Sign in", class: "btn btn-lg btn-primary btn-block" %>
     </div>
-  <% end -%>
+  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Sign in", class: "btn btn-lg btn-primary btn-block" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
+  <%= render "devise/shared/links" %>
+</div>
