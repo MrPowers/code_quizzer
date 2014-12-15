@@ -1,5 +1,7 @@
+<h2>CodeQuizzes Challenges</h2>
+
 <ol>
   <% @challenges.each do |challenge| %>
-    <li><%= markdownify_text(challenge.question) %></li>
+    <li><%= markdownify(challenge.question_summary) %></li>
   <% end %>
 </ol>

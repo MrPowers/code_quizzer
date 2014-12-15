@@ -1,0 +1,14 @@
+<% flash.each do |name, msg| %>
+
+  <% if msg.is_a?(String) %>
+    <div class="flash-message alert alert-<%= name == 'notice' ? 'success' : 'danger' %>">
+      <div id="flash_<%= name %>">
+        <%= msg %>
+        <a data-toggle="collapse" data-target="flash_message" data-dismiss="alert">
+          Hide this
+        </a>
+      </div>
+    </div>
+  <% end %>
+
+<% end %>

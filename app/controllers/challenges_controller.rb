@@ -11,11 +11,11 @@ class ChallengesController < ApplicationController
   end
 
   def edit
-    @challenge = Challenge.find(params[:id])
+    @challenge = Challenge.where(slug: params[:id]).first
   end
 
   def update
-    @challenge = Challenge.find(params[:id])
+    @challenge = Challenge.where(slug: params[:id]).first
     if @challenge.update_attributes(challenge_params)
       redirect_to @challenge
     end
@@ -26,12 +26,27 @@ class ChallengesController < ApplicationController
   end
 
   def show
-    @challenge = Challenge.find(params[:id])
+    @challenge = Challenge.where(slug: params[:id]).first
+  end
+
+  def check_answer
+    @challenge = Challenge.where(slug: params[:id]).first
+    if params[:challenge_answer] == @challenge.answer
+      flash[:notice] = "Correct answer!"
+      redirect_to challenge_answer_path(id: @challenge.slug)
+    else
+      flash[:success] = "Incorrect, try again"
+      redirect_to @challenge
+    end
+  end
+
+  def answer
+    @challenge = Challenge.where(slug: params[:id]).first
   end
 
   private
 
   def challenge_params
-    params.require(:challenge).permit(:question, :answer_description, :answer)
+    params.require(:challenge).permit(:question, :answer_description, :answer, :question_summary)
   end
 end

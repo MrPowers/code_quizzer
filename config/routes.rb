@@ -14,6 +14,9 @@ Compoundblingapplication::Application.routes.draw do
   get 'stats' => 'user_statistics#index'
   get 'static_pages/about'
 
+  get '/challenges/:id/answer', to: 'challenges#answer', as: 'challenge_answer'
+  post 'check_challenge_answer', :to => 'challenges#check_answer'
+
   post 'set_answer_status', :to => 'answers#set_answer_status'
   get 'get_answer', :to => 'answers#get_answer'
 

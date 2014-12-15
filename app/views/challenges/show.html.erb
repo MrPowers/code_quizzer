@@ -2,6 +2,14 @@
 
 <div class="container">
   <div class="row">
-    <%= markdownify_text(@challenge.answer_description) %>
+    <%= markdownify(@challenge.answer_description) %>
   </div>
 </div>
+
+<%= form_tag(check_challenge_answer_path) do %>
+  <%= label_tag(:challenge_answer, "Your Answer") %>
+  <%= text_field_tag(:challenge_answer) %>
+  <%= hidden_field_tag(:id, params[:id]) %>
+  <br />
+  <%= submit_tag("Submit Answer") %>
+<% end %>
