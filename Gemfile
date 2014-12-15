@@ -10,7 +10,6 @@ gem 'haml-rails'
 gem 'heroku'
 gem 'jquery-rails'
 gem 'pg'
-gem 'simple_form' # used by Devise views
 gem 'thin'
 gem 'redcarpet'
 gem 'pygments.rb'
