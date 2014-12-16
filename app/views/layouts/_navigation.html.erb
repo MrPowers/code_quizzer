@@ -7,7 +7,7 @@
   <% if user_signed_in? %>
     <li class="nav-options">
       <%= link_to(user_exams_path) do %>
-        <strong data-toggle="tooltip" data-placement="bottom" title="Your Exams">
+        <strong data-toggle="tooltip" data-placement="bottom" title="My Exams">
           <%= current_user.username %>
         </strong>
       <% end %>
