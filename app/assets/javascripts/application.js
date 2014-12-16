@@ -25,5 +25,7 @@ $(function(){
     isFitWidth: true
   });
 
+  $('[data-toggle="tooltip"]').tooltip()
+
 });
 

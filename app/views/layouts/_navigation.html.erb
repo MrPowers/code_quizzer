@@ -7,17 +7,19 @@
   <% if user_signed_in? %>
     <li class="nav-options">
       <%= link_to(user_exams_path) do %>
-        <strong><%= current_user.username %></strong>
+        <strong data-toggle="tooltip" data-placement="bottom" title="Your Exams">
+          <%= current_user.username %>
+        </strong>
       <% end %>
     </li>
     <li class="nav-options">
       <%= link_to(edit_user_registration_path) do %>
-        <i class="fa fa-gear"></i>
+        <i class="fa fa-gear" data-toggle="tooltip" data-placement="bottom" title="Edit Account"></i>
       <% end %>
     </li>
     <li class="nav-options">
       <%= link_to destroy_user_session_path, method: :delete do %>
-        <i class="fa fa-sign-out"></i>
+        <i class="fa fa-sign-out" data-toggle="tooltip" data-placement="bottom" title="Sign Out"></i>
       <% end %>
     </li>
   <% else %>
