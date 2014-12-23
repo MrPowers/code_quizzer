@@ -9,7 +9,7 @@ class Ability
       can :manage, :all
     elsif user.role == 'author'
       can :read, :all
-      can :create, Comment
+      #can :create, Comment
       can :create, Exam
       can :update, Exam do |exam|
         exam.try(:user) == user

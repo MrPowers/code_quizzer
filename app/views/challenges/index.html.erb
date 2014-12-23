@@ -1,7 +1,9 @@
-<h2>CodeQuizzes Challenges</h2>
+<div class="container col-md-6 col-md-offset-3">
+  <h2>Challenges</h2>
 
-<ol>
-  <% @challenges.each do |challenge| %>
-    <li><%= markdownify(challenge.question_summary) %></li>
-  <% end %>
-</ol>
+  <ol>
+    <% @challenges.each do |challenge| %>
+      <li><%= link_to markdownify(challenge.question_summary), challenge %></li>
+    <% end %>
+  </ol>
+</div>

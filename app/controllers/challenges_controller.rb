@@ -1,6 +1,7 @@
 class ChallengesController < ApplicationController
   def new
     @challenge = Challenge.new
+    authorize! :create, @challenge
   end
 
   def create
@@ -11,6 +12,7 @@ class ChallengesController < ApplicationController
   end
 
   def edit
+    authorize! :update, @challenge
     @challenge = Challenge.where(slug: params[:id]).first
   end
 

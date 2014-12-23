@@ -1,13 +1,16 @@
-<div class="container">
-  <div class="row">
-    <%= markdownify(@challenge.answer_description) %>
+<div class="container col-md-6 col-md-offset-3">
+  <h2><%= @challenge.question_summary %></h2>
+  <%= markdownify(@challenge.question) %>
+
+  <div class="container col-md-6 col-md-offset-3">
+    <%= form_tag(check_challenge_answer_path) do %>
+      <%= label_tag(:challenge_answer, "Your Answer", class: "sr-only") %>
+      <%= text_field_tag(:challenge_answer, nil, class: "form-control", placeholder: "Your Answer") %>
+      <%= hidden_field_tag(:id, params[:id]) %>
+      <br />
+      <%= submit_tag("Submit Answer", class: "btn btn-lg btn-primary btn-block") %>
+    <% end %>
   </div>
+
 </div>
 
-<%= form_tag(check_challenge_answer_path) do %>
-  <%= label_tag(:challenge_answer, "Your Answer") %>
-  <%= text_field_tag(:challenge_answer) %>
-  <%= hidden_field_tag(:id, params[:id]) %>
-  <br />
-  <%= submit_tag("Submit Answer") %>
-<% end %>
