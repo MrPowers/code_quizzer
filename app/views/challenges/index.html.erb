@@ -1,9 +1,21 @@
-<div class="container col-md-6 col-md-offset-3">
-  <h2>Challenges</h2>
+<h2>Challenges</h2>
 
-  <ol>
-    <% @challenges.each do |challenge| %>
-      <li><%= link_to markdownify(challenge.question_summary), challenge %></li>
+<div class="container col-md-6 col-md-offset-3">
+
+  <table>
+    <thead>
+      <td>Number</td>
+      <td>Challenge</td>
+      <td>Solved by</td>
+    </thead>
+
+    <% @challenges.each_with_index do |challenge, index| %>
+      <tr>
+        <td><p><%= index + 1 %></p></td>
+        <td><%= link_to markdownify(challenge.question_summary), challenge %></td>
+        <td><p><%= challenge.users.count %></p></td>
+      </tr>
     <% end %>
-  </ol>
+  </table>
+
 </div>
