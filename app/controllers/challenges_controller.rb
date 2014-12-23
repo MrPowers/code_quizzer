@@ -1,7 +1,7 @@
 class ChallengesController < ApplicationController
   def new
+    authorize! :create, Challenge
     @challenge = Challenge.new
-    authorize! :create, @challenge
   end
 
   def create
@@ -12,8 +12,8 @@ class ChallengesController < ApplicationController
   end
 
   def edit
-    authorize! :update, @challenge
     @challenge = Challenge.where(slug: params[:id]).first
+    authorize! :update, @challenge
   end
 
   def update
@@ -34,6 +34,8 @@ class ChallengesController < ApplicationController
   def check_answer
     @challenge = Challenge.where(slug: params[:id]).first
     if params[:challenge_answer] == @challenge.answer
+      authorize! :create, ChallengeUser
+      ChallengeUser.create!(challenge_id: @challenge.id, user_id: current_user.id)
       flash[:success] = "Correct answer!"
       redirect_to challenge_answer_path(id: @challenge.slug)
     else

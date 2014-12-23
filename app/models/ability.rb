@@ -10,6 +10,9 @@ class Ability
     elsif user.role == 'author'
       can :read, :all
       #can :create, Comment
+      can :create, ChallengeUser do |challenge_user|
+        challenge_user.try(:user) == user
+      end
       can :create, Exam
       can :update, Exam do |exam|
         exam.try(:user) == user
