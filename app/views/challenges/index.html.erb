@@ -1,8 +1,7 @@
-<h2>Challenges</h2>
+<div class="challenge-wrapper container col-md-6 col-md-offset-3">
+  <h2>Challenges</h2>
 
-<div class="container col-md-6 col-md-offset-3">
-
-  <table>
+  <table class="table table-bordered table-responsive">
     <thead>
       <td>Number</td>
       <td>Challenge</td>
@@ -11,9 +10,9 @@
 
     <% @challenges.each_with_index do |challenge, index| %>
       <tr>
-        <td><p><%= index + 1 %></p></td>
+        <td class="text-center"><p><%= index + 1 %></p></td>
         <td><%= link_to markdownify(challenge.question_summary), challenge %></td>
-        <td><p><%= challenge.users.count %></p></td>
+        <td class="text-center"><p><%= challenge.users.count %></p></td>
       </tr>
     <% end %>
   </table>
