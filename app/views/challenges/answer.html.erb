@@ -2,4 +2,7 @@
   <h2>Answer</h2>
 
   <%= markdownify(@challenge.answer_description) %>
+
+  <br />
+  <%= button_to('Back to all challenges', challenges_path, :class => 'btn btn-primary col-md-6 col-md-offset-3 col-xs-12', :method => :get) %>
 </div>
