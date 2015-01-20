@@ -1,6 +1,6 @@
 class FamiliesController < ApplicationController
   def show
-    @family = Family.find(params[:id])
+    @family = Family.where(slug: params[:id]).first
     authorize! :show, @family
     topics = @family.topics.includes(:quizzes => :videos)
     @topics = sorted_topics(topics)

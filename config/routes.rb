@@ -3,7 +3,7 @@ Compoundblingapplication::Application.routes.draw do
 
   get 'blogs/index'
 
-  root :to => 'families#show', :id => 1
+  root :to => 'families#show', :id => 'learn-programming'
 
   get 'blog' => 'blogs#index'
   get 'about' => 'blogs#about'
@@ -26,7 +26,9 @@ Compoundblingapplication::Application.routes.draw do
   get 'graded_count' => 'exams#graded_count'
   get 'user_exams' => 'exams#user_exams'
 
-  resources :families, :only => [:show]
+  resources :families, :path => '' do
+    resources :families, :only => [:show]
+  end
 
   resources :quizzes, :only => [] do
     resources :questions
