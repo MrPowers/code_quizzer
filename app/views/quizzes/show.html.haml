@@ -12,9 +12,7 @@
     %td Click to View Answer
     - if can? :update, Answer
       %td Your Answer
-    - if can? :update, Question
-      %td
-    - if can? :destroy, Question
+    - if can?(:update, Question) || can?(:destroy, Question)
       %td
   - @questions.each do |question|
     %tr.question-row{:data => {"question-id" => question.id}}
@@ -33,16 +31,18 @@
           - else
             = button_to('Correct', set_answer_status_path(exam_id: @exam.id, question_id: question.id, is_correct: true), :class => 'btn btn-success correct-answer', :method => :post, :remote => true)
             = button_to('Wrong', set_answer_status_path(exam_id: @exam.id, question_id: question.id, is_correct: false), :class => 'btn btn-danger incorrect-answer', :method => :post, :remote => true)
-      - if can? :update, question
-        %td= link_to "Edit", edit_quiz_question_path(:id => question.id, :quiz_id => @quiz.id)
-      - if can? :destroy, question
-        %td= link_to 'Destroy', [question.quiz, question], :confirm => 'Are you sure?', :method => :delete
+      - if can?(:update, question) || can?(:destroy, question)
+        %td
+          - if can? :update, question
+            %p= link_to "Edit", edit_quiz_question_path(:id => question.id, :quiz_id => @quiz.id)
+          - if can? :destroy, question
+            %p= link_to 'Destroy', [question.quiz, question], :confirm => 'Are you sure?', :method => :delete
 
 %br
 
 - if can? :create, Exam
   %div
-    %button.btn.btn-large.btn-primary.grade-exam{"data-target" => "#examResults", "data-toggle" => "modal"} Grade this Exam
+    %button.btn.btn-large.btn-primary.center-button{"data-target" => "#examResults", "data-toggle" => "modal"} Grade this Exam
 
   #examResults.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "examResultsLabel", role: "dialog", tabindex: "-1"}
     .modal-dialog

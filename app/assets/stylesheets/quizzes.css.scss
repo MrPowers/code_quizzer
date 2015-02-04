@@ -32,8 +32,8 @@
   color: #da4e49;
 }
 
-.grade-exam {
-  display: block;
+.center-button {
+  display: inherit;
   margin: 0 auto;
 }
 
@@ -42,17 +42,14 @@ TABLE PROGRAMMING CHALLENGES
 ************************/
 .quiz_name {
   text-align: center;
-  /*border: red 2px solid;*/
 }
 
 table {
   border-collapse: collapse;
-  /*width: 800px;*/
 }
 
 
 td {
-  /*border: 2px solid #545a71;*/
   margin: 0;
   padding: 3px 3px;
 }
