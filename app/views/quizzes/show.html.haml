@@ -18,7 +18,7 @@
     %tr.question-row{:data => {"question-id" => question.id}}
       %td.question
         = markdownify(question.body)
-      %td.answer.no-opacity
+      %td.answer.clickable.no-opacity
         = markdownify(question.answer)
       - if can? :update, Answer
         %td.user-answer.center

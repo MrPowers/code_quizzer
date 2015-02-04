@@ -2,16 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.clickable {
+  cursor: pointer;
+}
+
+.no-opacity {
+  opacity: 0.0;
+}
+
 .label {
   margin-left: 0.2em;
 }
 
 .quiz-wrapper .exam-counts {
   text-decoration: none;
-}
-
-.cancel-exam, .in-progress {
-  cursor: pointer;
 }
 
 .edit-question-form {
@@ -59,14 +63,6 @@ thead {
   text-align: center;
 }
 
-.answer {
-  cursor: pointer;
-}
-
-.no-opacity {
-  opacity: 0.0;
-}
-
 code {
   margin: 0;
   background-color: transparent;
@@ -89,18 +85,5 @@ pre {
   white-space: -pre-wrap;      /* Opera 4-6 */
   white-space: -o-pre-wrap;    /* Opera 7 */
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
-}
-
-.time_ago {
-  font-size: 0.65em;
-}
-
-.comment_body {
-  background-color: white;
-  width: 60%;
-}
-
-.comment_form_box textarea {
-  width: 40%;
 }
 
