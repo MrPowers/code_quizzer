@@ -42,7 +42,7 @@
 
 - if can? :create, Exam
   %div
-    %button.btn.btn-large.btn-primary.center-button{"data-target" => "#examResults", "data-toggle" => "modal"} Grade this Exam
+    %button.btn.btn-large.btn-primary.center-button.grade-exam{"data-target" => "#examResults", "data-toggle" => "modal"} Grade this Exam
 
   #examResults.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "examResultsLabel", role: "dialog", tabindex: "-1"}
     .modal-dialog
