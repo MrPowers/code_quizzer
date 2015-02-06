@@ -2,14 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.clickable {
-  cursor: pointer;
-}
-
-.no-opacity {
-  opacity: 0.0;
-}
-
 .correct {
   font-size: 2.5em;
   color: #5bb65b;
@@ -18,11 +10,6 @@
 .incorrect {
   @extend .correct;
   color: #da4e49;
-}
-
-.center-button {
-  display: inherit;
-  margin: 0 auto;
 }
 
 /************************
