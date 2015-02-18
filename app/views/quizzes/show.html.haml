@@ -36,7 +36,7 @@
           - if can? :update, question
             %p= link_to "Edit", edit_quiz_question_path(:id => question.id, :quiz_id => @quiz.id)
           - if can? :destroy, question
-            %p= link_to 'Destroy', [question.quiz, question], :confirm => 'Are you sure?', :method => :delete
+            %p= link_to 'Destroy', [question.quiz, question], :method => :delete, :data => {:confirm => 'Are you sure?'}
 
 %br
 
