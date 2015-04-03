@@ -5,6 +5,10 @@
   .hero-item.has-title.bg-primary
     %h1 CodeQuizzes
     %p.tagline Learn by doing
+  .hero-item.topic
+    %h3 Challenges
+    %p
+      =link_to("Test your Ruby skills with these longer form programming exercises", challenges_path)
   - @topics.each do |topic|
     .hero-item.topic
       %h3= topic.name
