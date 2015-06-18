@@ -20,7 +20,7 @@ class FamiliesController < ApplicationController
       "Intermediate Ruby",
       "Learn JavaScript",
       "Intermediate JavaScript",
-      "Learn MySQL",
+      "Learn Go",
       "Learn SQL with Rails 4",
       "Learn Rails 3",
       "Rails TDD",
@@ -30,9 +30,9 @@ class FamiliesController < ApplicationController
       "Learn CSS",
       "Git/Github",
       "Learn Bash",
+      "Intermediate Bash",
       "Ruby",
-      "jQuery",
-      "Unix / Bash"
+      "Learn MySQL"
     ]
   end
 
