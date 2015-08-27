@@ -20,6 +20,7 @@
     .container-fluid
       - unless controller_name == "blogs"
         = render "layouts/navigation"
+      = render 'layouts/announcement'
       = render 'layouts/messages'
       = yield
       = render 'layouts/footer'
