@@ -1,4 +1,6 @@
 Compoundblingapplication::Application.routes.draw do
+  devise_for :users
+
   resources :challenges
 
   get 'blogs/index'
@@ -37,8 +39,6 @@ Compoundblingapplication::Application.routes.draw do
   resources :quizzes, :only => [] do
     resources :comments, :only => [:create]
   end
-
-  devise_for :users
 
   resources :topics, :path => '', :only => [] do
     resources :quizzes, :path => '', :only => [:show]
