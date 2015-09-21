@@ -1,0 +1,74 @@
+<% content_for :title do %>
+  <%= @family.page_title %>
+<% end %>
+
+<div class='hero-masonry span12'>
+
+  <div class='hero-item has-title bg-primary'>
+    <h1>CodeQuizzes</h1>
+    <p class='tagline'>Learn by doing</p>
+  </div>
+
+  <div class='hero-item topic'>
+    <h3>Challenges</h3>
+    <p>
+      <%= link_to("Test your Ruby skills with these longer form programming exercises", challenges_path) %>
+    </p>
+  </div>
+
+  <div class='hero-item topic'>
+    <h3>Open Source</h3>
+    <p>I am working on several open source projects, including <%= link_to "this site", "https://github.com/MrPowers/code_quizzer" %>, <%= link_to "turf", "https://github.com/MrPowers/turf" %> and <%= link_to "frontend-generators", "https://github.com/MrPowers/frontend-generators" %>.  Please look at the open issues and help me make these open source projects better!  I am very nice so this is a great opportunity to make your first open source pull request!</p>
+  </div>
+
+  <% @topics.each do |topic| %>
+    <div class="hero-item topic">
+      <h3><%= topic.name %></h3>
+      <% topic.quizzes.sort_by(&:created_at).each do |quiz| %>
+
+        <div class="quiz-wrapper">
+
+          <%= content_tag "span", class: "quiz", data: {quiz_id: quiz.id} do %>
+            <%= link_to quiz.body, topic_quiz_path(:topic_id => topic.slug, :id => quiz.slug) %>
+          <% end %>
+
+          <% if @exam_counts[quiz.id] %>
+
+            <% if @exam_counts[quiz.id]["graded"] > 0 %>
+              <%= content_tag "span", class: "label label-success exam-count", title: "Number of times exam has been completed" do %>
+                <%= @exam_counts[quiz.id]["graded"] %>
+              <% end %>
+            <% end %>
+
+            <% if @exam_counts[quiz.id]["in_progress"] > 0 %>
+
+              <%= link_to topic_quiz_path(:topic_id => topic.slug, :id => quiz.slug), class: "exam-counts" do %>
+                <%= content_tag "span", class: "label label-info clickable", title: "In Progress" do %>
+                  &#x274B
+                <% end %>
+              <% end %>
+
+              <%= link_to cancel_exam_path(quiz_id: quiz.id), class: "exam-counts", remote: true, method: :post, data: { confirm: "Are you sure you want to cancel this in progress exam?" } do %>
+                <%= content_tag "span", class: "label label-danger clickable", title: "Cancel Exam In Progress" do %>
+                  &#x2718
+                <% end %>
+              <% end %>
+
+            <% end %>
+
+          <% end %>
+
+          <br />
+
+          <div class="description">
+            <%= quiz.description %>
+          </div>
+
+        </div>
+
+      <% end %>
+    </div>
+  <% end %>
+
+</div>
+
