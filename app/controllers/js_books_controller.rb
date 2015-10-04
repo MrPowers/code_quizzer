@@ -1,6 +1,10 @@
 class JsBooksController < ApplicationController
 
   def index
+    @sections = File.readlines("#{Rails.root}/js_book/00_learning_path.txt").inject([]) do |m, s|
+      m.push(File.basename(s.strip, ".*"))
+      m
+    end
   end
 
   def show

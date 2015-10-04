@@ -7,7 +7,8 @@ Compoundblingapplication::Application.routes.draw do
 
   root :to => 'families#show', :id => 'learn-programming'
 
-  get 'javascript-book/:section_name', to: 'js_books#show'
+  get 'javascript-book/:section_name', to: 'js_books#show', as: 'js_books'
+  get 'javascript-book', to: 'js_books#index'
 
   get 'blog' => 'blogs#index'
   get 'about' => 'blogs#about'
