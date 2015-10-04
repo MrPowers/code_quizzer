@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20150120021223) do
   create_table "answers", force: true do |t|
     t.integer  "exam_id"
     t.integer  "question_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "is_correct"
   end
 
@@ -53,15 +53,15 @@ ActiveRecord::Schema.define(version: 20150120021223) do
     t.text     "body"
     t.integer  "quiz_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "exams", force: true do |t|
     t.integer  "quiz_id"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "is_graded"
     t.boolean  "is_canceled"
   end
@@ -69,8 +69,8 @@ ActiveRecord::Schema.define(version: 20150120021223) do
   create_table "families", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "page_title"
     t.string   "slug"
   end
@@ -79,14 +79,14 @@ ActiveRecord::Schema.define(version: 20150120021223) do
     t.text     "body"
     t.text     "answer"
     t.integer  "quiz_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "quizzes", force: true do |t|
     t.string   "body"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "description"
     t.integer  "topic_id"
     t.string   "slug"
@@ -97,8 +97,8 @@ ActiveRecord::Schema.define(version: 20150120021223) do
 
   create_table "topics", force: true do |t|
     t.text     "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "family_id"
     t.string   "slug"
   end
@@ -116,8 +116,8 @@ ActiveRecord::Schema.define(version: 20150120021223) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "role",                   default: "author"
     t.string   "username"
   end
@@ -129,8 +129,8 @@ ActiveRecord::Schema.define(version: 20150120021223) do
     t.text     "link"
     t.text     "description"
     t.integer  "quiz_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
