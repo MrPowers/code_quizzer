@@ -1,3 +1,5 @@
+# Order of Operations
+
 Remember PEMDAS from high school algebra?  Mathematical expressions are evaluated in a certain order (called the order of operations).  The order of operations is parenthesis, exponents, multiplication / division, and finally addition / subtraction.  The following statement executes the multiplication before the addition:
 
 ```javascript
