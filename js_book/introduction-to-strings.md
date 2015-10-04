@@ -14,8 +14,8 @@ When a number is surrounded by single or double quotes, it is actually a string!
 "4.32"
 ```
 
-Strings can be added and this is called string concatenation.
+Strings can be combined and this is called string concatenation.
 
 ```javascript
-console.log("bat" + "man");
+console.log("bat" + "man"); // prints "batman" to the console
 ```
