@@ -1,6 +1,0 @@
-indroduction-to-numbers.md
-introduction-to-strings.md
-introduction-to-booleans.md
-declaring-variables.md
-variable-reassignment.md
-order-of-operations.md

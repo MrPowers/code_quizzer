@@ -1,3 +1,12 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="challenge-wrapper col-md-8 col-md-offset-2">
   <%= markdownify(@markdown) %>
+
+  <% if @section.previous %>
+    <%= link_to "<-- Previous (#{@section.previous})", js_books_path(section_name: @section.previous) %>
+  <% end %>
+
+  <% if @section.next %>
+    <%= link_to "Next (#{@section.next}) -->", js_books_path(section_name: @section.next), class: "pull-right" %>
+  <% end %>
 </div>
+
