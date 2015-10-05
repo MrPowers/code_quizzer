@@ -1,12 +1,15 @@
 module JsBook; class Sections
 
   def self.ordered
+    # missing: order-of-operations
     edges = [
       DirectedGraph::Edge.new('introduction-to-booleans', 'declaring-variables'),
       DirectedGraph::Edge.new('introduction-to-strings', 'declaring-variables'),
       DirectedGraph::Edge.new('introduction-to-numbers', 'declaring-variables'),
       DirectedGraph::Edge.new('declaring-variables', 'variable-reassignment'),
-      DirectedGraph::Edge.new('variable-reassignment', 'order-of-operations')
+      DirectedGraph::Edge.new('variable-reassignment', 'variables-and-values'),
+      DirectedGraph::Edge.new('variables-and-values', 'variable-practice'),
+      DirectedGraph::Edge.new('variable-practice', 'more-variable-reassignment')
     ]
     graph = DirectedGraph::Graph.new(edges)
     graph.sorted_vertices
