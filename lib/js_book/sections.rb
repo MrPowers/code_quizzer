@@ -1,11 +1,15 @@
 module JsBook; class Sections
 
   def self.ordered
-    runner = JsBook::JobRunner.new
-    runner.add('order-of-operations', ['variable-reassignment'])
-    runner.add('variable-reassignment', ['declaring-variables'])
-    runner.add('declaring-variables', ['introduction-to-strings', 'introduction-to-numbers', 'introduction-to-booleans'])
-    runner.tsort
+    edges = [
+      DirectedGraph::Edge.new('introduction-to-booleans', 'declaring-variables'),
+      DirectedGraph::Edge.new('introduction-to-strings', 'declaring-variables'),
+      DirectedGraph::Edge.new('introduction-to-numbers', 'declaring-variables'),
+      DirectedGraph::Edge.new('declaring-variables', 'variable-reassignment'),
+      DirectedGraph::Edge.new('variable-reassignment', 'order-of-operations')
+    ]
+    graph = DirectedGraph::Graph.new(edges)
+    graph.sorted_vertices
   end
 
   attr_reader :section
