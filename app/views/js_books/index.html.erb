@@ -1,5 +1,8 @@
+<div id="cy"></div>
+
 <div class="container challenge-wrapper col-md-6 col-md-offset-3">
   <% @sections.each do |section| %>
     <%= link_to section, js_books_path(section_name: section) %><br />
   <% end %>
 </div>
+
