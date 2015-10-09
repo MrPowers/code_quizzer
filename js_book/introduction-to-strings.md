@@ -1,6 +1,6 @@
 # Introduction to Strings
 
-Strings are a JavaScript type to store text values like `"bob"` or `'I like cheese'`.  
+Strings are a JavaScript type to store text values like `"bob"` or `'I like cheese'`.
 
 Strings can be created with single or double quotes.
 
@@ -19,3 +19,11 @@ Strings can be combined and this is called string concatenation.
 ```javascript
 console.log("bat" + "man"); // prints "batman" to the console
 ```
+
+The `length` property returns the number of characters in a string.
+
+```javascript
+console.log("coolio".length); // prints 6 to the console
+```
+
+The "coolio" string has 6 letters so the length is 6.

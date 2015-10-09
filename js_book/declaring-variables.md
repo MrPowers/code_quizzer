@@ -27,3 +27,18 @@ The statment above is equivalent to these two statements:
 var best_number;
 best_number = 8;
 ```
+
+Once a variable is declared, it does not need to be re-declared.  The following code is bad:
+
+```javascript
+var sad;
+var sad = "this code sucks"; // sad was already declared!  This is bad!
+```
+
+This is much better:
+
+```javascript
+var happy;
+var sad = ":-)";
+```
+

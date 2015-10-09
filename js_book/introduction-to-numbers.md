@@ -22,4 +22,3 @@ Multiple mathematical opertions can be performed in a single statement.  The fol
 1 + 2 + 3
 ```
 
-**Add CodeQuizzes like practice questions here**

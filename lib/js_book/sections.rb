@@ -21,6 +21,10 @@ module JsBook; class Sections
     @section = section
   end
 
+  def questions
+    SectionQuestion.where(section_name: section)
+  end
+
   def all
     Sections.ordered
   end
