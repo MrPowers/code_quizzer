@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CodeQuizzes Blog</title>
+  <%= stylesheet_link_tag 'blog_manifest', media: 'all' %>
+  <%= javascript_include_tag 'application.js' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+  <div class="continer-fluid">
+    <%= yield %>
+  </div>
+
+
+</body>
+</html>
+

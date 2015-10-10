@@ -39,6 +39,6 @@ This is much better:
 
 ```javascript
 var happy;
-var sad = ":-)";
+var happy = ":-)";
 ```
 
