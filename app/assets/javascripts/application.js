@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require cytoscape.min.js
 //= require bootstrap
 //= require masonry.pkgd.js
 //= require_tree .
