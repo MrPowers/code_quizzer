@@ -257,6 +257,336 @@ order: 500
 
 # declaring-variables
 
+SectionQuestion.where(
+body:
+%q{
+Declare the variable iAmSilly.
+},
+answer:
+%q{
+```javascript
+var iAmSilly;
+```
+},
+section_name: "declaring-variables",
+order: 100
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+Declare the variable goodPlayer and assign it to the value "Steve Kerr".
+},
+answer:
+%q{
+```javascript
+var goodPlayer;
+goodPlayer = "Steve Kerr";
+```
+
+The goodPlayer variable can also be declared and assigned on a single line:
+
+```javascript
+var goodPlayer = "Steve Kerr";
+```
+},
+section_name: "declaring-variables",
+order: 200
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+Assign the variable x to the value 3 and assign the variable y to the value 5.  Print the sum of x and y to the console.
+},
+answer:
+%q{
+```javascript
+var x = 3;
+var y = 5;
+console.log(x + y);
+```
+},
+section_name: "declaring-variables",
+order: 300
+).first_or_create
+
+
+# variable-reassignment
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var country = "Argentina";
+country = "Bolivia";
+country = "Colombia";
+console.log(country);
+```
+},
+answer:
+%q{
+"Colombia"
+
+The country variable is initially assigned to "Argentina", then reassigned to "Bolivia", then reassigned to "Colombia".
+},
+section_name: "variable-reassignment",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var person = "Frank";
+person = 3;
+console.log(person);
+```
+},
+answer:
+%q{
+3
+
+The person variable was initially assigned to the string "Frank" and then reassigned to the number 3.
+},
+section_name: "variable-reassignment",
+order: 200
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var blah = "meh";
+var motivation = "super!!!";
+blah = motivation;
+console.log(blah);
+```
+},
+answer:
+%q{
+"super!!!"
+
+The blah variable is initially assigned to the "meh" string.  The motivation variable is initially assigned to the "super!!!" string.  blah is then reassigned to the same value that motivation is assigned to (e.g. blah is reassigned to "super!!!").
+},
+section_name: "variable-reassignment",
+order: 300
+).first_or_create
+
+
+# variables-and-values
+
+SectionQuestion.where(
+body:
+%q{
+Identify the variables and values in the following statements:
+
+```javascript
+var hiThere = "greetings";
+var numNum = 55;
+var liar = false;
+```
+},
+answer:
+%q{
+hiThere, numNum, and liar are variables.  "greetings", 55, and false are values.
+
+Variables are assigned to values.
+},
+section_name: "variables-and-values",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var myIq = 10;
+var yourIq = 170;
+console.log(myIq > yourIq);
+```
+},
+answer:
+%q{
+false
+
+The myIq variable is assigned to the value 10.  The yourIq variable is assigned to the value 170.  The boolean condition (myIq > yourIq) evalues to false.
+},
+section_name: "variables-and-values",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var gg = 4;
+var ll = 4;
+console.log(gg === ll);
+```
+},
+answer:
+%q{
+true
+
+The gg and ll variables are both assigned to the value 4.  The === operator returns true when both of the operands are the same.  In this example, gg and ll are the operands and === is the operator.
+
+
+},
+section_name: "variables-and-values",
+order: 300
+).first_or_create
+
+
+# variable-practice
+
+SectionQuestion.where(
+body:
+%q{
+Assign the variable yy to the value "i like ".  Assign the variable zz to the value "whales".  Concatenate the two variables and print the result to the console.
+},
+answer:
+%q{
+var yy = "i like ";
+var zz = "whales";
+console.log(yy + zz);
+},
+section_name: "variable-practice",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+Assign the variable birthYear to the value 1970.  Assign the variable singularityYear to 2032.  Subtract birthYear from singularityYear and print the result to the console.
+},
+answer:
+%q{
+var birthYear = 1970;
+var singularityYear = 2032;
+console.log(singularityYear - birthYear);
+},
+section_name: "variable-practice",
+order: 200
+).first_or_create
+
+
+# more-variable-reassignment
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var ww = 3;
+ww = ww - 2;
+console.log(ww);
+```
+},
+answer:
+%q{
+```javascript
+1
+```
+
+The ww variable is initially assigned to 3.  ww is then reassigned to 1 (the right side of the equation, ww - 2, is executed first, and then ww is reassigned).  Then ww is printed to the console.
+},
+section_name: "more-variable-reassignment",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var lala = 66;
+lala -= 3;
+console.log(lala);
+```
+},
+answer:
+%q{
+```javascript
+63
+```
+
+lala is initially assigned to 66.  lala is then reassigned to lala minus 3, or 63.  lala -= 3 is the same as lala = lala = lala - 3.
+
+```javascript
+lala = lala - 3; // reassigns lala to lala minus 3
+lala -= 3; // shorthand notation for lala = lala - 3
+```
+},
+section_name: "more-variable-reassignment",
+order: 200
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var counter = 4;
+counter++;
+console.log(counter);
+```
+},
+answer:
+%q{
+```javascript
+5
+```
+
+counter is initially assigned to 4 and then reassigned to counter + 1.  counter++ is shorthand notation for counter = counter + 1.  Shorthand notation is useful for experienced programmers to complete common tasks with less typing.  Shorthand notation is difficult for new programmers because there are multiple ways of writing the same thing (and the shorthand notation is usually less clear).
+},
+section_name: "more-variable-reassignment",
+order: 300
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+Show how the following statment can be written differently with the two different shorthand notations.
+
+```javascript
+var sleepy;
+sleepy = sleepy + 1;
+```
+},
+answer:
+%q{
+```javascript
+sleepy += 1;
+```
+
+OR
+
+```javascript
+sleepy++;
+```
+},
+section_name: "more-variable-reassignment",
+order: 400
+).first_or_create
 
 #SectionQuestion.where(
 #body:
