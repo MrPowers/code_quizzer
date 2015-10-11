@@ -419,7 +419,9 @@ console.log(myIq > yourIq);
 },
 answer:
 %q{
+```javascript
 false
+```
 
 The myIq variable is assigned to the value 10.  The yourIq variable is assigned to the value 170.  The boolean condition (myIq > yourIq) evalues to false.
 },
@@ -440,11 +442,11 @@ console.log(gg === ll);
 },
 answer:
 %q{
+```javascript
 true
+```
 
 The gg and ll variables are both assigned to the value 4.  The === operator returns true when both of the operands are the same.  In this example, gg and ll are the operands and === is the operator.
-
-
 },
 section_name: "variables-and-values",
 order: 300
@@ -460,9 +462,11 @@ Assign the variable yy to the value "i like ".  Assign the variable zz to the va
 },
 answer:
 %q{
+```javascript
 var yy = "i like ";
 var zz = "whales";
 console.log(yy + zz);
+```
 },
 section_name: "variable-practice",
 order: 100
@@ -526,7 +530,7 @@ answer:
 63
 ```
 
-lala is initially assigned to 66.  lala is then reassigned to lala minus 3, or 63.  lala -= 3 is the same as lala = lala = lala - 3.
+lala is initially assigned to 66.  lala is then reassigned to lala minus 3, or 63.  lala -= 3 is the same as lala - 3.
 
 ```javascript
 lala = lala - 3; // reassigns lala to lala minus 3
