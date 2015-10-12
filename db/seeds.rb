@@ -592,6 +592,85 @@ section_name: "more-variable-reassignment",
 order: 400
 ).first_or_create
 
+
+# introduction-to-types
+
+SectionQuestion.where(
+body:
+%q{
+What does the following statement print to the console?
+
+```javascript
+console.log(typeof("gg"));
+```
+},
+answer:
+%q{
+"string"
+
+"gg" is a string.
+},
+section_name: "introduction-to-types",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following statement print to the console?
+
+```javascript
+console.log(typeof(true));
+```
+},
+answer:
+%q{
+"boolean"
+
+true is a boolean value.
+},
+section_name: "introduction-to-types",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following statement print to the console?
+
+```javascript
+console.log(typeof(3) === "number");
+```
+},
+answer:
+%q{
+true
+
+typeof(3) returns "number", which is equivalent to the string "number".
+},
+section_name: "introduction-to-types",
+order: 300
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following statement print to the console?
+
+```javascript
+console.log(typeof(typeof(78)));
+```
+},
+answer:
+%q{
+"string"
+
+typeof(78) is executed first and returns the string "number", so typeof(typeof(78)) simplifies to typeof("number").  typeof("number") returns "string".
+},
+section_name: "introduction-to-types",
+order: 400
+).first_or_create
+
 #SectionQuestion.where(
 #body:
 #%q{

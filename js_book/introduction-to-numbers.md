@@ -7,8 +7,6 @@ JavaScript has numbers like 8, 45607, and 4.32.  The numbers can be added and su
 4.3 - 1.1
 ```
 
-Numbers are one of the 7 different types in the JavaScript programming language.  The other data types will be introduced in later sections.
-
 Numbers can be multipled and divided:
 
 ```javascript
