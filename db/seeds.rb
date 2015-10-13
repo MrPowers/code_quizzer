@@ -18,6 +18,20 @@ end
 # stuff to be seeded in all environments
 #############################################
 
+#############################################
+# STUDENT WEBPAGES
+#############################################
+
+StudentWebpage.where(name: "cinderella", student_id: 1, website_created_at: "2015-10-05").first_or_create
+StudentWebpage.where(name: "colombia", student_id: 1, website_created_at: "2015-10-06").first_or_create
+StudentWebpage.where(name: "learning_git", student_id: 1, website_created_at: "2015-10-13").first_or_create
+
+
+
+#############################################
+# JAVASCRIPT BOOK
+#############################################
+
 # introduction-to-numbers
 
 SectionQuestion.where(
