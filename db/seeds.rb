@@ -671,6 +671,84 @@ section_name: "introduction-to-types",
 order: 400
 ).first_or_create
 
+
+# importance-of-precise-language
+
+SectionQuestion.where(
+body:
+%q{
+Describe the following code using precise language.
+
+```javascript
+var yummy;
+yummy = "cookies";
+```
+},
+answer:
+%q{
+The variable yummy is declared.  yummy is assigned to the value "cookies".
+},
+section_name: "importance-of-precise-language",
+order: 100
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+Describe the following code using precise language.
+
+```javascript
+var nice = "spa weekend!";
+console.log(nice);
+```
+},
+answer:
+%q{
+The variable nice is declared and assigned to the value "spa weekend!".  The value that is assigned to the variable nice is then printed to the console.
+},
+section_name: "importance-of-precise-language",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+Identify the operands and operator and in the following statment.
+
+```javascript
+3 * 45;
+```
+},
+answer:
+%q{
+* is the operator.
+
+3 and 45 are the operands.
+},
+section_name: "importance-of-precise-language",
+order: 300
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+Identify the operand and operator and in the following statment.
+
+```javascript
+typeof(4.44);
+```
+},
+answer:
+%q{
+typeof() is the operator.
+
+4.44 is the operand.
+},
+section_name: "importance-of-precise-language",
+order: 400
+).first_or_create
+
 #SectionQuestion.where(
 #body:
 #%q{
