@@ -1047,6 +1047,235 @@ section_name: "introduction-to-arrays",
 order: 500
 ).first_or_create
 
+
+
+# while-loops
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var counter = 25;
+while (counter < 28) {
+  console.log("The counter is " + counter);
+  counter = counter + 1;
+}
+```
+},
+answer:
+%q{
+<pre>
+The counter is 25
+The counter is 26
+The counter is 27
+</pre>
+},
+section_name: "while-loops",
+order: 100
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var i = 0;
+while (i < 3) {
+  i++;
+  console.log("I like " + i);
+}
+```
+},
+answer:
+%q{
+<pre>
+I like 1
+I like 2
+I like 3
+</pre>
+
+The variable i is incremented before the console.log statement so the results are slightly different from what we've seen so far.
+},
+section_name: "while-loops",
+order: 200
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+```javascript
+var sum = 0;
+var counter = 0;
+while (counter < 5) {
+  sum = sum + counter;
+  counter = counter + 1;
+}
+console.log(sum);
+```
+},
+answer:
+%q{
+This loops adds the numbers 0, 1, 2, 3, and 4, and assigned the result (10) to the sum variable.  This example is a bit more complex because two variables are being reassigned for each loop iteration.
+},
+section_name: "while-loops",
+order: 300
+).first_or_create
+
+
+# infinite-loops
+
+SectionQuestion.where(
+body:
+%q{
+Describe if this is an infinite loop or not.
+
+```javascript
+x = 4;
+while (x === 4) {
+  console.log("will I terminate?");
+}
+```
+},
+answer:
+%q{
+This is an infinite loop because the boolean condidion (4 === 4) always evaluates to true.
+},
+section_name: "infinite-loops",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+Describe if this is an infinite loop or not.
+
+```javascript
+var counter = 0;
+while (counter < 4) {
+  console.log("give me chicken");
+}
+```
+},
+answer:
+%q{
+The counter variable is assigned to 0 and is never reassigned, so the boolean condition (0 < 4) always evaluates to true and the loop continues forever.
+},
+section_name: "infinite-loops",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+Describe if this is an infinite loop or not.
+
+```javascript
+var counter = 0;
+var i = 0;
+while (counter < 100) {
+  console.log("I like Indian food");
+  i++;
+}
+```
+},
+answer:
+%q{
+Yes, this is an infinite loop.
+
+The i variable is incremented for each loop iteration, but the counter variable is unchanged, so the boolean condition is always true and the loop iterates forever.
+},
+section_name: "infinite-loops",
+order: 300
+).first_or_create
+
+
+# while-loops-with-arrays
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var colors = ["red", "blue"];
+i = 0;
+while (i < colors.length) {
+  console.log(colors[i] + " is pretty")
+  i++;
+}
+```
+},
+answer:
+%q{
+<pre>
+red is pretty
+blue is pretty
+</pre>
+
+This loop iterates through every element in the colors array and prints them to the console.
+},
+section_name: "while-loops-with-arrays",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var funNumbers = [2, 4, 6];
+result = 0;
+i = 0;
+while (i < funNumbers.length) {
+  result = result + funNumbers[i];
+  i++;
+}
+console.log(result);
+```
+},
+answer:
+%q{
+12
+
+This loop sums every number in the funNumbers array.
+},
+section_name: "while-loops-with-arrays",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var yummy = ["chi", "mi", "changa"];
+result = "";
+i = 0;
+while (i < yummy.length) {
+  result = result + yummy[i];
+  i++;
+}
+console.log(result);
+```
+},
+answer:
+%q{
+chimichanga
+
+This loop concatenates every string in the yummy array into a single string.  The string "chimichanga" is printed to the console.
+},
+section_name: "while-loops-with-arrays",
+order: 300
+).first_or_create
+
+
 #SectionQuestion.where(
 #body:
 #%q{
