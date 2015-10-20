@@ -11,7 +11,10 @@ module JsBook; class Sections
       DirectedGraph::Edge.new('variables-and-values', 'variable-practice'),
       DirectedGraph::Edge.new('variable-practice', 'more-variable-reassignment'),
       DirectedGraph::Edge.new('more-variable-reassignment', 'introduction-to-types'),
-      DirectedGraph::Edge.new('more-variable-reassignment', 'importance-of-precise-language')
+      DirectedGraph::Edge.new('more-variable-reassignment', 'importance-of-precise-language'),
+      DirectedGraph::Edge.new('more-variable-reassignment', 'importance-of-precise-language'),
+      DirectedGraph::Edge.new('importance-of-precise-language', 'if-statements'),
+      DirectedGraph::Edge.new('introduction-to-types', 'if-statements')
     ]
     graph = DirectedGraph::Graph.new(edges)
     graph.sorted_vertices

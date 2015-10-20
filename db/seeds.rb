@@ -763,6 +763,110 @@ section_name: "importance-of-precise-language",
 order: 400
 ).first_or_create
 
+# if-statements
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+console.log("A B C");
+var singer = "michael";
+if (singer === "michael") {
+  console.log("It's easy as 1 2 3");
+}
+console.log("It's simple as do re me");
+```
+},
+answer:
+%q{
+<pre>
+A B C
+It's easy as 1 2 3
+It's simple as do re me
+</pre>
+
+The variable singer is assigned to the value "michael".  The string "michael" is the same as the other string "michael" so the code block associated with the if statement is executed.
+},
+section_name: "if-statements",
+order: 100
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+console.log("I like");
+if (32 > 55) {
+  console.log("evil clowns and");
+}
+console.log("funny jokes");
+```
+},
+answer:
+%q{
+<pre>
+I like
+funny jokes
+</pre>
+
+The conditional 32 > 55 evaluates to false, so the string "evil clowns and" is not printed to the console.
+},
+section_name: "if-statements",
+order: 200
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var y = "cypress hill";
+if (7 === 7) {
+  y = "house of pain";
+}
+console.log(y);
+```
+},
+answer:
+%q{
+"house of pain"
+
+The boolean condition 7 === 7 evaluates to true so the code block associated with the if statement is executed and the y variable is reassigned to the string "house of pain".
+},
+section_name: "if-statements",
+order: 300
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var number = 5;
+if (number > 10) {
+  number = number + 4;
+}
+console.log(number);
+```
+},
+answer:
+%q{
+5
+
+The variable number is assigned to the value 5.  The boolean condition (number > 10) evaluates to false so the code block associated with the if statement is not executed and the number variable is not reassigned.  The number variable is still assigned to 5 when it is printed to the console.
+},
+section_name: "if-statements",
+order: 400
+).first_or_create
+
 #SectionQuestion.where(
 #body:
 #%q{
