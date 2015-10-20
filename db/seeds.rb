@@ -867,6 +867,186 @@ section_name: "if-statements",
 order: 400
 ).first_or_create
 
+
+# if-else-statements
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+if (5 === 6) {
+  console.log("i get down in colombia");
+} else {
+  console.log("and look funny");
+}
+```
+},
+answer:
+%q{
+"and look funny"
+
+The boolean condition (5 === 6) evaluates to false so the code associated with the else keyword is executed.
+},
+section_name: "if-else-statements",
+order: 100
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var me = "gringo";
+if ("gringo" === me) {
+  console.log("me llamo mateo");
+} else {
+  console.log("and my Spanish sucks");
+}
+```
+},
+answer:
+%q{
+me llamo mateo
+
+The boolean condition ("gringo" === me) evaluates to true so the code block associated with the if keyword is executed.
+},
+section_name: "if-else-statements",
+order: 200
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var bestNumber = 8;
+if (bestNumber / 2 / 2 === 2) {
+  console.log("Dan Ostrov is awesome");
+} else {
+  console.log("I love math");
+}
+```
+},
+answer:
+%q{
+Dan Ostrov is awesome
+
+The boolean condition (bestNumber / 2 / 2 === 2) evaluates to true so the code associated with the if condition is executed.
+},
+section_name: "if-else-statements",
+order: 300
+).first_or_create
+
+
+# introduction-to-arrays
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var cars = ["toyota", "honda", "volvo"];
+console.log(cars[1]);
+```
+},
+answer:
+%q{
+honda
+
+Index position 1 corresponds with the second element of the array, which is the string "honda".
+},
+section_name: "introduction-to-arrays",
+order: 100
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var cars = ["toyota", "honda", "volvo"];
+console.log(cars[1]);
+```
+},
+answer:
+%q{
+honda
+
+Index position 1 corresponds with the second element of the array, which is the string "honda".
+},
+section_name: "introduction-to-arrays",
+order: 200
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+Print the first element of the following array to the console.
+
+```javascript
+var simpsons = ["homer", "lisa", "bart"];
+```
+},
+answer:
+%q{
+console.log(simpsons[0]);
+
+Index position 0 corresponds with the first element of the array.
+},
+section_name: "introduction-to-arrays",
+order: 300
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var fun = ["party"];
+console.log(fun.length);
+```
+},
+answer:
+%q{
+1
+
+There is only one element in the party array, so the length property returns 1.
+},
+section_name: "introduction-to-arrays",
+order: 400
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var arrestedDev = ["tobias", "michael", "gob"];
+console.log(arrestedDev[arrestedDev.length - 1]);
+```
+},
+answer:
+%q{
+gob
+
+The arrestedDev array has three elements, so the length property returns 3.  The length of an array minus one equals the index position of the last element in the array :)
+},
+section_name: "introduction-to-arrays",
+order: 500
+).first_or_create
+
 #SectionQuestion.where(
 #body:
 #%q{
