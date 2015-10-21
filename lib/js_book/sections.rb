@@ -19,7 +19,8 @@ module JsBook; class Sections
       DirectedGraph::Edge.new('if-else-statements', 'introduction-to-arrays'),
       DirectedGraph::Edge.new('introduction-to-arrays', "while-loops"),
       DirectedGraph::Edge.new("while-loops", 'infinite-loops'),
-      DirectedGraph::Edge.new('while-loops', 'while-loops-with-arrays')
+      DirectedGraph::Edge.new('while-loops', 'while-loops-with-arrays'),
+      DirectedGraph::Edge.new('while-loops-with-arrays', 'more-arrays')
     ]
     graph = DirectedGraph::Graph.new(edges)
     graph.sorted_vertices

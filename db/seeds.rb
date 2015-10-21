@@ -1276,6 +1276,120 @@ order: 300
 ).first_or_create
 
 
+# more-arrays
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var nums = [8, 1, 3];
+nums.push(99);
+console.log(nums);
+```
+},
+answer:
+%q{
+```javascript
+[8, 1, 3, 99]
+```
+
+The push method can be used to add elements to the end of an array.
+},
+section_name: "more-arrays",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var blah = [];
+blah.push("bat", "fat");
+console.log(blah);
+```
+},
+answer:
+%q{
+```javascript
+["bat", "fat"]
+```
+
+The blah variable is initially assigned to the empty array.  The push method is then used to add the "bat" and "fat" strings to the array.
+},
+section_name: "more-arrays",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var liz = ["silly"];
+liz.push("crazy", "funny");
+console.log(liz.length);
+```
+},
+answer:
+%q{
+3
+
+The liz variable is initially assigned to an array with one element.  Two additional elements are added to the liz array, so the length is 3.
+},
+section_name: "more-arrays",
+order: 300
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var rain = [];
+rain.push("wet");
+rain[0] = "fun";
+console.log(rain);
+```
+},
+answer:
+%q{
+```javascript
+["fun"]
+```
+
+The rain variable is initially assigned to the empty array.  The "wet" string is then added to the rain array.  The first element of the rain array ("wet") is then replaced with the string "fun".  The rain array is then printed to the console.
+},
+section_name: "more-arrays",
+order: 400
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var awesome = ["programming", "is", "fun"];
+console.log(awesome.join(" "));
+```
+},
+answer:
+%q{
+programming is fun
+
+The join() method concatenates all the elements of the array into a single string.
+},
+section_name: "more-arrays",
+order: 500
+).first_or_create
+
+
 #SectionQuestion.where(
 #body:
 #%q{
