@@ -970,27 +970,6 @@ order: 100
 SectionQuestion.where(
 body:
 %q{
-What does the following code print to the console?
-
-```javascript
-var cars = ["toyota", "honda", "volvo"];
-console.log(cars[1]);
-```
-},
-answer:
-%q{
-honda
-
-Index position 1 corresponds with the second element of the array, which is the string "honda".
-},
-section_name: "introduction-to-arrays",
-order: 200
-).first_or_create
-
-
-SectionQuestion.where(
-body:
-%q{
 Print the first element of the following array to the console.
 
 ```javascript
@@ -1004,7 +983,7 @@ console.log(simpsons[0]);
 Index position 0 corresponds with the first element of the array.
 },
 section_name: "introduction-to-arrays",
-order: 300
+order: 200
 ).first_or_create
 
 SectionQuestion.where(
@@ -1024,7 +1003,7 @@ answer:
 There is only one element in the party array, so the length property returns 1.
 },
 section_name: "introduction-to-arrays",
-order: 400
+order: 300
 ).first_or_create
 
 SectionQuestion.where(
@@ -1044,7 +1023,7 @@ gob
 The arrestedDev array has three elements, so the length property returns 3.  The length of an array minus one equals the index position of the last element in the array :)
 },
 section_name: "introduction-to-arrays",
-order: 500
+order: 400
 ).first_or_create
 
 
@@ -1390,6 +1369,97 @@ order: 500
 ).first_or_create
 
 
+# introduction-to-functions
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+function subtract(x, y) {
+  return(x - y);
+}
+var r = subtract(100, 4);
+console.log(r);
+```
+},
+answer:
+%q{
+96
+
+The subtract function is defined and programmed to take two arguments.  The subtract function is then invoked with the arguments 100 and 4 and the resulting output is assigned to the variable r.  r is printed to the console.
+},
+section_name: "introduction-to-functions",
+order: 100
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+function inchesToCentimeters(n) {
+  return(n * 2.54);
+}
+var r = inchesToCentimeters(10);
+console.log(r);
+},
+answer:
+%q{
+25.4
+
+The inchesToCentimeters function converts inches to centimeters.  10 inches is equivalent to 25.4 centimeters.
+},
+section_name: "introduction-to-functions",
+order: 200
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+function stringLength(s) {
+  return(s.length);
+}
+var r = stringLength("cool");
+console.log(r);
+},
+answer:
+%q{
+4
+
+The stringLength() function returns the number of characters in a string.  In this example, the stringLength() function is invoked with the argument "cool" and returns the integer 4.
+},
+section_name: "introduction-to-functions",
+order: 300
+).first_or_create
+
+
+# variable-scope
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+
+```
+},
+answer:
+%q{
+},
+section_name: "variable-scope",
+order: 100
+).first_or_create
+
+
 #SectionQuestion.where(
 #body:
 #%q{
@@ -1397,7 +1467,19 @@ order: 500
 #answer:
 #%q{
 #},
-#section_name: "introduction-to-booleans",
+#section_name: "introduction-to-functions",
 #order: 100
 #).first_or_create
 
+
+var matthew = {
+  firstName: "Matt",
+  lastName: "Powers",
+  fullName: function () {
+    return(this.firstName + " " + this.lastName);
+  }
+}
+
+matthew.firstName
+matthew.lastName
+matthew.fullName()
