@@ -1514,6 +1514,72 @@ order: 300
 ).first_or_create
 
 
+# undefined
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var x = 11;
+console.log(x);
+```
+},
+answer:
+%q{
+11
+
+The variable x is assigned to the value 11 and is then printed to the console.
+},
+section_name: "undefined",
+order: 100
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var lol;
+var zyz;
+console.log(lol);
+```
+},
+answer:
+%q{
+undefined
+
+The variable lol is declared but is not assigned to any value.  When variables are declared, they are automatically assigned to undefined.
+},
+section_name: "undefined",
+order: 200
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+function fullName(x, y) {
+  x + " " + y;
+}
+console.log(fullName());
+```
+},
+answer:
+%q{
+undefined
+
+The fullName() function does not use the return keyword, so nothing is returned from the function.  JavaScript returns undefined from a function when the return keyword does not specify a return value.
+},
+section_name: "undefined",
+order: 300
+).first_or_create
 
 #SectionQuestion.where(
 #body:
