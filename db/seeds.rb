@@ -1581,6 +1581,86 @@ section_name: "undefined",
 order: 300
 ).first_or_create
 
+
+# anonymous-functions
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var iLike = function(x) {
+  return("I like " + x);
+}
+iLike("pineapples");
+```
+},
+answer:
+%q{
+I like pineapples
+
+The variable iLike is assigned to an anonymous function that takes one argument and returns a string.
+},
+section_name: "anonymous-functions",
+order: 100
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var multiply = function(x, y) {
+  return(x * y);
+}
+```
+var r = multiply(10, 3);
+console.log(r);
+},
+answer:
+%q{
+30
+
+The multiply variable is assigned to an anonymous function that takes two arguments and returns the product of the arguments.
+},
+section_name: "anonymous-functions",
+order: 200
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var beHappy = function() {
+  console.log("just chill");
+}
+```
+console.log(beHappy);
+},
+answer:
+%q{
+```javascript
+function() {
+  console.log("just chill");
+}
+```
+
+The beHappy variable is assigned to a function and it is common to accidentally return a function by forgetting to invoke it.  This is what the console.log statement would look like if the function was invoked.
+
+```javascript
+console.log(beHappy());
+```
+},
+section_name: "anonymous-functions",
+order: 300
+).first_or_create
+
 #SectionQuestion.where(
 #body:
 #%q{

@@ -23,7 +23,8 @@ module JsBook; class Sections
       DirectedGraph::Edge.new('while-loops-with-arrays', 'more-arrays'),
       DirectedGraph::Edge.new('more-arrays', 'introduction-to-functions'),
       DirectedGraph::Edge.new('introduction-to-functions', 'variable-scope'),
-      DirectedGraph::Edge.new('variable-scope', 'undefined')
+      DirectedGraph::Edge.new('variable-scope', 'undefined'),
+      DirectedGraph::Edge.new('undefined', 'anonymous-functions')
     ]
     graph = DirectedGraph::Graph.new(edges)
     graph.sorted_vertices

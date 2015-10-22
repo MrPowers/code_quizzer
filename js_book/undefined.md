@@ -34,3 +34,11 @@ var result = add(44, 55);
 result === undefined; // true
 ```
 
+undefined is a separate type:
+
+```javascript
+typeof(undefined); // "undefined"
+```
+
+Strings ("bob", "i like cheese"), numbers (4.55, 77), and booleans (true, false) are other types we've already covered in this book.
+
