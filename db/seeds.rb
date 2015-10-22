@@ -1449,15 +1449,70 @@ body:
 What does the following code print to the console?
 
 ```javascript
-
+var x = "sky";
+function moon() {
+  return("I live in the " + x);
+}
+console.log(moon());
 ```
 },
 answer:
 %q{
+I live in the sky
+
+The variable x is not defined within a function, so it is accessible outside of functions and within them.  x is accessible within in the moon() function.
 },
 section_name: "variable-scope",
 order: 100
 ).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+function pretty() {
+  var look = "hipsters";
+  return("I like " + look);
+}
+console.log(look);
+```
+},
+answer:
+%q{
+This code raises and exception.  The look variable is defined within the pretty() function and is only accessible within the function.  console.log(pretty()) will work because the look variable is being used within the function, but look cannot be accessed outside of the function.
+},
+section_name: "variable-scope",
+order: 200
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var coolCat = "garfield";
+function meow() {
+  return(coolCat + " likes lasagna");
+}
+console.log(meow());
+console.log(coolCat);
+```
+},
+answer:
+%q{
+garfield likes lasagna
+garfield
+
+The coolCat variable is assigned to the "garfield" string and can be used within the meow() function.  The coolCat variable can also be used outside of the meow() function.
+},
+section_name: "variable-scope",
+order: 300
+).first_or_create
+
 
 
 #SectionQuestion.where(
@@ -1471,15 +1526,3 @@ order: 100
 #order: 100
 #).first_or_create
 
-
-var matthew = {
-  firstName: "Matt",
-  lastName: "Powers",
-  fullName: function () {
-    return(this.firstName + " " + this.lastName);
-  }
-}
-
-matthew.firstName
-matthew.lastName
-matthew.fullName()
