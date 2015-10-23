@@ -1661,6 +1661,222 @@ section_name: "anonymous-functions",
 order: 300
 ).first_or_create
 
+
+# introduction-to-objects
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var dog = {
+  name: "fido",
+  speak: "ruff"
+}
+console.log(dog.speak);
+},
+answer:
+%q{
+ruff
+
+The dog variable is declared and assigned to an object with the name and speak properties.  Dot notation is used to access the value associated with the speak property and this value is printed to the console.
+},
+section_name: "introduction-to-objects",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var cat = {
+  name: "lala",
+  sound: function() {
+    return(this.name + " meow");
+  }
+}
+console.log(cat.sound());
+},
+answer:
+%q{
+lala meow
+
+The sound property is assigned to an anonymous function.  The "this" keyword refers to the object that's assigned to the cat variable in this example.
+},
+section_name: "introduction-to-objects",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var joe = {
+  weightKg: 70,
+  heightMeters: 1.75,
+  bodyMassIndex: function() {
+    var r = this.weightKg / (this.heightMeters * this.heightMeters);
+    return(r);
+  }
+}
+console.log(joe.bodyMassIndex());
+},
+answer:
+%q{
+22.86 (approximately)
+
+The joe variable is assigned to an object that has weightKg and heightMeters properties.  The bodyMassIndex is used to calculate the body mass index.
+},
+section_name: "introduction-to-objects",
+order: 300
+).first_or_create
+
+
+# math-object
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code return?
+
+```javascript
+Math.min(8, 2, 34);
+```
+},
+answer:
+%q{
+2
+
+The smallest value out of all the arguments is 2.
+},
+section_name: "math-object",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code return?
+
+```javascript
+Math.sqrt(16);
+```
+},
+answer:
+%q{
+4
+
+The Math.sqrt() method takes the square root of the argument.
+},
+section_name: "math-object",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code return?
+
+```javascript
+Math.round(18.87);
+```
+},
+answer:
+%q{
+19
+
+The Math.round() method rounds the number to the nearest integer.
+},
+section_name: "math-object",
+order: 300
+).first_or_create
+
+
+# for-loops
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+var weird = ['sponge', 'bob'];
+var result = "";
+for(var i = 0; i < weird.length; i++) {
+  result = result + weird[i];
+}
+console.log(result);
+},
+answer:
+%q{
+spongebob
+
+The for loop iterates through every element of the weird array and concatenates each string in the array with the result string.  After the loop is finished, the result is printed to the console.
+},
+section_name: "for-loops",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var nums = [1, 1, 2, 3, 5, 8];
+var result = 0;
+for(var i = 0; i < nums.length; i++) {
+  result = result + nums[i];
+}
+console.log(result);
+```
+},
+answer:
+%q{
+20
+
+The for loop iterates through every element of the nums array and tracks the running sum in the result variable.  After the loop is finished, the result variable is printed to the console.
+},
+section_name: "for-loops",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+Write a for loop that prints the same result to the console as this while loop.
+
+```javascript
+var smarties = ['knuth', 'joy'];
+var i = 0;
+while(i < smarties.length) {
+  console.log(smarties[i] + " is smart!");
+  i++;
+}
+```
+},
+answer:
+%q{
+```javascript
+var smarties = ['knuth', 'joy'];
+for(var i = 0; i < smarties.length; i++) {
+  console.log(smarties[i] + " is smart!");
+}
+```
+
+The for loop is similar to the while loop, but it only takes 4 lines of code instead of 6.
+},
+section_name: "for-loops",
+order: 300
+).first_or_create
+
+
+# nested-arrays
+
 #SectionQuestion.where(
 #body:
 #%q{
