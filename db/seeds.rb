@@ -2289,6 +2289,146 @@ section_name: "truthy-falsy",
 order: 300
 ).first_or_create
 
+
+# and-or-operators
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+console.log(true && false);
+```
+},
+answer:
+%q{
+false
+
+The && operator returns false when one of the operands is false.
+},
+section_name: "and-or-operators",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+console.log(true || false);
+```
+},
+answer:
+%q{
+true
+
+The || operator returns true when one of the operands is true.
+},
+section_name: "and-or-operators",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+console.log(true && true);
+```
+},
+answer:
+%q{
+true
+
+The && operator returns true when both of the operands are true.
+},
+section_name: "and-or-operators",
+order: 300
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+console.log(false || false);
+```
+},
+answer:
+%q{
+false
+
+The || operator returns false when both of the operands are false.
+},
+section_name: "and-or-operators",
+order: 400
+).first_or_create
+
+
+# functions-with-array-arguments
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+function maxFinder (numbers) {
+  var max = numbers[0];
+  for (var i = 0; i < numbers.length; i++) {
+    if (max < numbers[i]) {
+      max = numbers[i];
+    }
+  }
+  return(max);
+}
+
+console.log(maxFinder([100, 40, 99]));
+```
+},
+answer:
+%q{
+100
+
+The maxFinder() method iterates over all elements in an array of numbers and returns the largest number.
+},
+section_name: "functions-with-array-arguments",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console.
+
+```javascript
+function likeify(words) {
+  var result = [];
+  for (var i = 0; i < words.length; i++) {
+    result.push("i like " + words[i]);
+  }
+  return(result);
+}
+
+var r = likeify(["math", "programming"]);
+console.log(r);
+```
+},
+answer:
+%q{
+["i like math", "i like programming"]
+
+The likeify function iterates through every element in the words array and prepends "i like" to each string.
+},
+section_name: "functions-with-array-arguments",
+order: 200
+).first_or_create
+
+
 #SectionQuestion.where(
 #body:
 #%q{
