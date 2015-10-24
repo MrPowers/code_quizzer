@@ -2018,6 +2018,92 @@ section_name: "nested-objects",
 order: 300
 ).first_or_create
 
+
+# arrays-of-objects
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var cat = {
+  name: "garfield",
+  mood: "blah"
+}
+
+var crazy = {
+  name: "rambo",
+  mood: "angry"
+}
+
+var random = [cat, crazy];
+
+for (var i = 0; i < random.length; i++) {
+  var thing = random[i];
+  console.log(thing.name + " is " + thing.mood);
+}
+```
+},
+answer:
+%q{
+<pre>
+garfield is blah
+rambo is angry
+</pre>
+
+The for loop iterates through every element in the random array and prints a message to the console.
+},
+section_name: "arrays-of-objects",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var testOne = {
+  score: 63,
+  date: "2015-01-04"
+}
+
+var testTwo = {
+  score: 85,
+  date: "2015-02-07"
+}
+
+var testThree = {
+  score: 74,
+  date: "2015-05-10"
+}
+
+var tests = [testOne, testTwo, testThree];
+
+countPassingTests = 0;
+
+for (var i = 0; i < tests.length; i++) {
+  var test = tests[i];
+  if (test.score > 65) {
+    countPassingTests++;
+  }
+}
+
+console.log(countPassingTests);
+```
+},
+answer:
+%q{
+2
+
+The for loop iterates over all the tests and increments the countPassingTests variable whenever the score is greater than 65.  The countPassingTests variable is then printed to the console.
+},
+section_name: "arrays-of-objects",
+order: 200
+).first_or_create
+
+
 #SectionQuestion.where(
 #body:
 #%q{
