@@ -2104,6 +2104,65 @@ order: 200
 ).first_or_create
 
 
+# type-conversion
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?  Explain.
+
+```javascript
+console.log(true + 3);
+```
+},
+answer:
+%q{
+4
+
+true is converted to 1 and then added to 3.
+},
+section_name: "type-conversion",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?  Explain.
+
+```javascript
+console.log(42 + "3");
+```
+},
+answer:
+%q{
+"423"
+
+The number 42 is converted to a string and then concatenated with "3" to return the string "423".
+},
+section_name: "type-conversion",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?  Explain.
+
+```javascript
+console.log(99 == "99");
+```
+},
+answer:
+%q{
+true
+
+The number 99 is converted to the string "99" before being compared with the other operand for equality.
+},
+section_name: "type-conversion",
+order: 300
+).first_or_create
+
 #SectionQuestion.where(
 #body:
 #%q{
