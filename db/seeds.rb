@@ -1877,6 +1877,147 @@ order: 300
 
 # nested-arrays
 
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var animals = [
+  ["hawk", "bird"],
+  ["shark", "fish"],
+  ["gecko", "lizard"]
+]
+for (var i = 0; i < animals.length; i++) {
+  var r = "A " + animals[i][0] + " is a " + animals[i][1];
+  console.log(r);
+}
+```
+},
+answer:
+%q{
+<pre>
+A hawk is a bird
+A shark is a fish
+A gecko is a lizard
+</pre>
+
+The code iterates through every element of the outer array and prints a formatted string to the console for each iteration.
+},
+section_name: "nested-arrays",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+The following array shows two soccer players and their all-time career goals.
+
+```javascript
+var players = [
+  ["messi", 467],
+  ["ronaldo", 502]
+]
+var totalGoals = 0;
+for (var i = 0; i < players.length; i++) {
+  totalGoals = totalGoals + players[i][1];
+}
+console.log(totalGoals);
+```
+},
+answer:
+%q{
+969
+
+messi and ronaldo have scored a combined 969 goals in their carrers.
+},
+section_name: "nested-arrays",
+order: 200
+).first_or_create
+
+
+# nested-objects
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var billGates = {
+  firstName: "Bill",
+  lastName: "Gates",
+  address: {
+    state: "Washington",
+    city: "Medina"
+  }
+}
+console.log(billGates.address.state);
+```
+},
+answer:
+%q{
+Washington
+
+The billGates object has an address property that points to another object (the nested object).
+},
+section_name: "nested-objects",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+```javascript
+var olympics = {
+  headquarters: "Switzerland",
+  records: {
+    countryWithMostMetals: "United States",
+    personWithMostMetals: "Michael Phelps"
+  }
+}
+
+console.log(olympics.headquarters);
+```
+},
+answer:
+%q{
+Switzerland
+},
+section_name: "nested-objects",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+```javascript
+var bob = {
+  age: 39,
+  favoriteSport: "basketball"
+}
+
+var cindy = {
+  age: 12,
+  favoriteSport: "cricket",
+  father: bob
+}
+
+console.log(cindy.father.favoriteSport);
+```
+},
+answer:
+%q{
+basketball
+
+The bob object is nested in the cindy object (bob is cindy's father).  bob's favorite sport is basketball.
+},
+section_name: "nested-objects",
+order: 300
+).first_or_create
+
 #SectionQuestion.where(
 #body:
 #%q{
