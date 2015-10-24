@@ -32,7 +32,9 @@ module JsBook; class Sections
       DirectedGraph::Edge.new('for-loops', 'nested-arrays'),
       DirectedGraph::Edge.new('nested-arrays', 'nested-objects'),
       DirectedGraph::Edge.new('nested-objects', 'arrays-of-objects'),
-      DirectedGraph::Edge.new('arrays-of-objects', 'type-conversion')
+      DirectedGraph::Edge.new('arrays-of-objects', 'type-conversion'),
+      DirectedGraph::Edge.new('type-conversion', 'infinity-nan'),
+      DirectedGraph::Edge.new('infinity-nan', 'truthy-falsy')
     ]
     graph = DirectedGraph::Graph.new(edges)
     graph.sorted_vertices

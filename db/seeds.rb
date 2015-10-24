@@ -2163,6 +2163,132 @@ section_name: "type-conversion",
 order: 300
 ).first_or_create
 
+
+# infinity-nan
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+console.log(3 / (9 - 9));
+```
+},
+answer:
+%q{
+Infinity
+
+3 / (9 - 9) simplifies to 3 / 0 and anything dividied by zero equals Infinity.
+},
+section_name: "infinity-nan",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+console.log(1 + "farm");
+```
+},
+answer:
+%q{
+1farm
+
+The number 1 is first converted to a string and then concatenated with the string "farm".
+},
+section_name: "infinity-nan",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+console.log(1 / "farm");
+```
+},
+answer:
+%q{
+NaN
+
+JavaScript converts "farm" to a number which results in NaN (Number("farm")).  Any mathematical operation with NaN results in NaN, so 1 / NaN returns NaN.
+},
+section_name: "infinity-nan",
+order: 300
+).first_or_create
+
+
+# truthy-falsy
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+if ([8, 8]) {
+  console.log("I love 8!");
+}
+```
+},
+answer:
+%q{
+I love 8!
+
+The array [8, 8] is truthy in a boolean context.
+},
+section_name: "truthy-falsy",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+if (undefined) {
+  console.log("here comes the sun");
+}
+```
+},
+answer:
+%q{
+Nothing is printed to the console because undefined is falsy.
+},
+section_name: "truthy-falsy",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var party = "dance";
+while (party) {
+  console.log("woo hoo!");
+  party = "";
+}
+```
+},
+answer:
+%q{
+woo hoo!
+
+The party variable is initially assigned to the string "dance" which is truthy in a boolean context.  After the first iteration, the party variable is reassigned to the empty string, which is falsy, so the while loop is exited.
+},
+section_name: "truthy-falsy",
+order: 300
+).first_or_create
+
 #SectionQuestion.where(
 #body:
 #%q{
