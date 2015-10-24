@@ -2429,6 +2429,53 @@ order: 200
 ).first_or_create
 
 
+# while-loops-with-if
+
+SectionQuestion.where(
+body:
+%q{
+},
+answer:
+%q{
+},
+section_name: "while-loops-with-if",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+},
+answer:
+%q{
+},
+section_name: "while-loops-with-if",
+order: 200
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+},
+answer:
+%q{
+},
+section_name: "while-loops-with-if",
+order: 300
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+},
+answer:
+%q{
+},
+section_name: "while-loops-with-if",
+order: 400
+).first_or_create
+
+
 #SectionQuestion.where(
 #body:
 #%q{
