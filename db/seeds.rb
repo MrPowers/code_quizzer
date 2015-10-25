@@ -2578,6 +2578,57 @@ order: 300
 ).first_or_create
 
 
+# map-function
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var r = [25, 64].map(function (n) {
+  return(Math.sqrt(n));
+});
+console.log(r);
+```
+},
+answer:
+%q{
+```javascript
+[5, 8]
+```
+
+The map() function iterates through every number in the array and creates a new array with the square root of every number.
+},
+section_name: "map-function",
+order: 100
+).first_or_create
+
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var r = ["leap", "bull"].map(function (s) {
+  return(s + " frog");
+});
+```
+},
+answer:
+%q{
+```javascript
+["leap frog", "bull frog"]
+```
+
+The map() function iterates through every string in the array and creates a new array with " frog" appended to every string.
+},
+section_name: "map-function",
+order: 200
+).first_or_create
+
+
 #SectionQuestion.where(
 #body:
 #%q{
