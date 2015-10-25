@@ -2434,45 +2434,147 @@ order: 200
 SectionQuestion.where(
 body:
 %q{
+What does the following code print to the console?
+
+```javascript
+function joinIfString (array) {
+  var result = "";
+  for (var i = 0; i < array.length; i++) {
+    if (typeof(array[i]) === "string") {
+      result += array[i];
+    }
+  }
+  return(result);
+}
+
+var planet = ["earth", "fire", 34, undefined, "wind", [], "water"]
+var r = joinIfString(arr);
+console.log(r);
+```
 },
 answer:
 %q{
+earthfirewindwater
+
+The joinIfString() function joins every string in the planet array.
 },
-section_name: "while-loops-with-if",
+section_name: "loops-with-if",
 order: 100
 ).first_or_create
 
 SectionQuestion.where(
 body:
 %q{
+What does the following code print to the console?
+
+```javascript
+function logEvenNumbers (n) {
+  var i = 0;
+  while (i < n) {
+    if (i % 2 === 0) {
+      console.log(i + " is an even number");
+    }
+    i++;
+  }
+}
+logEvenNumbers(5);
 },
 answer:
 %q{
+<pre>
+0 is an even number
+2 is an even number
+4 is an even number
+</pre>
+
+The logEvenNumbers() function iterates through all numbers from 0 to n and prints if the number is even or not.
 },
-section_name: "while-loops-with-if",
+section_name: "loops-with-if",
+order: 200
+).first_or_create
+
+
+# foreach-functions
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var numbers = [11, 22, 33];
+var result = 0;
+numbers.forEach(function(number){
+  result += number;
+})
+console.log(result);
+```
+},
+answer:
+%q{
+66
+
+The forEach() function is used to iterate over all the numbers in the array and add them to the result.
+},
+section_name: "foreach-functions",
+order: 100
+).first_or_create
+
+SectionQuestion.where(
+body:
+%q{
+What does the following code print to the console?
+
+```javascript
+var sacredTetrad = [1, 2, 3, 4];
+var result = [];
+sacredTetrad.forEach(function(number) {
+  result.push(number * number);
+})
+console.log(result);
+```
+},
+answer:
+%q{
+```javascript
+[1, 4, 9, 16]
+```
+
+The forEach() function is used to iterate over the sacredTetrad array and append the square of every number to the result array.
+},
+section_name: "foreach-functions",
 order: 200
 ).first_or_create
 
 SectionQuestion.where(
 body:
 %q{
-},
-answer:
-%q{
-},
-section_name: "while-loops-with-if",
-order: 300
-).first_or_create
+What does the following code print to the console?
 
-SectionQuestion.where(
-body:
-%q{
+```javascript
+var fun = ["dance", "party"];
+var bang = function (x) {
+  console.log(x + "!");
+}
+fun.forEach(bang);
+```
 },
 answer:
 %q{
+<pre>
+dance!
+party!
+</pre>
+
+The forEach() function iterates over every element in the fun array and calls the anonymous function that is assigned to the bang variable.  This code yields and equivalent result.
+
+```javascript
+bang("dance");
+bang("party");
+```
 },
-section_name: "while-loops-with-if",
-order: 400
+section_name: "foreach-functions",
+order: 300
 ).first_or_create
 
 

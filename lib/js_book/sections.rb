@@ -36,7 +36,10 @@ module JsBook; class Sections
       DirectedGraph::Edge.new('type-conversion', 'infinity-nan'),
       DirectedGraph::Edge.new('infinity-nan', 'truthy-falsy'),
       DirectedGraph::Edge.new('truthy-falsy', 'and-or-operators'),
-      DirectedGraph::Edge.new('and-or-operators', 'functions-with-array-arguments')
+      DirectedGraph::Edge.new('and-or-operators', 'functions-with-array-arguments'),
+      DirectedGraph::Edge.new('functions-with-array-arguments', 'loops-with-if'),
+      DirectedGraph::Edge.new('loops-with-if', 'foreach-functions'),
+      DirectedGraph::Edge.new('foreach-function', 'map-function')
     ]
     graph = DirectedGraph::Graph.new(edges)
     graph.sorted_vertices

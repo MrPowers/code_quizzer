@@ -5,10 +5,10 @@ Variables defined within a function are only accessible within that function.  T
 ```javascript
 function nothing() {
   var y = 24;
-  return("greetings");
+  return(y);
 }
-nothing()
-console.log(y)
+nothing() // this works because the nothing() function can access the y variable
+console.log(y) // this raises and error because the y variable cannot be accessed outside the nothing() function
 ```
 
 The y variable is accessible within the nothing() function, but access to this variable is lost once the function is over.

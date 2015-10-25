@@ -1,4 +1,4 @@
-# While Loops with If
+# Loops with If
 
 When an array contains elements with different types, you'll need to use if statments to perform some type checking.  Here is the code to add all the elements in the array that are numbers.
 
