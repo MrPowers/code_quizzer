@@ -1,0 +1,64 @@
+---
+- body: |2
+
+    What are the two boolean values in the JavaScript programming language?
+  answer: |2
+
+    true and false
+- body: |2
+
+    What does the following expression print to the console?
+
+    ```javascript
+    console.log(Boolean(3 > 1));
+    ```
+  answer: |2
+
+    ```javascript
+    true
+    ```
+
+    The number 3 is greater than the number 1, so the boolean condition returns true.  Boolean conditions are statements that return true or false.
+- body: |2
+
+    What does the following expression print to the console?
+
+    ```javascript
+    console.log(4 === 4);
+    ```
+  answer: |2
+
+    ```javascript
+    true
+    ```
+
+    The number 4 equals the number 4, so the boolean condition returns true.
+- body: |2
+
+    What does the following expression print to the console?
+
+    ```javascript
+    console.log("cat" === "cat");
+    ```
+  answer: |2
+
+    ```javascript
+    true
+    ```
+
+    The string "cat" is the same as the other string "cat", so the boolean condition returns true.
+- body: |2
+
+    What does the following expression print to the console?
+
+    ```javascript
+    console.log("fork" === "plate");
+    ```
+  answer: |2
+
+    ```javascript
+    false
+    ```
+
+    The string "fork" is different than the string "plate" so the boolean condition returns false.
+

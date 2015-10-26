@@ -1,0 +1,45 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var country = "Argentina";
+    country = "Bolivia";
+    country = "Colombia";
+    console.log(country);
+    ```
+  answer: |2
+
+    "Colombia"
+
+    The country variable is initially assigned to "Argentina", then reassigned to "Bolivia", then reassigned to "Colombia".
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var person = "Frank";
+    person = 3;
+    console.log(person);
+    ```
+  answer: |2
+
+    3
+
+    The person variable was initially assigned to the string "Frank" and then reassigned to the number 3.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var blah = "meh";
+    var motivation = "super!!!";
+    blah = motivation;
+    console.log(blah);
+    ```
+  answer: |2
+
+    "super!!!"
+
+    The blah variable is initially assigned to the "meh" string.  The motivation variable is initially assigned to the "super!!!" string.  blah is then reassigned to the same value that motivation is assigned to (e.g. blah is reassigned to "super!!!").

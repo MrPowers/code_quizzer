@@ -1,0 +1,49 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    console.log(true && false);
+    ```
+  answer: |2
+
+    false
+
+    The && operator returns false when one of the operands is false.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    console.log(true || false);
+    ```
+  answer: |2
+
+    true
+
+    The || operator returns true when one of the operands is true.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    console.log(true && true);
+    ```
+  answer: |2
+
+    true
+
+    The && operator returns true when both of the operands are true.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    console.log(false || false);
+    ```
+  answer: |2
+
+    false
+
+    The || operator returns false when both of the operands are false.

@@ -21,6 +21,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'directed_graph'
+gem 'titleize'
 
 group :production do
   gem 'rails_12factor'

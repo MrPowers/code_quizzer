@@ -1,0 +1,21 @@
+---
+- body: |2
+
+    Assign the variable yy to the value "i like ".  Assign the variable zz to the value "whales".  Concatenate the two variables and print the result to the console.
+  answer: |2
+
+    ```javascript
+    var yy = "i like ";
+    var zz = "whales";
+    console.log(yy + zz);
+    ```
+- body: |2
+
+    Assign the variable birthYear to the value 1970.  Assign the variable singularityYear to 2032.  Subtract birthYear from singularityYear and print the result to the console.
+  answer: |2
+
+    ```javascript
+    var birthYear = 1970;
+    var singularityYear = 2032;
+    console.log(singularityYear - birthYear);
+    ```

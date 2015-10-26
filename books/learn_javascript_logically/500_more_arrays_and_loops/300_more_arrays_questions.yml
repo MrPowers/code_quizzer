@@ -1,0 +1,77 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var nums = [8, 1, 3];
+    nums.push(99);
+    console.log(nums);
+    ```
+  answer: |2
+
+    ```javascript
+    [8, 1, 3, 99]
+    ```
+
+    The push method can be used to add elements to the end of an array.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var blah = [];
+    blah.push("bat", "fat");
+    console.log(blah);
+    ```
+  answer: |2
+
+    ```javascript
+    ["bat", "fat"]
+    ```
+
+    The blah variable is initially assigned to the empty array.  The push method is then used to add the "bat" and "fat" strings to the array.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var liz = ["silly"];
+    liz.push("crazy", "funny");
+    console.log(liz.length);
+    ```
+  answer: |2
+
+    3
+
+    The liz variable is initially assigned to an array with one element.  Two additional elements are added to the liz array, so the length is 3.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var rain = [];
+    rain.push("wet");
+    rain[0] = "fun";
+    console.log(rain);
+    ```
+  answer: |2
+
+    ```javascript
+    ["fun"]
+    ```
+
+    The rain variable is initially assigned to the empty array.  The "wet" string is then added to the rain array.  The first element of the rain array ("wet") is then replaced with the string "fun".  The rain array is then printed to the console.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var awesome = ["programming", "is", "fun"];
+    console.log(awesome.join(" "));
+    ```
+  answer: |2
+
+    programming is fun
+
+    The join() method concatenates all the elements of the array into a single string.

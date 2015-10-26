@@ -1,0 +1,47 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var animals = [
+      ["hawk", "bird"],
+      ["shark", "fish"],
+      ["gecko", "lizard"]
+    ]
+    for (var i = 0; i < animals.length; i++) {
+      var r = "A " + animals[i][0] + " is a " + animals[i][1];
+      console.log(r);
+    }
+    ```
+  answer: |2
+
+    <pre>
+    A hawk is a bird
+    A shark is a fish
+    A gecko is a lizard
+    </pre>
+
+    The code iterates through every element of the outer array and prints a formatted string to the console for each iteration.
+- body: |2
+
+    What does the following code print to the console?
+
+    The following array shows two soccer players and their all-time career goals.
+
+    ```javascript
+    var players = [
+      ["messi", 467],
+      ["ronaldo", 502]
+    ]
+    var totalGoals = 0;
+    for (var i = 0; i < players.length; i++) {
+      totalGoals = totalGoals + players[i][1];
+    }
+    console.log(totalGoals);
+    ```
+  answer: |2
+
+    969
+
+    messi and ronaldo have scored a combined 969 goals in their carrers.

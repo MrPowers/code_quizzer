@@ -1,0 +1,61 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var numbers = [11, 22, 33];
+    var result = 0;
+    numbers.forEach(function(number){
+      result += number;
+    })
+    console.log(result);
+    ```
+  answer: |2
+
+    66
+
+    The forEach() function is used to iterate over all the numbers in the array and add them to the result.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var sacredTetrad = [1, 2, 3, 4];
+    var result = [];
+    sacredTetrad.forEach(function(number) {
+      result.push(number * number);
+    })
+    console.log(result);
+    ```
+  answer: |2
+
+    ```javascript
+    [1, 4, 9, 16]
+    ```
+
+    The forEach() function is used to iterate over the sacredTetrad array and append the square of every number to the result array.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var fun = ["dance", "party"];
+    var bang = function (x) {
+      console.log(x + "!");
+    }
+    fun.forEach(bang);
+    ```
+  answer: |2
+
+    <pre>
+    dance!
+    party!
+    </pre>
+
+    The forEach() function iterates over every element in the fun array and calls the anonymous function that is assigned to the bang variable.  This code yields and equivalent result.
+
+    ```javascript
+    bang("dance");
+    bang("party");
+    ```

@@ -1,0 +1,37 @@
+---
+- body: |2
+
+    What does the following code return?
+
+    ```javascript
+    Math.min(8, 2, 34);
+    ```
+  answer: |2
+
+    2
+
+    The smallest value out of all the arguments is 2.
+- body: |2
+
+    What does the following code return?
+
+    ```javascript
+    Math.sqrt(16);
+    ```
+  answer: |2
+
+    4
+
+    The Math.sqrt() method takes the square root of the argument.
+- body: |2
+
+    What does the following code return?
+
+    ```javascript
+    Math.round(18.87);
+    ```
+  answer: |2
+
+    19
+
+    The Math.round() method rounds the number to the nearest integer.

@@ -1,5 +1,5 @@
 <div class="challenge-wrapper col-md-8 col-md-offset-2">
-  <%= markdownify(@markdown) %>
+  <%= markdownify(@section.markdown) %>
 
   <table class="table table-bordered">
 
@@ -12,10 +12,10 @@
 
       <tr class="question-row">
         <td class="question">
-          <%= markdownify(question.body) %>
+          <%= markdownify(question["body"]) %>
         </td>
         <td class="answer clickable no-opacity">
-          <%= markdownify(question.answer) %>
+          <%= markdownify(question["answer"]) %>
         </td>
       </tr>
 
@@ -23,12 +23,12 @@
 
   </table>
 
-  <% if @section.previous %>
-    <%= link_to "<-- Previous (#{@section.previous})", js_books_path(section_name: @section.previous) %>
+  <% if @previous_section %>
+    <%= link_to "<-- Previous (#{@previous_section.humanized_name})", js_books_path(section_name: @previous_section.to_param) %>
   <% end %>
 
-  <% if @section.next %>
-    <%= link_to "Next (#{@section.next}) -->", js_books_path(section_name: @section.next), class: "pull-right" %>
+  <% if @next_section %>
+    <%= link_to "Next (#{@next_section.humanized_name}) -->", js_books_path(section_name: @next_section.to_param), class: "pull-right" %>
   <% end %>
 </div>
 

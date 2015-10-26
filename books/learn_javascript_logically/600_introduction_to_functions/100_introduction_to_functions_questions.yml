@@ -1,0 +1,47 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    function subtract(x, y) {
+      return(x - y);
+    }
+    var r = subtract(100, 4);
+    console.log(r);
+    ```
+  answer: |2
+
+    96
+
+    The subtract function is defined and programmed to take two arguments.  The subtract function is then invoked with the arguments 100 and 4 and the resulting output is assigned to the variable r.  r is printed to the console.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    function inchesToCentimeters(n) {
+      return(n * 2.54);
+    }
+    var r = inchesToCentimeters(10);
+    console.log(r);
+  answer: |2
+
+    25.4
+
+    The inchesToCentimeters function converts inches to centimeters.  10 inches is equivalent to 25.4 centimeters.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    function stringLength(s) {
+      return(s.length);
+    }
+    var r = stringLength("cool");
+    console.log(r);
+  answer: |2
+
+    4
+
+    The stringLength() function returns the number of characters in a string.  In this example, the stringLength() function is invoked with the argument "cool" and returns the integer 4.

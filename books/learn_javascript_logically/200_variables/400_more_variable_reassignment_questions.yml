@@ -1,0 +1,73 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var ww = 3;
+    ww = ww - 2;
+    console.log(ww);
+    ```
+  answer: |2
+
+    ```javascript
+    1
+    ```
+
+    The ww variable is initially assigned to 3.  ww is then reassigned to 1 (the right side of the equation, ww - 2, is executed first, and then ww is reassigned).  Then ww is printed to the console.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var lala = 66;
+    lala -= 3;
+    console.log(lala);
+    ```
+  answer: |2
+
+    ```javascript
+    63
+    ```
+
+    lala is initially assigned to 66.  lala is then reassigned to lala minus 3, or 63.  lala -= 3 is the same as lala - 3.
+
+    ```javascript
+    lala = lala - 3; // reassigns lala to lala minus 3
+    lala -= 3; // shorthand notation for lala = lala - 3
+    ```
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var counter = 4;
+    counter++;
+    console.log(counter);
+    ```
+  answer: |2
+
+    ```javascript
+    5
+    ```
+
+    counter is initially assigned to 4 and then reassigned to counter + 1.  counter++ is shorthand notation for counter = counter + 1.  Shorthand notation is useful for experienced programmers to complete common tasks with less typing.  Shorthand notation is difficult for new programmers because there are multiple ways of writing the same thing (and the shorthand notation is usually less clear).
+- body: |2
+
+    Show how the following statment can be written differently with the two different shorthand notations.
+
+    ```javascript
+    var sleepy;
+    sleepy = sleepy + 1;
+    ```
+  answer: |2
+
+    ```javascript
+    sleepy += 1;
+    ```
+
+    OR
+
+    ```javascript
+    sleepy++;
+    ```

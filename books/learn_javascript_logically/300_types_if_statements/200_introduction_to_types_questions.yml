@@ -1,0 +1,49 @@
+---
+- body: |2
+
+    What does the following statement print to the console?
+
+    ```javascript
+    console.log(typeof("gg"));
+    ```
+  answer: |2
+
+    "string"
+
+    "gg" is a string.
+- body: |2
+
+    What does the following statement print to the console?
+
+    ```javascript
+    console.log(typeof(true));
+    ```
+  answer: |2
+
+    "boolean"
+
+    true is a boolean value.
+- body: |2
+
+    What does the following statement print to the console?
+
+    ```javascript
+    console.log(typeof(3) === "number");
+    ```
+  answer: |2
+
+    true
+
+    typeof(3) returns "number", which is equivalent to the string "number".
+- body: |2
+
+    What does the following statement print to the console?
+
+    ```javascript
+    console.log(typeof(typeof(78)));
+    ```
+  answer: |2
+
+    "string"
+
+    typeof(78) is executed first and returns the string "number", so typeof(typeof(78)) simplifies to typeof("number").  typeof("number") returns "string".

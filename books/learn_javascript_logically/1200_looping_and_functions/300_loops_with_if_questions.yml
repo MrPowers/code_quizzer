@@ -1,0 +1,49 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    function joinIfString (array) {
+      var result = "";
+      for (var i = 0; i < array.length; i++) {
+        if (typeof(array[i]) === "string") {
+          result += array[i];
+        }
+      }
+      return(result);
+    }
+
+    var planet = ["earth", "fire", 34, undefined, "wind", [], "water"]
+    var r = joinIfString(arr);
+    console.log(r);
+    ```
+  answer: |2
+
+    earthfirewindwater
+
+    The joinIfString() function joins every string in the planet array.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    function logEvenNumbers (n) {
+      var i = 0;
+      while (i < n) {
+        if (i % 2 === 0) {
+          console.log(i + " is an even number");
+        }
+        i++;
+      }
+    }
+    logEvenNumbers(5);
+  answer: |2
+
+    <pre>
+    0 is an even number
+    2 is an even number
+    4 is an even number
+    </pre>
+
+    The logEvenNumbers() function iterates through all numbers from 0 to n and prints if the number is even or not.

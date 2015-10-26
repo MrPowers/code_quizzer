@@ -1,0 +1,58 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var billGates = {
+      firstName: "Bill",
+      lastName: "Gates",
+      address: {
+        state: "Washington",
+        city: "Medina"
+      }
+    }
+    console.log(billGates.address.state);
+    ```
+  answer: |2
+
+    Washington
+
+    The billGates object has an address property that points to another object (the nested object).
+- body: |2
+
+    ```javascript
+    var olympics = {
+      headquarters: "Switzerland",
+      records: {
+        countryWithMostMetals: "United States",
+        personWithMostMetals: "Michael Phelps"
+      }
+    }
+
+    console.log(olympics.headquarters);
+    ```
+  answer: |2
+
+    Switzerland
+- body: |2
+
+    ```javascript
+    var bob = {
+      age: 39,
+      favoriteSport: "basketball"
+    }
+
+    var cindy = {
+      age: 12,
+      favoriteSport: "cricket",
+      father: bob
+    }
+
+    console.log(cindy.father.favoriteSport);
+    ```
+  answer: |2
+
+    basketball
+
+    The bob object is nested in the cindy object (bob is cindy's father).  bob's favorite sport is basketball.

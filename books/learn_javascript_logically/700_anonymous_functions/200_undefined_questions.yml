@@ -1,0 +1,43 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var x = 11;
+    console.log(x);
+    ```
+  answer: |2
+
+    11
+
+    The variable x is assigned to the value 11 and is then printed to the console.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var lol;
+    var zyz;
+    console.log(lol);
+    ```
+  answer: |2
+
+    undefined
+
+    The variable lol is declared but is not assigned to any value.  When variables are declared, they are automatically assigned to undefined.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    function fullName(x, y) {
+      x + " " + y;
+    }
+    console.log(fullName());
+    ```
+  answer: |2
+
+    undefined
+
+    The fullName() function does not use the return keyword, so nothing is returned from the function.  JavaScript returns undefined from a function when the return keyword does not specify a return value.

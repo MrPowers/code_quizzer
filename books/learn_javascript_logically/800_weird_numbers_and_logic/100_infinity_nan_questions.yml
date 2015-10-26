@@ -1,0 +1,37 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    console.log(3 / (9 - 9));
+    ```
+  answer: |2
+
+    Infinity
+
+    3 / (9 - 9) simplifies to 3 / 0 and anything dividied by zero equals Infinity.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    console.log(1 + "farm");
+    ```
+  answer: |2
+
+    1farm
+
+    The number 1 is first converted to a string and then concatenated with the string "farm".
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    console.log(1 / "farm");
+    ```
+  answer: |2
+
+    NaN
+
+    JavaScript converts "farm" to a number which results in NaN (Number("farm")).  Any mathematical operation with NaN results in NaN, so 1 / NaN returns NaN.

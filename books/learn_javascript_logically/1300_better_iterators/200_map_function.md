@@ -1,6 +1,6 @@
 # Map Function
 
-The map() function is useful for code that iterates over one array and returns another array.  The following example shows how to square every number in an array with forEach() and then we'll rewrite the code with map() to make it cleaner.
+The map() function is useful for code that iterates over one array and returns another array.  The following example shows how to square every number in an array with forEach().  After reviewing the forEach() solution, we'll rewrite the code with map() to make it cleaner.
 
 ```javascript
 var numbers = [2, 4, 6, 8];

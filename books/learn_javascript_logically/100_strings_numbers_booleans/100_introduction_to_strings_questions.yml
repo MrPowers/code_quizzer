@@ -1,0 +1,43 @@
+-
+  body: |
+    What does the following expression print to the console?
+
+    ```javascript
+    console.log("sponge" + "bob");
+    ```
+  answer: |
+    ```javascript
+    "spongebob"
+    ```
+
+    It is called string concatenation when two strings are combined.
+
+-
+  body: |
+    What does the following expression print to the console?
+
+    ```javascript
+    console.log("colombia".length);
+    ```
+
+  answer: |
+    ```javascript
+    8
+    ```
+
+    The "colombia" string has 8 letters, so the length is 8.
+
+-
+  body: |
+    What does the following expression print to the console?
+
+    ```javascript
+    console.log('i am'.length);
+    ```
+
+  answer: |
+    ```javascript
+    4
+    ```
+
+    The 'i am' string has three letters and one space, so the length is 4.  Spaces count!

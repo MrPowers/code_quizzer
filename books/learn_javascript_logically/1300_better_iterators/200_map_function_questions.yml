@@ -1,0 +1,34 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var r = [25, 64].map(function (n) {
+      return(Math.sqrt(n));
+    });
+    console.log(r);
+    ```
+  answer: |2
+
+    ```javascript
+    [5, 8]
+    ```
+
+    The map() function iterates through every number in the array and creates a new array with the square root of every number.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var r = ["leap", "bull"].map(function (s) {
+      return(s + " frog");
+    });
+    ```
+  answer: |2
+
+    ```javascript
+    ["leap frog", "bull frog"]
+    ```
+
+    The map() function iterates through every string in the array and creates a new array with " frog" appended to every string.

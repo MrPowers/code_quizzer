@@ -1,0 +1,47 @@
+-
+  body: |
+    Perform these exercises in the JavaScript console of your favorite web browser.
+
+    What does the following expression print to the console?
+
+    ```javascript
+    console.log(3 + 2);
+    ```
+  answer: |
+    ```javascript
+    5
+    ```
+
+    3 and 2 are called operands and + is the operator.
+
+-
+  body: |
+    What does the following expression print to the console?
+
+    ```javascript
+    console.log(3 + 4 * 2);
+    ```
+
+  answer: |
+    ```javascript
+    11
+    ```
+
+    4 is multiplied by 2 first and the product is added to 3.
+
+-
+  body: |
+    What does the following expression print to the console?
+
+    ```javascript
+    console.log(4.4 - 3.4);
+    ```
+
+  answer: |
+    ```javascript
+    1.0000000000000004
+    ```
+
+    Numbers with decimal points (e.g. 4.4, 1.8) are called floating point numbers. Computers cannot do math with floating point numbers precisely (this is why the answer is slightly different from 1). Integers are numbers without decimal points (e.g. 5 and 5,397) and computers can do math with integers precisely.
+    What does the following expression print to the console?
+

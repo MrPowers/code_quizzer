@@ -1,0 +1,44 @@
+---
+- body: |2
+
+    Describe if this is an infinite loop or not.
+
+    ```javascript
+    x = 4;
+    while (x === 4) {
+      console.log("will I terminate?");
+    }
+    ```
+  answer: |2
+
+    This is an infinite loop because the boolean condidion (4 === 4) always evaluates to true.
+- body: |2
+
+    Describe if this is an infinite loop or not.
+
+    ```javascript
+    var counter = 0;
+    while (counter < 4) {
+      console.log("give me chicken");
+    }
+    ```
+  answer: |2
+
+    The counter variable is assigned to 0 and is never reassigned, so the boolean condition (0 < 4) always evaluates to true and the loop continues forever.
+- body: |2
+
+    Describe if this is an infinite loop or not.
+
+    ```javascript
+    var counter = 0;
+    var i = 0;
+    while (counter < 100) {
+      console.log("I like Indian food");
+      i++;
+    }
+    ```
+  answer: |2
+
+    Yes, this is an infinite loop.
+
+    The i variable is incremented for each loop iteration, but the counter variable is unchanged, so the boolean condition is always true and the loop iterates forever.

@@ -1,0 +1,55 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    var weird = ['sponge', 'bob'];
+    var result = "";
+    for(var i = 0; i < weird.length; i++) {
+      result = result + weird[i];
+    }
+    console.log(result);
+  answer: |2
+
+    spongebob
+
+    The for loop iterates through every element of the weird array and concatenates each string in the array with the result string.  After the loop is finished, the result is printed to the console.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var nums = [1, 1, 2, 3, 5, 8];
+    var result = 0;
+    for(var i = 0; i < nums.length; i++) {
+      result = result + nums[i];
+    }
+    console.log(result);
+    ```
+  answer: |2
+
+    20
+
+    The for loop iterates through every element of the nums array and tracks the running sum in the result variable.  After the loop is finished, the result variable is printed to the console.
+- body: |2
+
+    Write a for loop that prints the same result to the console as this while loop.
+
+    ```javascript
+    var smarties = ['knuth', 'joy'];
+    var i = 0;
+    while(i < smarties.length) {
+      console.log(smarties[i] + " is smart!");
+      i++;
+    }
+    ```
+  answer: |2
+
+    ```javascript
+    var smarties = ['knuth', 'joy'];
+    for(var i = 0; i < smarties.length; i++) {
+      console.log(smarties[i] + " is smart!");
+    }
+    ```
+
+    The for loop is similar to the while loop, but it only takes 4 lines of code instead of 6.

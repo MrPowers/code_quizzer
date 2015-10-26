@@ -1,0 +1,52 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var dog = {
+      name: "fido",
+      speak: "ruff"
+    }
+    console.log(dog.speak);
+  answer: |2
+
+    ruff
+
+    The dog variable is declared and assigned to an object with the name and speak properties.  Dot notation is used to access the value associated with the speak property and this value is printed to the console.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var cat = {
+      name: "lala",
+      sound: function() {
+        return(this.name + " meow");
+      }
+    }
+    console.log(cat.sound());
+  answer: |2
+
+    lala meow
+
+    The sound property is assigned to an anonymous function.  The "this" keyword refers to the object that's assigned to the cat variable in this example.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var joe = {
+      weightKg: 70,
+      heightMeters: 1.75,
+      bodyMassIndex: function() {
+        var r = this.weightKg / (this.heightMeters * this.heightMeters);
+        return(r);
+      }
+    }
+    console.log(joe.bodyMassIndex());
+  answer: |2
+
+    22.86 (approximately)
+
+    The joe variable is assigned to an object that has weightKg and heightMeters properties.  The bodyMassIndex is used to calculate the body mass index.

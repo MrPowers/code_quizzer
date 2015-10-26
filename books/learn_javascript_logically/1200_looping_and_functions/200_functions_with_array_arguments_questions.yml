@@ -1,0 +1,44 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    function maxFinder (numbers) {
+      var max = numbers[0];
+      for (var i = 0; i < numbers.length; i++) {
+        if (max < numbers[i]) {
+          max = numbers[i];
+        }
+      }
+      return(max);
+    }
+
+    console.log(maxFinder([100, 40, 99]));
+    ```
+  answer: |2
+
+    100
+
+    The maxFinder() method iterates over all elements in an array of numbers and returns the largest number.
+- body: |2
+
+    What does the following code print to the console.
+
+    ```javascript
+    function likeify(words) {
+      var result = [];
+      for (var i = 0; i < words.length; i++) {
+        result.push("i like " + words[i]);
+      }
+      return(result);
+    }
+
+    var r = likeify(["math", "programming"]);
+    console.log(r);
+    ```
+  answer: |2
+
+    ["i like math", "i like programming"]
+
+    The likeify function iterates through every element in the words array and prepends "i like" to each string.

@@ -1,0 +1,49 @@
+---
+- body: |2
+
+    Describe the following code using precise language.
+
+    ```javascript
+    var yummy;
+    yummy = "cookies";
+    ```
+  answer: |2
+
+    The variable yummy is declared.  yummy is assigned to the value "cookies".
+- body: |2
+
+    Describe the following code using precise language.
+
+    ```javascript
+    var nice = "spa weekend!";
+    console.log(nice);
+    ```
+  answer: |2
+
+    The variable nice is declared and assigned to the value "spa weekend!".  The value that is assigned to the variable nice is then printed to the console.
+- body: |2
+
+    Identify the operands and operator and in the following statment.
+
+    ```javascript
+    3 * 45;
+    ```
+  answer: |2
+
+    <pre>
+    * is the operator.
+    </pre>
+
+    3 and 45 are the operands.
+- body: |2
+
+    Identify the operand and operator and in the following statment.
+
+    ```javascript
+    typeof(4.44);
+    ```
+  answer: |2
+
+    typeof() is the operator.
+
+    4.44 is the operand.

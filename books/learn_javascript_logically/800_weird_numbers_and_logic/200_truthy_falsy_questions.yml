@@ -1,0 +1,43 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    if ([8, 8]) {
+      console.log("I love 8!");
+    }
+    ```
+  answer: |2
+
+    I love 8!
+
+    The array [8, 8] is truthy in a boolean context.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    if (undefined) {
+      console.log("here comes the sun");
+    }
+    ```
+  answer: |2
+
+    Nothing is printed to the console because undefined is falsy.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var party = "dance";
+    while (party) {
+      console.log("woo hoo!");
+      party = "";
+    }
+    ```
+  answer: |2
+
+    woo hoo!
+
+    The party variable is initially assigned to the string "dance" which is truthy in a boolean context.  After the first iteration, the party variable is reassigned to the empty string, which is falsy, so the while loop is exited.

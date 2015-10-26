@@ -32,141 +32,16 @@ StudentWebpage.where(name: "learning_git", student_id: 1, website_created_at: "2
 # JAVASCRIPT BOOK
 #############################################
 
-# introduction-to-numbers
 
-SectionQuestion.where(
-body:
-%q{
-Perform these exercises in the JavaScript console of your favorite web browser.
+#Book.where(name: "learn_javascript_logically").first_or_create
 
-What does the following expression print to the console?
-
-```javascript
-console.log(3 + 2);
-```
-},
-answer:
-%q{
-```javascript
-5
-```
-
-3 and 2 are called operands and + is the operator.
-},
-section_name: "introduction-to-numbers",
-order: 100
-).first_or_create
+#BookChapter.where(
+  #name: "strings_numbers_booleans",
+  #position: 100
+#).first_or_create
 
 
-SectionQuestion.where(
-body:
-%q{
-What does the following expression print to the console?
 
-```javascript
-console.log(3 + 4 * 2);
-```
-},
-answer:
-%q{
-```javascript
-11
-```
-
-4 is multiplied by 2 first and the product is added to 3.
-},
-section_name: "introduction-to-numbers",
-order: 200
-).first_or_create
-
-SectionQuestion.where(
-body:
-%q{
-What does the following expression print to the console?
-
-```javascript
-console.log(4.4 - 3.4);
-```
-},
-answer:
-%q{
-```javascript
-1.0000000000000004
-```
-
-Numbers with decimal points (e.g. 4.4, 1.8) are called floating point numbers.  Computers cannot do math with floating point numbers precisely (this is why the answer is slightly different from 1).  Integers are numbers without decimal points (e.g. 5 and 5,397) and computers can do math with integers precisely.
-},
-section_name: "introduction-to-numbers",
-order: 300
-).first_or_create
-
-
-# introduction-to-strings
-
-SectionQuestion.where(
-body:
-%q{
-What does the following expression print to the console?
-
-```javascript
-console.log("sponge" + "bob");
-```
-},
-answer:
-%q{
-```javascript
-"spongebob"
-```
-
-It is called string concatenation when two strings are combined.
-},
-section_name: "introduction-to-strings",
-order: 100
-).first_or_create
-
-
-SectionQuestion.where(
-body:
-%q{
-What does the following expression print to the console?
-
-```javascript
-console.log("colombia".length);
-```
-},
-answer:
-%q{
-```javascript
-8
-```
-
-The "colombia" string has 8 letters, so the length is 8.
-},
-section_name: "introduction-to-strings",
-order: 200
-).first_or_create
-
-
-SectionQuestion.where(
-body:
-%q{
-What does the following expression print to the console?
-
-```javascript
-console.log('i am'.length);
-```
-},
-answer:
-%q{
-```javascript
-4
-```
-
-The 'i am' string has three letters and one space, so the length is 4.  Spaces count!
-},
-section_name: "introduction-to-strings",
-order: 300
-).first_or_create
 
 
 # introduction-to-booleans
@@ -2429,7 +2304,7 @@ order: 200
 ).first_or_create
 
 
-# while-loops-with-if
+# loops-with-if
 
 SectionQuestion.where(
 body:

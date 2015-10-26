@@ -1,0 +1,47 @@
+---
+- body: |2
+
+    Identify the variables and values in the following statements:
+
+    ```javascript
+    var hiThere = "greetings";
+    var numNum = 55;
+    var liar = false;
+    ```
+  answer: |2
+
+    hiThere, numNum, and liar are variables.  "greetings", 55, and false are values.
+
+    Variables are assigned to values.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var myIq = 10;
+    var yourIq = 170;
+    console.log(myIq > yourIq);
+    ```
+  answer: |2
+
+    ```javascript
+    false
+    ```
+
+    The myIq variable is assigned to the value 10.  The yourIq variable is assigned to the value 170.  The boolean condition (myIq > yourIq) evalues to false.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var gg = 4;
+    var ll = 4;
+    console.log(gg === ll);
+    ```
+  answer: |2
+
+    ```javascript
+    true
+    ```
+
+    The gg and ll variables are both assigned to the value 4.  The === operator returns true when both of the operands are the same.  In this example, gg and ll are the operands and === is the operator.

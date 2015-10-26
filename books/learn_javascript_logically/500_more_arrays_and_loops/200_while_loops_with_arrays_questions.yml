@@ -1,0 +1,59 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var colors = ["red", "blue"];
+    i = 0;
+    while (i < colors.length) {
+      console.log(colors[i] + " is pretty")
+      i++;
+    }
+    ```
+  answer: |2
+
+    <pre>
+    red is pretty
+    blue is pretty
+    </pre>
+
+    This loop iterates through every element in the colors array and prints them to the console.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var funNumbers = [2, 4, 6];
+    result = 0;
+    i = 0;
+    while (i < funNumbers.length) {
+      result = result + funNumbers[i];
+      i++;
+    }
+    console.log(result);
+    ```
+  answer: |2
+
+    12
+
+    This loop sums every number in the funNumbers array.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var yummy = ["chi", "mi", "changa"];
+    result = "";
+    i = 0;
+    while (i < yummy.length) {
+      result = result + yummy[i];
+      i++;
+    }
+    console.log(result);
+    ```
+  answer: |2
+
+    chimichanga
+
+    This loop concatenates every string in the yummy array into a single string.  The string "chimichanga" is printed to the console.

@@ -1,0 +1,34 @@
+---
+- body: |2
+
+    Declare the variable iAmSilly.
+  answer: |2
+
+    ```javascript
+    var iAmSilly;
+    ```
+- body: |2
+
+    Declare the variable goodPlayer and assign it to the value "Steve Kerr".
+  answer: |2
+
+    ```javascript
+    var goodPlayer;
+    goodPlayer = "Steve Kerr";
+    ```
+
+    The goodPlayer variable can also be declared and assigned on a single line:
+
+    ```javascript
+    var goodPlayer = "Steve Kerr";
+    ```
+- body: |2
+
+    Assign the variable x to the value 3 and assign the variable y to the value 5.  Print the sum of x and y to the console.
+  answer: |2
+
+    ```javascript
+    var x = 3;
+    var y = 5;
+    console.log(x + y);
+    ```

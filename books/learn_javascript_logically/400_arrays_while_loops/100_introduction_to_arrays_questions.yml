@@ -1,0 +1,52 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var cars = ["toyota", "honda", "volvo"];
+    console.log(cars[1]);
+    ```
+  answer: |2
+
+    honda
+
+    Index position 1 corresponds with the second element of the array, which is the string "honda".
+- body: |2
+
+    Print the first element of the following array to the console.
+
+    ```javascript
+    var simpsons = ["homer", "lisa", "bart"];
+    ```
+  answer: |2
+
+    console.log(simpsons[0]);
+
+    Index position 0 corresponds with the first element of the array.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var fun = ["party"];
+    console.log(fun.length);
+    ```
+  answer: |2
+
+    1
+
+    There is only one element in the party array, so the length property returns 1.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    var arrestedDev = ["tobias", "michael", "gob"];
+    console.log(arrestedDev[arrestedDev.length - 1]);
+    ```
+  answer: |2
+
+    gob
+
+    The arrestedDev array has three elements, so the length property returns 3.  The length of an array minus one equals the index position of the last element in the array :)
