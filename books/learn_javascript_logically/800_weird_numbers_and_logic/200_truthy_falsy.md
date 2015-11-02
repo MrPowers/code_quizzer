@@ -28,6 +28,17 @@ Boolean(false); // false
 Boolean(undefined); // false
 ```
 
+There are only 6 values that are falsy and every other value is truthy.  Here's a list of all the falsy values.
+
+```javascript
+Boolean(undefined); // false
+Boolean(NaN); // false
+Boolean(null); // false
+Boolean(0); // false
+Boolean(""); // false
+Boolean(false); // false
+```
+
 Here is a simple function that returns a string explaining if a value is truthy or falsy.
 
 ```javascript
