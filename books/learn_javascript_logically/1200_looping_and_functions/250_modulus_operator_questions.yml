@@ -1,0 +1,38 @@
+---
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    console.log(9 % 4);
+    ```
+  answer: |2
+
+    1
+
+    9 divided by 4 has a quotient of 2 and a remainder of 1.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    console.log(31 % 2);
+    ```
+  answer: |2
+
+    1
+
+    If the divisor is 2, the modulus operator will always return 1 for odd numbers.
+- body: |2
+
+    What does the following code print to the console?
+
+    ```javascript
+    console.log(16 % 2);
+    ```
+  answer: |2
+
+    0
+
+    If the divisor is 2, the modulus operator will always return 0 for even numbers.
+
