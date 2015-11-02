@@ -3,12 +3,14 @@
 
     What does the following code print to the console?
 
+    ```javascript
     var weird = ['sponge', 'bob'];
     var result = "";
     for(var i = 0; i < weird.length; i++) {
       result = result + weird[i];
     }
     console.log(result);
+    ```
   answer: |2
 
     spongebob
