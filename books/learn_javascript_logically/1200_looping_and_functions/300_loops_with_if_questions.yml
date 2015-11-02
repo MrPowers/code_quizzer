@@ -15,7 +15,7 @@
     }
 
     var planet = ["earth", "fire", 34, undefined, "wind", [], "water"]
-    var r = joinIfString(arr);
+    var r = joinIfString(planet);
     console.log(r);
     ```
   answer: |2
