@@ -23,7 +23,7 @@ if ("a" === "a") {
 
 The string "one direction <3" will be printed to the console and the code associated with the else keyword is not executed.
 
-The boolean condition is false in the following example, so the code associated with the else clause is executed (and the code associted with the if clause is not executed).
+The boolean condition is false in the following example, so the code associated with the else clause is executed (and the code associated with the if clause is not executed).
 
 ```javascript
 var lovePoints = 100;
@@ -36,5 +36,4 @@ if (heart === "open") {
 console.log(lovePoints);
 ```
 
-The boolean condition evaluates to false so the lovePoints variable is reassigned to lovePoints minus 60 (40).  40 is then printed to the console.
-
+The boolean condition evaluates to false, so the lovePoints variable is reassigned to lovePoints minus 60 (40). The number 40 is then printed to the console.
