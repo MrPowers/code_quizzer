@@ -1,6 +1,6 @@
 # While Loops
 
-While loops execute until the boolean condition evaluates to false (i.e. while loops continue executing when the boolean condition evaluates to true).
+While loops execute a code block until the given boolean condition evaluates to false. In other words, while loops continue executing *while* (or "as long as") the boolean condition evaluates to true.
 
 Here is an example of a while loop:
 
@@ -57,7 +57,7 @@ The variable i is 6
 The variable i is 7
 </pre>
 
-The counter variable in loops is often i and the i++ shorthand notation is frequently used to increment the variable.  i++ and i = i + 1 are equivalent statements.
+The counter variable in loops is often i. In loops, the i++ shorthand notation is frequently used to increment the variable by 1. Recall from Chapter 2.4 that i++ and i = i + 1 are equivalent statements:
 
 ```javascript
 var x = 0;
@@ -68,4 +68,3 @@ var y = 0;
 y = y + 1;
 console.log(y); // 1
 ```
-
