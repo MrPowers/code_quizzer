@@ -14,7 +14,7 @@
 
     "and look funny"
 
-    The boolean condition (5 === 6) evaluates to false so the code associated with the else keyword is executed.
+    The boolean condition (5 === 6) evaluates to false, so the code associated with the else keyword is executed.
 - body: |2
 
     What does the following code print to the console?
@@ -31,7 +31,7 @@
 
     me llamo mateo
 
-    The boolean condition ("gringo" === me) evaluates to true so the code block associated with the if keyword is executed.
+    The boolean condition ("gringo" === me) evaluates to true, so the code block associated with the if keyword is executed.
 - body: |2
 
     What does the following code print to the console?
@@ -48,4 +48,4 @@
 
     Dan Ostrov is awesome
 
-    The boolean condition (bestNumber / 2 / 2 === 2) evaluates to true so the code associated with the if condition is executed.
+    The boolean condition (bestNumber / 2 / 2 === 2) evaluates to true, so the code associated with the if condition is executed.
