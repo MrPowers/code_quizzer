@@ -6,6 +6,7 @@ Strings can be created with single or double quotes.
 
 ```javascript
 "this is a string"
+'this is a string, too'
 ```
 When a number is surrounded by single or double quotes, it is actually a string!
 
@@ -14,7 +15,7 @@ When a number is surrounded by single or double quotes, it is actually a string!
 "4.32"
 ```
 
-Strings can be combined and this is called string concatenation.
+Strings can be combined using the plus operator (+). This is called string concatenation.
 
 ```javascript
 console.log("bat" + "man"); // prints "batman" to the console
