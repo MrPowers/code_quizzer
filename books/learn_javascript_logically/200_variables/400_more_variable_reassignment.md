@@ -8,18 +8,18 @@ x = x + 2; // x is incremented by 2
 console.log(x); // 90
 ```
 
-The statement `x = x + 2;` executes the code to the right of `=` first and then reassigns `x` to the new value.  `x = x + 2;` reassigns `x` to the value `90`.
+The statement `x = x + 2;` executes the code to the right of `=` first, then reassigns `x` to the new value.  `x = x + 2;` reassigns `x` to the value `90`.
 
-The following statement demonstrates shortcut notation for adding `5` to the variable `y`.
+JavaScript provides a few *shortcuts* for common operations such as these. Here's the shortcut notation for adding `5` to the variable `y`:
 
 ```javascript
 var y = 3;
 y += 5; // y is reassigned to 8
 ```
 
-`y += 5;` is the same as `y = y + 5;`.  This shortcut notation is used so experienced programmers can write less code.  Shorcut notation is confusing for beginning programmers and the only reason it is being introduced now is because it is used frequently.
+Notice that `y += 5;` is the same as `y = y + 5;`.
 
-The `++` operator can be used to increment a variable by 1:
+Another shortcut — the `++` operator — is used to increment a variable by 1, which proves very useful for loops (as we'll see in later sections). The shortcut `x++` is equivalent to `x = x + 1`:
 
 ```javascript
 var i = 0; // i is assigned to 0
@@ -29,4 +29,4 @@ i++; // i is reassigned to 2
 console.log(i); // prints 2 to the console
 ```
 
-The `++` operator is used frequently, especially with loops that are covered in the upcoming sections.
+Shortcuts help experienced programmers write less code. New programmers sometimes find shortcuts confusing, but the shortcuts are well worth learning. You will see them frequently.

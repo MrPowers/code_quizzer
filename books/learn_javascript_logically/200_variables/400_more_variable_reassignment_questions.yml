@@ -30,7 +30,7 @@
     63
     ```
 
-    lala is initially assigned to 66.  lala is then reassigned to lala minus 3, or 63.  lala -= 3 is the same as lala - 3.
+    lala is initially assigned to 66.  lala is then reassigned to lala - 3, or 63.  lala -= 3 is the same as lala - 3.
 
     ```javascript
     lala = lala - 3; // reassigns lala to lala minus 3

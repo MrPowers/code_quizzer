@@ -1,6 +1,6 @@
 # Variables and Values
 
-Variables are assigned to values.  After variables are assigned, they can be reassigned to other values.
+Variables are assigned to values. After variables are assigned, they can be reassigned to other values.
 
 ```javascript
 var world; // the variable world is declared
@@ -16,7 +16,7 @@ var waterfall = "awesome";
 world === waterfall // true
 ````
 
-`45`, "something", and `true` are examples of values.
+You can assign variables to any type of value. Numbers (`45`), strings (`"something"`), and booleans `true` are all valid examples.
 
 In the following statement, the variable `mood` is assigned to the value `'happy'`:
 

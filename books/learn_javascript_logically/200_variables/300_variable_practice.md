@@ -14,7 +14,7 @@ var secondNumber = 5;
 firstNumber + secondNumber // returns 9
 ```
 
-Strings can also be combined with the `+` operator and this is called string concatenation:
+Strings can also be combined with the `+` operator. This is called string concatenation:
 
 ```javascript
 "Bart" + " Simpson" // returns "Bart Simpson"
