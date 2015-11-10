@@ -36,7 +36,7 @@
     I like 3
     </pre>
 
-    The variable i is incremented before the console.log statement so the results are slightly different from what we've seen so far.
+    The variable i is incremented before the console.log statement, so the results are slightly different from what we've seen so far.
 - body: |2
 
     ```javascript
@@ -64,18 +64,6 @@
     ```
   answer: |2
 
-    This loops adds the numbers 0, 1, 2, 3, and 4, and assigned the result (10) to the sum variable.  This example is a bit more complex because two variables are being reassigned for each loop iteration.
-- body: |2
-
-    ```javascript
-    var sum = 0;
-    var counter = 0;
-    while (counter < 5) {
-      sum = sum + counter;
-      counter = counter + 1;
-    }
-    console.log(sum);
-    ```
-  answer: |2
-
+    10
+    
     This loops adds the numbers 0, 1, 2, 3, and 4, and assigned the result (10) to the sum variable.  This example is a bit more complex because two variables are being reassigned for each loop iteration.
