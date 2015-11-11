@@ -60,5 +60,4 @@
     false
     ```
 
-    The string "fork" is different than the string "plate" so the boolean condition returns false.
-
+    The string "fork" is different than the string "plate", so the boolean condition returns false.
