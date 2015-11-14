@@ -1,4 +1,4 @@
-if Rails.env.developemt?
+if Rails.env.development?
   family = Family.create!(
     name: "Programming",
     description: "Ruby, Rails and JavaScript practice problems",
