@@ -1,6 +1,6 @@
 # While Loops With Arrays
 
-While loops can be used to iterate over every element in an array.
+`While` loops can be used to iterate over every element in an array:
 
 ```javascript
 var animals = ["cats", "dogs", "sheep"];
@@ -37,8 +37,13 @@ while (i < numbers.length) {
   sum = sum + numbers[i];
   i++;
 }
-console.log(sum);
+console.log(sum); // 90
 ```
 
-10 plus 30 plus 50 equals 90, which is the result that is printed to the console.
+The result 90 is printed to the console because 10 + 30 + 50 = 90. Let's look at how the loop accomplishes this in three steps:
 
+Loop 1: sum = 0 + 10 = 10;
+Loop 2: sum = 10 + 30 = 40;
+Loop 3: sum = 40 + 50 = 90;
+
+On the first loop, the code takes the variable `sum` (0) and adds the first element of the array, `numbers[0]` (10).  In the first loop, the variable sum receives the new value 0 (current value of sum) + 10 = 10.  This is repeated for loops two (sum = 10 + 30 = 40) and three (sum = 40 + 50 = 90).  By the time the loop ends, the new value of sum is 90.  This is what's printed to the console. 
