@@ -14,7 +14,7 @@
 
     I live in the sky
 
-    The variable x is not defined within a function, so it is accessible outside  functions as well as within them.  x is accessible within in the moon() function, so the expression ``"I live in the " + x` returns the string `"I live in the sky"`.
+    Because the variable x is defined outside a function, it is accessible anywhere — including inside any function (such as moon()).  The variable x is accessible within the moon() function, so the expression ``"I live in the " + x` returns the string `"I live in the sky"`.
 - body: |2
 
     What does the following code print to the console?
