@@ -14,7 +14,7 @@
 
     96
 
-    The subtract function is defined and programmed to take two arguments.  The subtract function is then invoked with the arguments 100 and 4 and the resulting output is assigned to the variable r.  r is printed to the console.
+    The subtract function is defined and programmed to take two arguments.  The subtract function is then invoked with the arguments 100 and 4, and the resulting output is assigned to the variable r.  r is printed to the console.
 - body: |2
 
     What does the following code print to the console?
