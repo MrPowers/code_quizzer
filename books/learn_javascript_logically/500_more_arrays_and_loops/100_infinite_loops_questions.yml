@@ -1,7 +1,7 @@
 ---
 - body: |2
 
-    Describe if this is an infinite loop or not.
+    Is the following loop an infinite loop? Explain why/why not.
 
     ```javascript
     x = 4;
@@ -14,7 +14,7 @@
     This is an infinite loop because the boolean condidion (4 === 4) always evaluates to true.
 - body: |2
 
-    Describe if this is an infinite loop or not.
+    Is the following loop an infinite loop? Explain why/why not.
 
     ```javascript
     var counter = 0;
@@ -24,10 +24,10 @@
     ```
   answer: |2
 
-    The counter variable is assigned to 0 and is never reassigned, so the boolean condition (0 < 4) always evaluates to true and the loop continues forever.
+    The counter variable is assigned to 0 and is never reassigned, so the boolean condition (0 < 4) always evaluates to true.  The loop continues forever.
 - body: |2
 
-    Describe if this is an infinite loop or not.
+    Is the following loop an infinite loop? Explain why/why not.
 
     ```javascript
     var counter = 0;
@@ -41,4 +41,4 @@
 
     Yes, this is an infinite loop.
 
-    The i variable is incremented for each loop iteration, but the counter variable is unchanged, so the boolean condition is always true and the loop iterates forever.
+    The i variable is incremented for each loop iteration, but the counter variable is unchanged, so the boolean condition is always true.  The loop iterates forever.

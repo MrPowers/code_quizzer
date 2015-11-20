@@ -14,7 +14,7 @@
 
     I live in the sky
 
-    The variable x is not defined within a function, so it is accessible outside of functions and within them.  x is accessible within in the moon() function.
+    Because the variable x is defined outside a function, it is accessible anywhere — including inside any function (such as moon()).  The variable x is accessible within the moon() function, so the expression ``"I live in the " + x` returns the string `"I live in the sky"`.
 - body: |2
 
     What does the following code print to the console?
@@ -28,7 +28,8 @@
     ```
   answer: |2
 
-    This code raises and exception.  The look variable is defined within the pretty() function and is only accessible within the function.  console.log(pretty()) will work because the look variable is being used within the function, but look cannot be accessed outside of the function.
+    This code raises an exception.  The look variable is defined within the pretty() function and is only accessible within that function.  The look variable exists only in the context of the pretty() function itself — console.log(pretty()) would still print "I like hipsters."
+
 - body: |2
 
     What does the following code print to the console?

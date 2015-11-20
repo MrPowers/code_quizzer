@@ -13,7 +13,7 @@ console.log(y) // this raises and error because the y variable cannot be accesse
 
 The y variable is accessible within the nothing() function, but access to this variable is lost once the function is over.
 
-Variables defined before the function are accessible within the function.
+By contrast, variables defined before the function are accessible within the function.
 
 ```javascript
 var greatBand = "Backstreet";
@@ -32,4 +32,3 @@ console.log(greatBand); // "Backstreet"
 ```
 
 In summary, variables defined outside functions are accessible both inside and outside of functions.  Variables that are defined within a function are only accessible within that function.
-

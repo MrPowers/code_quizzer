@@ -1,6 +1,6 @@
 # More Arrays
 
-Elements can be added to arrays with the push method.
+Elements can be added to arrays with the `push` method.
 
 ```javascript
 var dorks = ["me", "einstein"];
@@ -33,4 +33,3 @@ var lol = ["i", "like", "ice", "cream"];
 var lolString = lol.join(" ");
 console.log(lolString); // "i like ice cream"
 ```
-
