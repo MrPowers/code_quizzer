@@ -48,8 +48,10 @@
     }
     ```
 
-    The beHappy variable is assigned to a function and it is common to accidentally return a function by forgetting to invoke it.  This is what the console.log statement would look like if the function was invoked.
+    The beHappy variable is assigned to a function.  It is a common mistake to forget the parentheses when invoking a function — that is, writing beHappy instead of beHappy().  If you call beHappy without parentheses, the computer returns the function itself rather than its result.
+
+    If you want to print the result of the function, you would need to invoke it inside the console.log statement like so:
 
     ```javascript
-    console.log(beHappy());
+    console.log(beHappy()); // "just chill"
     ```
