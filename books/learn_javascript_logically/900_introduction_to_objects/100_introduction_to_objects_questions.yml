@@ -13,7 +13,7 @@
 
     ruff
 
-    The dog variable is declared and assigned to an object with the name and speak properties.  Dot notation is used to access the value associated with the speak property and this value is printed to the console.
+    The dog variable is declared and assigned to an object with the name and speak properties.  Dot notation is used to access the value associated with the speak property, and the value of the speak property ("ruff") is printed to the console.
 - body: |2
 
     What does the following code print to the console?
@@ -49,4 +49,4 @@
 
     22.86 (approximately)
 
-    The joe variable is assigned to an object that has weightKg and heightMeters properties.  The bodyMassIndex is used to calculate the body mass index.
+    The joe variable is assigned to an object that has weightKg and heightMeters properties.  The bodyMassIndex function is used to calculate the body mass index.
