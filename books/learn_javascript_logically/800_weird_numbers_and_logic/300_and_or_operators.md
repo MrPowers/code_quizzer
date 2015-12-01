@@ -1,12 +1,13 @@
 # && and || Operators
+The comparison operators && (and) and || (or) test the boolean values of two or more expressions.  
 
-The && operator returns true if both the operands are true.
+The && operator returns true if both sides are true.
 
 ```javascript
 true && true; // true
 ```
 
-In the example above, true and true are referred to as the operands and && is the operator.
+In the example above, true and true are referred to as the operands and && is the operator.  Both operands return true, so the expression returns true.
 
 If one or both of the operands is false, the && operator will return false.
 
@@ -25,7 +26,7 @@ if (age > 12 && age < 20) {
 }
 ```
 
-age > 12 evaluates to true and age < 20 evaluates to true, so the string "This person is a teenager" is printed to the console.
+The variable `age` is set to 17, so both `age > 12` and `age < 20` evaluate to true.  The string "This person is a teenager" is printed to the console.
 
 The || operator returns true if one or both of the operands is true.
 
@@ -35,7 +36,7 @@ true || false; // true
 true || true; // true
 ```
 
-The || operator returns false if both of the operands are false.
+The || operator returns false only if both of the operands are false.
 
 ```javascript
 false || false; // false
@@ -51,4 +52,3 @@ if (age < 13 || age > 19) {
 ```
 
 The if statement will print "This person is NOT a teenager" to the console if the age is less than 13 or greater than 19.
-
