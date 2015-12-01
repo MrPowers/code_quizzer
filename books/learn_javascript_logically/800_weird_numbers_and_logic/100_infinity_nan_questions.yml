@@ -34,4 +34,4 @@
 
     NaN
 
-    JavaScript converts "farm" to a number which results in NaN (Number("farm")).  Any mathematical operation with NaN results in NaN, so 1 / NaN returns NaN.
+    JavaScript converts "farm" to a number, which results in NaN (Number("farm")).  Any mathematical operation between numbers and NaN results in NaN, so 1 / NaN returns NaN.
