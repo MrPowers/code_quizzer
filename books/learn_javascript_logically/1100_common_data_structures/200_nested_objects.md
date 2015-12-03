@@ -1,6 +1,6 @@
 # Nested Objects
 
-Nested objects are objects within other objects.  Let's review start by reviewing a basic object:
+Nested objects are objects within other objects.  Let's start by reviewing a basic object:
 
 ```javascript
 var president = {
@@ -34,7 +34,7 @@ Nested objects can be used to model the real world and are used extensively.
 Here is another way to write the president object and get the same result:
 
 ```javascript
-firstLady = {
+var firstLady = {
   firstName: "Michelle",
   lastName: "Obama",
   birthYear: 1964
@@ -50,4 +50,3 @@ president.wife.firstName; // "Michelle"
 president.wife.birthYear; // 1964
 firstLady.birthYear; // 1964
 ```
-
