@@ -41,7 +41,7 @@ result.push(squareNumber(numbers[3]));
 console.log(result); // [4, 16, 36, 64]
 ```
 
-The map() function can use the squareNumber() function to yeild the same result.
+The map() function can use the squareNumber() function to yield the same result.
 
 ```javascript
 var numbers = [2, 4, 6, 8];
@@ -54,4 +54,3 @@ var result = numbers.map(squareNumber);
 
 console.log(result); // [4, 16, 36, 64]
 ```
-
