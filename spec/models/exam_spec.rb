@@ -29,7 +29,7 @@ RSpec.describe Exam,type: :model do
       exam = Exam.new(quiz_id: quiz.id,user_id:1,is_graded:true,is_canceled:false)
       Answer.create!(exam_id: exam.id, question_id: question1.id, is_correct: true)
       Answer.create!(exam_id: exam.id, question_id: question2.id, is_correct: false)
-      expect(exam.percent_correct).to be(0.3333333333333333)
+      expect(exam.percent_correct).to eq 0.3333333333333333
       expect(exam.incorrect_answers_count).to eq 1
       expect(exam.blank_answers_count).to eq 1
     end

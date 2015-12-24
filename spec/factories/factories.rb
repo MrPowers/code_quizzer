@@ -7,7 +7,21 @@ FactoryGirl.define do
     f.is_correct "true"
   end
   
+  factory :family do |f|
+    f.name "Programming"
+    f.description "Ruby, Rails and JavaScript practice problems"
+    f.page_title "Learn Ruby, Rails, JavaScript | How to code"
+    f.slug "learn-programming"
+  end
   
+  factory :challenge do |f|
+    f.question "Programming"
+    f.answer "answer"
+    f.answer_description "Learn Ruby, Rails, JavaScript | How to code"
+    f.slug "learn-programming"
+    f.question_summary "summary"
+  end
+   
   factory :challenge_answer do |f|
     f.challenge_id 1
     f.user_id 1
