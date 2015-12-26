@@ -2,7 +2,7 @@
 
 If JavaScript cannot perform an operation with the supplied arguments, it will aggressively convert the arguments to different types to see if the operation can be completed.
 
-In the following statment, the integer 1 is converted to a string to perform string concatenation.
+In the following statement, the integer 1 is converted to a string to perform string concatenation.
 
 ```javascript
 "bob" + 1; // "bob1"
@@ -28,7 +28,7 @@ Type conversion is especially bizarre when it comes to the == operator.
 true == 1; // true
 ```
 
-When the == operator is used, true is converted to 1, so true == 1 evaluates to true.  The === operator does not convert types and is much more useful when comparing the equality of two operands.
+When the == operator is used, true is converted to 1, so true == 1 evaluates to true.  The === operator (note the extra =) does *not* convert types and is much more useful when comparing the equality of two operands.
 
 ```javascript
 true === 1; // false
@@ -52,5 +52,4 @@ add(55, true); // "true is not a number"
 add(1, 2); // 3
 ```
 
-A lot of programming languages raise errors when the types are different from what is expected and many programmers hate JavaScript's aggressive type conversion.  Checking the type of every argument of every function can be a tedious process.  JavaScript isn't a perfect language and let's remember to have a positive attitude when dealing with the language flaws :)
-
+A lot of programming languages raise errors when the types are different from what is expected, and many programmers hate JavaScript's aggressive type conversion.  Checking the type of every argument of every function can be a tedious process.  JavaScript isn't a perfect language, but let's remember to have a positive attitude when dealing with the language's flaws :)

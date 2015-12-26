@@ -53,7 +53,7 @@
     party!
     </pre>
 
-    The forEach() function iterates over every element in the fun array and calls the anonymous function that is assigned to the bang variable.  This code yields and equivalent result.
+    The forEach() function iterates over every element in the fun array and calls the anonymous function that is assigned to the bang variable.  The following code yields an equivalent result:
 
     ```javascript
     bang("dance");

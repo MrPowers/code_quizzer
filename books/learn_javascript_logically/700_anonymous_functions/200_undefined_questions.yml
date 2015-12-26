@@ -25,7 +25,7 @@
 
     undefined
 
-    The variable lol is declared but is not assigned to any value.  When variables are declared, they are automatically assigned to undefined.
+    The variable lol is declared but is not assigned to any value.  When variables are declared but not assigned to a value, they are automatically assigned to undefined.
 - body: |2
 
     What does the following code print to the console?
@@ -34,7 +34,7 @@
     function fullName(x, y) {
       x + " " + y;
     }
-    console.log(fullName());
+    console.log(fullName("Mr", "Powers"));
     ```
   answer: |2
 

@@ -1,23 +1,26 @@
 # forEach Functions
 
-forEach() functions can be used to iterate over arrays with a better syntax than what is provided by for loops.  This is the verbose syntax required by a for loop to iterate through a collection of strings.
+The for loop uses a verbose syntax. Here's a for loop that iterates through an array of strings:
 
 ```javascript
-var people = ["manuel", "sid", "li li"]
+var people = ["manuel", "sid", "li li"];
 for (var i = 0; i < people.length; i++) {
   console.log(people[i] + " is a person");
 }
 ```
 
-The forEach() function can also be used to iterate through the people array.
+The forEach() function can do the same thing but with cleaner syntax. Here is how we would iterate through the same `people` array using forEach():
 
 ```javascript
+var people = ["manuel", "sid", "li li"];
 people.forEach(function(person) {
   console.log(person + " is a person");
 });
 ```
 
-The forEach() function takes an anonymous function as an argument (this anonymous function is referred to as a callback function).  The forEach() function iterates through all the people in the array and passes each person as an argument to the callback function.  Let's assign the callback function to a variable to make the code clearer.
+The forEach() function takes an anonymous function as an argument; this type of anonymous function is commonly referred to as a *callback*.  The forEach() function iterates through all the people in the array and passes each person as an argument to the callback function.  
+
+Let's assign the callback function to a variable to make the code clearer.
 
 ```javascript
 var peopleSpeaker = function(person) {
@@ -35,4 +38,3 @@ peopleSpeaker("li li");
 ```
 
 Traditional JavaScript for loops are ugly and hard to read.  Use the forEach() function to make your code more readable.
-

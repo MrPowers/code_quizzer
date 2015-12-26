@@ -1,10 +1,10 @@
 # Truthy and Falsy
 
-When JavaScript encounters an element that is not true or false in a boolean context, it converts the elements to either true or false.
+When JavaScript encounters an element that is not true or false in a boolean context, it converts the element to either true or false.
 
 ```javascript
 if ("hey") {
-  console.log("The string 'hey' is true in a Boolean context");
+  console.log("The string 'hey' is true in a boolean context, so this string is printed.");
 }
 ```
 
@@ -12,11 +12,11 @@ The string "hey" is considered true in a boolean context.  The empty string is c
 
 ```javascript
 if ("") {
-  console.log("This is not printed");
+  console.log("This is not printed. An empty string is false in a boolean context.");
 }
 ```
 
-When an element is considered true in a boolean context, it is considered truthy.  When an element is considered false in a boolean context, it is called falsy.
+When an element is considered true in a boolean context, it is called **truthy.**  When an element is considered false in a boolean context, it is called **falsy.**
 
 The Boolean() function can be used to see which elements are truthy and falsy.
 
@@ -28,7 +28,7 @@ Boolean(false); // false
 Boolean(undefined); // false
 ```
 
-There are only 6 values that are falsy and every other value is truthy.  Here's a list of all the falsy values.
+JavaScript has only six values that are falsy:
 
 ```javascript
 Boolean(undefined); // false
@@ -39,7 +39,9 @@ Boolean(""); // false
 Boolean(false); // false
 ```
 
-Here is a simple function that returns a string explaining if a value is truthy or falsy.
+*Every other value is truthy.*
+
+Here is a simple function that returns a string explaining if a value is truthy or falsy:
 
 ```javascript
 function booleanTruthiness (e) {
@@ -56,26 +58,7 @@ booleanTruthiness("hi"); // "The element hi is a string and is true in a boolean
 booleanTruthiness(false); // "The element false is a boolean and is false in a boolean context"
 ```
 
-The following for loop demonstrates the truthiness of several elements in a boolean context.
-
-```javascript
-var stuff = [true, 99, "tree", undefined, [1, 2]]
-for (var i = 0; i < stuff.length; i++) {
-  console.log(booleanTruthiness(stuff[i]));
-}
-```
-
-The for loop generates this output:
-
-<pre>
-The element true is a boolean and is true in a boolean context
-The element 99 is a number and is true in a boolean context
-The element tree is a string and is true in a boolean context
-The element undefined is a undefined and is false in a boolean context
-The element 1,2 is a object and is true in a boolean context
-</pre>
-
-while loops continue iterating until the value is falsy in a boolean context.
+Here's a while loop that continues iterating until the value is falsy in a boolean context.
 
 ```javascript
 var lol = "haha";
@@ -86,4 +69,3 @@ while (lol) {
 ```
 
 The while loop will iterate once because the lol variable is set to "haha", which is truthy.  After the first iteration, the lol variable is reassigned to undefined, which is falsy.  The loop exits before the second iteration.
-

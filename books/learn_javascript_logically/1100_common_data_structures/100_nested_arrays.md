@@ -13,7 +13,7 @@ people[0]; // ['bob', 34]
 people[0][1]; // 34
 ```
 
-`people[0]` returns `['bob', 34]` so `people[0][1]` is the same as `['bob', 34][1]`.
+`people[0]` returns `['bob', 34]`, so `people[0][1]` is the same as `['bob', 34][1]`.
 
 Here is how we can use the people array to create this names array: `['bob', 'jose']`.
 
@@ -25,7 +25,7 @@ for (var i = 0; i < people.length; i++) {
 console.log(names); // ['bob', 'jose']
 ```
 
-The following array contains a list of cities and the countries they are located in.  The for loop iterates over the nested arrays and prints our information about each city to the console.
+The following array of arrays contains groups of cities and their respective countries.  The for loop iterates over the nested arrays and prints our information about each city to the console.
 
 ```javascript
 var cities = [['jarkata', 'indonesia'], ['bangalore', 'india']];
@@ -46,11 +46,10 @@ A nested array data structure can also be used to represent a student's name, te
 
 ```javascript
 var students = [
-  ['frank', '201-658-2233', 'biology'],
-  ['saurabh', '454-998-1100', 'math'],
-  ['tomo', '987-222-7777', 'finance']
+  ['frank', '444-4444', 'biology'],
+  ['saurabh', '333-3333', 'math'],
+  ['tomo', '999-9999', 'finance']
 }
 ```
 
 Nested arrays are a powerful and flexible way to store data.
-

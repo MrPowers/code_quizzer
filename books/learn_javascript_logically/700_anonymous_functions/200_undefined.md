@@ -16,7 +16,7 @@ abc = "happy";
 abc === undefined // false
 ```
 
-Functions that do not use the return keyword to explicity return a value will return undefined by default.
+Functions that do not use the return keyword to explicitly return a value will return undefined by default.
 
 ```javascript
 function boring() {}
@@ -41,4 +41,3 @@ typeof(undefined); // "undefined"
 ```
 
 Strings ("bob", "i like cheese"), numbers (4.55, 77), and booleans (true, false) are other types we've already covered in this book.
-

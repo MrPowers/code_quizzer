@@ -1,6 +1,6 @@
 # Arrays of Objects
 
-Objects are frequently stored in arrays.  Here is an array of people.
+Objects are frequently stored in arrays.  Let's create a few objects.
 
 ```javascript
 var tom = {
@@ -17,7 +17,11 @@ var susan = {
   name: "susan",
   job: "doctor"
 }
+```
 
+Now we can store tom, phil, and susan in an array of people.
+
+```javascript
 var people = [tom, phil, susan];
 ```
 
@@ -53,4 +57,3 @@ for (var i = 0; i < peopleData.length; i++) {
 ```
 
 Arrays of objects are **very** common in JavaScript.
-
