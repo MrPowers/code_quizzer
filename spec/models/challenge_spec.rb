@@ -1,15 +1,17 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Challenge do
+RSpec.describe Challenge, type: :model do
 
   context "associations" do
-    it 'has_many challenge_users' do
-      expect(subject).to have_many :challenge_users
-    end
-
-    it 'should have_many :users' do
-      expect(subject).to have_many :users
-    end
+    it { Challenge.reflect_on_association(:challenge_users).macro.should  eq(:has_many) }
+    it { Challenge.reflect_on_association(:users).macro.should eq(:has_many) }
+    
+    # it 'has_many challenge_users' do
+      # expect(subject).to have_many :challenge_users
+    # end
+    # it 'should have_many :users' do
+      # expect(subject).to have_many :users
+    # end
   end
 
   context "after_save" do

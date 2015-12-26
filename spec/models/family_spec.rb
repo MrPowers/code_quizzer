@@ -1,14 +1,20 @@
-require "spec_helper"
+require 'rails_helper'
 
-describe Family do
+RSpec.describe Family,type: :model do
 
   context ".exam_counts" do
-    pending
+    it "should return exam count" do
+      user = FactoryGirl.create(:user)
+      quiz1 = Quiz.create!(body: "quiz_body", description: "quiz_description", slug: "quiz_slug", page_title: "quiz_page_title")
+      quiz2 = Quiz.create!(body: "quiz_body", description: "quiz_description", slug: "quiz_slug", page_title: "quiz_page_title")
+      exam1 = Exam.create!(quiz_id:quiz1.id,user_id:user.id,is_graded:0,is_canceled:1)
+      exam1 = Exam.create!(quiz_id:quiz2.id,user_id:user.id,is_graded:1,is_canceled:0)
+      count = Family.exam_counts(user.id)
+      expect(count.size).to eq 2
+    end
   end
-
-  it "has_many :topics" do
-    expect(subject).to have_many(:topics)
-  end
+  
+  it { Family.reflect_on_association(:topics).macro.should  eq(:has_many) }
 
   context "#validations" do
     it "raises an exception for really long page titles" do

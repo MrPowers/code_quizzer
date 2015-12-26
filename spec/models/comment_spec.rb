@@ -1,7 +1,5 @@
-require "spec_helper"
+require 'rails_helper'
 
-describe Comment do
-  it "belongs_to :user" do
-    expect(subject).to belong_to(:user)
-  end
+RSpec.describe Comment, type: :model do
+  it { Comment.reflect_on_association(:user).macro.should eq(:belongs_to) }
 end

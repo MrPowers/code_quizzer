@@ -7,6 +7,11 @@ describe UserStatisticsController,type: :controller do
       response = get :index
       expect(response).to be_success
     end
+    
+    it "render page " do
+      response = get :index
+      expect(response).to render_template("index")
+    end
   end
 
 end

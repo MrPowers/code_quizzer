@@ -38,10 +38,15 @@ group :test do
   gem 'minitest'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
+  gem 'rspec'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'simplecov'
 end
 
 group :development, :test do
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-nav'
   gem 'byebug'
 end

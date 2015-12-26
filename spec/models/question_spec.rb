@@ -1,10 +1,8 @@
-require "spec_helper"
+require 'rails_helper'
 
-describe Question do
+describe Question,type: :model do
 
-  it "belongs_to :quiz" do
-    expect(subject).to belong_to(:quiz)
-  end
-
+  it { Question.reflect_on_association(:quiz).macro.should  eq(:belongs_to) }
+  
 end
 
