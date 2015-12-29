@@ -10,15 +10,15 @@
   </div>
 
   <div class='hero-item topic'>
+    <h3>JavaScript Book</h3>
+    <p>I wrote a <%= link_to "book to teach programming with JavaScript", javascript_book_path %>.  It is completely open source and lets you practice while you learn.</p>
+  </div>
+
+  <div class='hero-item topic'>
     <h3>Challenges</h3>
     <p>
       <%= link_to("Test your Ruby skills with these longer form programming exercises", challenges_path) %>
     </p>
-  </div>
-
-  <div class='hero-item topic'>
-    <h3>Open Source</h3>
-    <p>I am working on several open source projects, including <%= link_to "this site", "https://github.com/MrPowers/code_quizzer" %>, <%= link_to "turf", "https://github.com/MrPowers/turf" %> and <%= link_to "frontend-generators", "https://github.com/MrPowers/frontend-generators" %>.  Please look at the open issues and help me make these open source projects better!  I am very nice so this is a great opportunity to make your first open source pull request!</p>
   </div>
 
   <% @topics.each do |topic| %>

@@ -1,17 +1,16 @@
 <div class="container challenge-wrapper col-md-8 col-md-offset-2">
-  <ol>
-  <% @chapters.each do |chapter| %>
-    <li><%= chapter.humanized_name %></li>
-    <ol>
-      <% chapter.chapter_sections.each do |section| %>
-        <li>
-          <%= link_to section.humanized_name, js_books_path(section_name: section.to_param) %>
-        </li>
-      <% end %>
-    </ol>
-  <% end %>
-  </ol>
 
-  <%= image_tag "book/javascript_learning_path.png", class: "img-responsive" %>
+  <hr>
+  <h1 align = "center">JavaScript Book</h1>
+  <h2 align = "center">Learn by doing</h2>
+  <hr>
+
+  <% @chapters.each_with_index do |chapter, chapter_index| %>
+    <h3>Chapter <%= chapter_index + 1 %>: <%= chapter.humanized_name %></h3>
+    <% chapter.chapter_sections.each_with_index do |section, section_index| %>
+      <p class="chapter-section"><%= chapter_index + 1 %>.<%= section_index + 1 %> <%= link_to section.humanized_name, js_books_path(section_name: section.to_param) %></p>
+    <% end %>
+  <% end %>
+
 </div>
 
