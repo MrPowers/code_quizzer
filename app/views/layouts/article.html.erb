@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %> | CodeQuizzes</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application.js' %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/google_analytics' %>
+</head>
+
+<body>
+
+  <div class="continer-fluid">
+    <%= render "layouts/navigation" %>
+    <%= render 'layouts/messages' %>
+
+    <div class="container challenge-wrapper col-md-10 col-md-offset-1">
+      <%= yield %>
+    </div>
+
+    <%= render 'layouts/footer' %>
+  </div>
+
+
+</body>
+</html>
+
+
