@@ -12,7 +12,7 @@ Compoundblingapplication::Application.routes.draw do
     resources :student_webpages
   end
 
-  root :to => 'families#show', :id => 'learn-programming'
+  root :to => 'subjects#index'
 
   get 'javascript-book/:section_name', to: 'js_books#show', as: 'js_books'
   get 'javascript-book', to: 'js_books#index'
@@ -39,9 +39,7 @@ Compoundblingapplication::Application.routes.draw do
   get 'graded_count' => 'exams#graded_count'
   get 'user_exams' => 'exams#user_exams'
 
-  resources :families, :path => '' do
-    resources :families, :only => [:show]
-  end
+  resources :subjects, :path => '', :only => [:show]
 
   resources :quizzes, :only => [] do
     resources :questions

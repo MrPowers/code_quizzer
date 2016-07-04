@@ -1,0 +1,27 @@
+<div class='hero-masonry span12'>
+
+  <% @topics.each do |topic| %>
+    <div class="hero-item topic">
+      <h3><%= topic.name %></h3>
+      <% topic.quizzes.sort_by(&:created_at).each do |quiz| %>
+
+        <div class="quiz-wrapper">
+
+          <%= content_tag "span", class: "quiz", data: {quiz_id: quiz.id} do %>
+            <%= link_to quiz.body, topic_quiz_path(:topic_id => topic.slug, :id => quiz.slug) %>
+          <% end %>
+
+          <br />
+
+          <div class="description">
+            <%= quiz.description %>
+          </div>
+
+        </div>
+
+      <% end %>
+    </div>
+  <% end %>
+
+</div>
+

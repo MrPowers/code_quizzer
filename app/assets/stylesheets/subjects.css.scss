@@ -1,0 +1,28 @@
+// Place all the styles related to the Subjects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.subject {
+  width: 240px;
+  height: 250px;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.subject img {
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+}
+
+.subject h3 {
+  color: black;
+}
+
+.subject:hover {
+  background-color: #365358;
+  transition: 0.5s ease;
+  color: white;
+}
+

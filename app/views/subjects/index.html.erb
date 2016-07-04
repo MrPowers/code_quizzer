@@ -1,0 +1,13 @@
+<div class='hero-masonry span12'>
+
+  <% @subjects.each do |subject| %>
+    <%= link_to(subject_path(subject.slug)) do %>
+      <div class="hero-item subject">
+        <%= image_tag "subjects/#{subject.slug.underscore}.png" %>
+        <h3><%= subject.name %></h3>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>
+
