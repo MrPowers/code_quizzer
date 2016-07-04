@@ -19,7 +19,7 @@ class SubjectsController < ApplicationController
     [
       "Ruby",
       "JavaScript",
-      "Git/GitHub",
+      "Git",
       "Computer Science",
       "Scala",
       "Bash",
