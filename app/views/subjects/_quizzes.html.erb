@@ -1,3 +1,11 @@
+<% content_for :title do %>
+  Learn <%= @subject.name %>
+<% end %>
+
+<h1><%= @subject.name %> Learning Resources</h1>
+
+<h2>Quizzes</h2>
+
 <div class='hero-masonry span12'>
 
   <% @topics.each do |topic| %>
