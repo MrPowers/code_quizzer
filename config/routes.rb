@@ -49,7 +49,10 @@ Compoundblingapplication::Application.routes.draw do
     resources :comments, :only => [:create]
   end
 
-  resources :topics, :path => '', :only => [] do
-    resources :quizzes, :path => '', :only => [:show]
+  resources :subjects, :path => '', :only => [] do
+    resources :topics, :path => '', :only => [] do
+      resources :quizzes, :path => '', :only => [:show]
+    end
   end
+
 end

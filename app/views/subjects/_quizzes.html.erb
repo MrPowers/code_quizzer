@@ -2,7 +2,7 @@
   Learn <%= @subject.name %>
 <% end %>
 
-<h1><%= @subject.name %> Learning Resources</h1>
+<h1>Learn <%= @subject.name %></h1>
 
 <h2>Quizzes</h2>
 
@@ -16,7 +16,7 @@
         <div class="quiz-wrapper">
 
           <%= content_tag "span", class: "quiz", data: {quiz_id: quiz.id} do %>
-            <%= link_to quiz.body, topic_quiz_path(:topic_id => topic.slug, :id => quiz.slug) %>
+            <%= link_to quiz.body, subject_topic_quiz_path(subject_id: topic.subject.slug, :topic_id => topic.slug, :id => quiz.slug) %>
           <% end %>
 
           <br />
