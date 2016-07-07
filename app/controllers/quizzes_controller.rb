@@ -1,6 +1,7 @@
 class QuizzesController < ApplicationController
   def show
-    @topic = Topic.where(slug: params[:topic_id]).first
+    @subject = Subject.where(slug: params[:subject_id]).first
+    @topic = Topic.where(slug: params[:topic_id], subject_id: @subject.id).first
     authorize! :show, @topic
     @quiz = Quiz.where(slug: params[:id], topic_id: @topic.id).first
     @questions = @quiz.questions.sort_by {|question| question.created_at}
