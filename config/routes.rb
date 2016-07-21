@@ -1,5 +1,5 @@
 Compoundblingapplication::Application.routes.draw do
-  get '/scala-tutorial', to: 'tutorials#scala', as: 'scala_tutorial'
+  get '/scala/tutorial', to: 'tutorials#scala', as: 'scala_tutorial'
 
   devise_for :users
 
