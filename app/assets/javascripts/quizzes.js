@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   $('.answer').click(function() {
-    $(this).toggleClass('no-opacity');
+    $(this).removeClass('no-opacity clickable');
   });
 
   // Adds a correct check or an incorrect cross if the answer is marked
