@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
     @question = @quiz.questions.new(question_params)
     authorize! :create, @question
     if @question.save
-      redirect_to topic_quiz_path(topic_id: @quiz.topic.slug, id: @quiz, anchor: "new_question")
+      redirect_to subject_topic_quiz_path(subject_id: @quiz.topic.subject.slug, topic_id: @quiz.topic.slug, id: @quiz, anchor: "new_question")
     end
   end
 
