@@ -10,9 +10,9 @@
       %td Completed
     - @completed_exams.each do |exam|
       %tr
-        %td= exam.quiz.topic.subject.name
-        %td= exam.quiz.topic.name
-        %td= exam.quiz.body
+        %td= exam.quiz.topic.subject.name rescue "subjectless"
+        %td= exam.quiz.topic.name rescue "topicless"
+        %td= exam.quiz.body rescue "quizless"
         %td= exam.user ? exam.user.username : "a_dude"
         %td= (exam.percent_correct * 100).round(2).to_s + "%"
         %td= time_ago_in_words(exam.updated_at) + " ago"
@@ -28,8 +28,8 @@
       %td Started
     - @exams_in_progress.each do |exam|
       %tr
-        %td= exam.quiz.topic.subject.name
-        %td= exam.quiz.topic.name
-        %td= exam.quiz.body
+        %td= exam.quiz.topic.subject.name rescue "subjectless"
+        %td= exam.quiz.topic.name rescue "topicless"
+        %td= exam.quiz.body rescue "quizless"
         %td= exam.user ? exam.user.username : "a_dude"
         %td= time_ago_in_words(exam.created_at) + " ago"
