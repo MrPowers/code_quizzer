@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
     @quiz = Quiz.where(slug: params[:quiz_id]).first
     authorize! :update, @question
     if @question.update_attributes(question_params)
-      redirect_to topic_quiz_path(topic_id: @quiz.topic.slug, id: @quiz)
+      redirect_to subject_topic_quiz_path(subject_id: @quiz.topic.subject.slug, topic_id: @quiz.topic.slug, id: @quiz)
     end
   end
 
@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
     @quiz = Quiz.where(slug: params[:quiz_id]).first
     authorize! :destroy, @question
     @question.destroy
-    redirect_to topic_quiz_path(topic_id: @quiz.topic.slug, id: @quiz)
+    redirect_to subject_topic_quiz_path(subject_id: @quiz.topic.subject.slug, topic_id: @quiz.topic.slug, id: @quiz)
   end
 
   private
