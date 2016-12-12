@@ -5,7 +5,7 @@ class Quiz < ActiveRecord::Base
   has_many :videos
   belongs_to :topic
 
-  validates :slug, presence: true
+  validates :slug, presence: true, uniqueness: true
   validates :page_title, length: {maximum: 45}
 
   def to_param
