@@ -1020,7 +1020,7 @@ while (x === 4) {
 },
 answer:
 %q{
-This is an infinite loop because the boolean condidion (4 === 4) always evaluates to true.
+This is an infinite loop because the boolean condition (4 === 4) always evaluates to true.
 },
 section_name: "infinite-loops",
 order: 100
