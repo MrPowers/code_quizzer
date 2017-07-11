@@ -17,6 +17,7 @@ class SubjectsController < ApplicationController
 
   def subject_order
     [
+      "Python",
       "Ruby",
       "JavaScript",
       "Git",
