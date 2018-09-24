@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-ruby "2.1.2"
-gem 'rails', '4.1.8'
+ruby "2.2.2"
+gem 'rails', '4.1.16'
 
 gem 'cancan'
 gem 'devise'
@@ -9,11 +9,10 @@ gem 'faker'
 gem 'haml-rails'
 gem 'heroku'
 gem 'jquery-rails'
-gem 'pg'
+gem 'pg', '>= 0.18', '< 2.0'
 gem 'thin'
 gem 'redcarpet'
 gem 'pygments.rb'
-gem 'pry'
 gem 'spring'
 
 gem 'coffee-rails', '~> 4.0.0'
@@ -45,8 +44,5 @@ group :test do
 end
 
 group :development, :test do
-  gem 'pry'
-  gem 'pry-rails'
-  gem 'pry-nav'
   gem 'byebug'
 end
