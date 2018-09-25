@@ -29,7 +29,7 @@ if Rails.env.development?
   rails.save!
   challenges = Subject.where(name: "Challenges", slug: "challenges").first_or_create
 
-  User.create email: 'you@example.com', password: 'password', password_confirmation: 'password', username: Faker::Internet.user_name, role: 'admin'
+  User.create email: 'you@example.com', password: 'password', password_confirmation: 'password', username: "some_user", role: 'admin'
 
   topic = family.topics.create! name: 'Rails Topic', slug: 'topic-slug', family_id: family.id, subject_id: ruby.id
   quiz1 = topic.quizzes.create! body: 'MVC Quiz', slug: 'quiz-slug', description: 'A first quiz', page_title: 'a quiz page title'

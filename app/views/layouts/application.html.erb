@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+  <head>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="Learn programming with Ruby, JavaScript, and Rails code quizzes." name="description"/>
+    <meta content="Matthew Powers" name="author"/>
+    <title><%= content_for?(:title) ? yield(:title) : "Learn Programming - How To Code" %> | CodeQuizzes</title>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+    <%= render 'layouts/google_analytics' %>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <% unless controller_name == "blogs" %>
+        <%= render "layouts/navigation" %>
+      <% end %>
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
+
+</html>
+

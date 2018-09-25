@@ -1,0 +1,31 @@
+<% content_for :title do %>
+  <%= @quiz.page_title %>
+<% end %>
+
+<h1 class="center">
+  <%= (@quiz.page_title || @topic.name) %>
+</h1>
+<% unless current_user %>
+  <div class="center">
+    <%= button_to('Sign Up to Track Your Progress', new_user_registration_path, :class => 'btn btn-primary btn-large', :method => :get) %>
+  </div>
+<% end %>
+
+<table class="table table-bordered">
+  <thead>
+    <td class="col-md-5">Question</td>
+    <td>Click to View Answer</td>
+    <% if can? :update, Answer %>
+      <td>Your Answer</td>
+    <% end %>
+    <% if can?(:update, Question) || can?(:destroy, Question) %>
+      <td></td>
+    <% end %>
+  </thead>
+  <% @questions.each do |question| %>
+    <tr class="question-row" data-question-id="<%= question.id %>">
+      <td class="question"><%= markdownify(question.body) %></td>
+      <td class="answer clickable no-opacity"><%= markdownify(question.answer) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,1 +1,1 @@
-require_relative "../../lib/html_with_pygments.rb"
+#require_relative "../../lib/html_with_pygments.rb"

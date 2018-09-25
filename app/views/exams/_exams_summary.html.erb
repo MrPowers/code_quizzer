@@ -1,0 +1,67 @@
+<div class="col-md-7 recently-completed-exams">
+  <h3>Recently Completed Exams</h3>
+  <table class="table table-hover">
+    <thead>
+      <td>Subject</td>
+      <td>Topic</td>
+      <td>Quiz</td>
+      <td>User</td>
+      <td>% Correct</td>
+      <td>Completed</td>
+    </thead>
+    <% @completed_exams.each do |exam| %>
+      <tr>
+        <td>
+          <%= exam.quiz.topic.subject.name rescue "subjectless" %>
+        </td>
+        <td>
+          <%= exam.quiz.topic.name rescue "topicless" %>
+        </td>
+        <td>
+          <%= exam.quiz.body rescue "quizless" %>
+        </td>
+        <td>
+          <%= exam.user ? exam.user.username : "a_dude" %>
+        </td>
+        <td>
+          <%= (exam.percent_correct * 100).round(2).to_s + "%" %>
+        </td>
+        <td>
+          <%= time_ago_in_words(exam.updated_at) + " ago" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<div class="col-md-7 exams-in-progress">
+  <h3>Exams In Progress</h3>
+  <table class="table table-hover">
+    <thead>
+      <td>Subject</td>
+      <td>Topic</td>
+      <td>Quiz</td>
+      <td>User</td>
+      <td>Started</td>
+    </thead>
+    <% @exams_in_progress.each do |exam| %>
+      <tr>
+        <td>
+          <%= exam.quiz.topic.subject.name rescue "subjectless" %>
+        </td>
+        <td>
+          <%= exam.quiz.topic.name rescue "topicless" %>
+        </td>
+        <td>
+          <%= exam.quiz.body rescue "quizless" %>
+        </td>
+        <td>
+          <%= exam.user ? exam.user.username : "a_dude" %>
+        </td>
+        <td>
+          <%= time_ago_in_words(exam.created_at) + " ago" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+

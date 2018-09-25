@@ -1,49 +1,37 @@
 source 'https://rubygems.org'
 
-ruby "2.2.2"
-gem 'rails', '4.1.16'
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
+ruby "2.5.0"
+gem 'rails', '5.1.6'
 
 gem 'cancan'
 gem 'devise'
-gem 'faker'
-gem 'haml-rails'
-gem 'heroku'
+
 gem 'jquery-rails'
-gem 'pg', '>= 0.18', '< 2.0'
-gem 'thin'
+gem 'pg', '~> 1.0.0'
+
 gem 'redcarpet'
 gem 'pygments.rb'
-gem 'spring'
 
-gem 'coffee-rails', '~> 4.0.0'
-gem 'sass-rails', '~> 4.0.3'
+gem 'coffee-rails', '~> 4.2'
+gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
-gem 'directed_graph'
 gem 'titleize'
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg', '~> 0.11'
 end
 
 group :development do
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'quiet_assets'
-end
-
-group :test do
-  gem 'minitest'
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  gem 'rspec'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
-  gem 'simplecov'
-end
-
-group :development, :test do
   gem 'byebug'
+  #gem 'spring'
 end
+

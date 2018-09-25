@@ -1,5 +1,11 @@
 module ApplicationHelper
 
+  class HTMLwithPygments < Redcarpet::Render::HTML
+    def block_code(code, language)
+      Pygments.highlight(code, lexer: language)
+    end
+  end
+
   def markdownify(str)
     markdown = Redcarpet::Markdown.new(HTMLwithPygments, fenced_code_blocks: true, no_intra_emphasis: true)
     markdown.render(str).html_safe

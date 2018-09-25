@@ -1,0 +1,18 @@
+<%= form_for [@quiz, @question] do |f| %>
+  <p>
+    <%= f.label :body %>
+  </p>
+  <p>
+    <%= f.text_area :body, :rows => "15", :class => "form-control" %>
+  </p>
+  <p>
+    <%= f.label :answer %>
+  </p>
+  <p>
+    <%= f.text_area :answer, :rows => "15", :class => "form-control" %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+

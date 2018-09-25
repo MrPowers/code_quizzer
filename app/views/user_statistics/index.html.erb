@@ -1,0 +1,30 @@
+<h1>Total Users: #{@total_users}</h1>
+<br/>
+<h3>Total Exams: #{@total_exams}</h3>
+<h3>Graded Exams: #{@graded_exams}</h3>
+<h3>Cancelled Exams: #{@cancelled_exams}</h3>
+<table>
+  <thead>
+    <td>Date</td>
+    <td>Sign Up Count</td>
+    <td>Graded Exams</td>
+    <td>Cancelled Exams</td>
+  </thead>
+  <% @grouped_users.keys.each do |date| %>
+    <tr>
+      <td>
+        <%= date %>
+      </td>
+      <td>
+        <%= @grouped_users[date] %>
+      </td>
+      <td>
+        <%= @grouped_graded_exams[date] %>
+      </td>
+      <td>
+        <%= @grouped_cancelled_exams[date] %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
