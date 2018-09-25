@@ -26,6 +26,7 @@
     <tr class="question-row" data-question-id="<%= question.id %>">
       <td class="question"><%= markdownify(question.body) %></td>
       <td class="answer clickable no-opacity"><%= markdownify(question.answer) %></td>
+
       <% if can? :update, Answer %>
         <td class="user-answer center">
           <% answer = @exam.answers.find { |a| a.exam_id == @exam.id && a.question_id == question.id } %>
@@ -41,6 +42,61 @@
           <% end %>
         </td>
       <% end %>
+
+      <% if can?(:update, question) || can?(:destroy, question) %>
+        <td>
+          <% if can? :update, question %>
+            <p><%= link_to "Edit", edit_quiz_question_path(:id => question.id, :quiz_id => @quiz.id) %></p>
+          <% end %>
+          <% if can? :destroy, question %>
+            <p><%= link_to 'Destroy', [question.quiz, question], :method => :delete, :data => {:confirm => 'Are you sure?'} %></p>
+          <% end %>
+        </td>
+      <% end %>
     </tr>
   <% end %>
 </table>
+
+<br>
+
+<% if can? :create, Exam %>
+  <div>
+    <button class="btn btn-large btn-primary grade-exam" data-target="#examResults" data-toggle="modal">Grade this Exam</button>
+  </div>
+  <div id="examResults" class="modal fade" aria-hidden="true" aria-labelledby="examResultsLabel" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" aria-hidden="true" data-dismiss="modal" type="button">×</button>
+          <h4 id="examResultsLabel" class="modal-title">Exam Results</h4>
+        </div>
+        <div class="modal-body">
+          <h4>Percent Correct: <span class="percent-correct"></span></h4>
+          <h5>Correct Answers: <span class="correct-answers"></span></h5>
+          <h5>Incorrect Answers: <span class="incorrect-answers"></span></h5>
+          <h5>Not Answered: <span class="unanswered-questions"></span></h5>
+          <%= button_to('Back To All Quizzes', root_path, :class => 'btn btn-primary', :method => :get) %>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<br>
+
+<% if can? :create, @quiz.questions.build %>
+  <%= render "questions" %>
+<% end %>
+
+<br>
+
+<% if @exam %>
+  <div class="exam-information" data-exam-id="<%= @exam.id %>">
+  </div>
+<% end %>
+
+<%= render 'disqus' %>
+
