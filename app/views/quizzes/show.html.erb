@@ -26,6 +26,21 @@
     <tr class="question-row" data-question-id="<%= question.id %>">
       <td class="question"><%= markdownify(question.body) %></td>
       <td class="answer clickable no-opacity"><%= markdownify(question.answer) %></td>
+      <% if can? :update, Answer %>
+        <td class="user-answer center">
+          <% answer = @exam.answers.find { |a| a.exam_id == @exam.id && a.question_id == question.id } %>
+          <% if answer %>
+            <% if answer.is_correct %>
+              <div class="correct">&#x2713;</div>
+            <% else %>
+              <div class="incorrect">&#x2718;</div>
+            <% end %>
+          <% else %>
+            <%= button_to('Correct', set_answer_status_path(exam_id: @exam.id, question_id: question.id, is_correct: true), :class => 'btn btn-success correct-answer', :method => :post, :remote => true) %>
+            <%= button_to('Wrong', set_answer_status_path(exam_id: @exam.id, question_id: question.id, is_correct: false), :class => 'btn btn-danger incorrect-answer', :method => :post, :remote => true) %>
+          <% end %>
+        </td>
+      <% end %>
     </tr>
   <% end %>
 </table>
