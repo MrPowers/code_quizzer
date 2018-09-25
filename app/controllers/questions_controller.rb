@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_filter :find_question, :except => [:create]
+  before_action :find_question, :except => [:create]
 
   def create
     @quiz = Quiz.where(slug: params[:quiz_id]).first
