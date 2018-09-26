@@ -28,6 +28,7 @@ group :production do
 end
 
 group :development do
+  gem 'derailed_benchmarks'
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
