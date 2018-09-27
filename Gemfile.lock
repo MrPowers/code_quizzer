@@ -105,6 +105,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     pg (1.0.0)
+    puma (3.11.4)
     pygments.rb (1.2.1)
       multi_json (>= 1.0.0)
     rack (2.0.5)
@@ -192,6 +193,7 @@ DEPENDENCIES
   devise
   jquery-rails
   pg (~> 1.0.0)
+  puma
   pygments.rb
   rails (= 5.1.6)
   rails_12factor
