@@ -10,10 +10,6 @@ Compoundblingapplication::Application.routes.draw do
 
   get 'blogs/index'
 
-  resources :students do
-    resources :student_webpages
-  end
-
   root :to => 'subjects#index'
 
   get 'javascript-book/:section_name', to: 'js_books#show', as: 'js_books'
