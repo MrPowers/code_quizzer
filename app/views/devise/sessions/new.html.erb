@@ -2,12 +2,14 @@
 
   <h2>Please sign in</h2>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= f.label :email, class: "sr-only" %>
-    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email address" %>
-
-    <%= f.label :password, class: "sr-only" %>
-    <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
-
+    <div class="form-group">
+      <%= f.label :email, class: "sr-only" %>
+      <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email address" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password, class: "sr-only" %>
+      <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+    </div>
     <% if devise_mapping.rememberable? -%>
       <div class="checkbox">
         <%= f.check_box :remember_me %>
@@ -15,7 +17,7 @@
       </div>
     <% end -%>
 
-    <div class="actions">
+    <div class="form-group">
       <%= f.submit "Sign in", class: "btn btn-lg btn-primary btn-block" %>
     </div>
   <% end %>

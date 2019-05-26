@@ -12,6 +12,18 @@
   color: #da4e49;
 }
 
+td.user-answer {
+  vertical-align: middle;
+  .button_to {
+    margin: 0.5em 0;
+  }
+}
+
+input.btn.btn-success.correct-answer,
+input.btn.btn-danger.incorrect-answer {
+  min-width: 50%;
+}
+
 /************************
 TABLE PROGRAMMING CHALLENGES
 ************************/
