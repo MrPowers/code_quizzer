@@ -21,9 +21,9 @@
 }
 
 .subject:hover {
-  background-color: #365358;
-  transition: 0.5s ease;
-  color: white;
+  border-color: #337ab7;
+  box-shadow: 0 0 0 0.3rem #337ab7;
+  transition: box-shadow 0.5s;
 }
 
 .landing-section {
