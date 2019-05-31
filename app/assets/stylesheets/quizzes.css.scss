@@ -31,8 +31,9 @@ TABLE PROGRAMMING CHALLENGES
   text-align: center;
 }
 
-table {
+table.table.table-bordered {
   border-collapse: collapse;
+  margin-top: 1em;
 }
 
 td {
