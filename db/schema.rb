@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20180929051153) do
   create_table "answers", force: :cascade do |t|
     t.integer "exam_id"
     t.integer "question_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "is_correct"
   end
 
@@ -27,23 +27,23 @@ ActiveRecord::Schema.define(version: 20180929051153) do
     t.integer "challenge_id"
     t.integer "user_id"
     t.boolean "is_correct"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "challenge_users", force: :cascade do |t|
     t.integer "challenge_id"
     t.integer "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "challenges", force: :cascade do |t|
     t.text "question"
     t.text "answer_description"
     t.text "answer"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text "question_summary"
     t.text "slug"
   end
@@ -52,15 +52,15 @@ ActiveRecord::Schema.define(version: 20180929051153) do
     t.text "body"
     t.integer "quiz_id"
     t.integer "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "exams", force: :cascade do |t|
     t.integer "quiz_id"
     t.integer "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "is_graded"
     t.boolean "is_canceled"
   end
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 20180929051153) do
   create_table "families", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "page_title"
     t.string "slug"
   end
@@ -78,14 +78,14 @@ ActiveRecord::Schema.define(version: 20180929051153) do
     t.text "body"
     t.text "answer"
     t.integer "quiz_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "quizzes", force: :cascade do |t|
     t.string "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text "description"
     t.integer "topic_id"
     t.string "slug"
@@ -98,21 +98,21 @@ ActiveRecord::Schema.define(version: 20180929051153) do
     t.text "answer"
     t.string "section_name"
     t.integer "order"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "subjects", force: :cascade do |t|
     t.string "name"
     t.string "slug"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "topics", force: :cascade do |t|
     t.text "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "family_id"
     t.string "slug"
     t.integer "subject_id"
@@ -130,8 +130,8 @@ ActiveRecord::Schema.define(version: 20180929051153) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "role", default: "author"
     t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -142,8 +142,8 @@ ActiveRecord::Schema.define(version: 20180929051153) do
     t.text "link"
     t.text "description"
     t.integer "quiz_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -1,4 +1,4 @@
-class CreateChallengeUsers < ActiveRecord::Migration
+class CreateChallengeUsers < ActiveRecord::Migration[5.1]
   def change
     create_table :challenge_users do |t|
       t.integer :challenge_id

@@ -1,4 +1,4 @@
-class CreateStudentWebpages < ActiveRecord::Migration
+class CreateStudentWebpages < ActiveRecord::Migration[5.1]
   def change
     create_table :student_webpages do |t|
       t.string :name

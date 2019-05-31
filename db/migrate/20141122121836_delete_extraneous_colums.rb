@@ -1,4 +1,4 @@
-class DeleteExtraneousColums < ActiveRecord::Migration
+class DeleteExtraneousColums < ActiveRecord::Migration[5.1]
   def change
     remove_column :exams, :status
     remove_column :exams, :correct_answers

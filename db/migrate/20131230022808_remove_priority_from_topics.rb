@@ -1,4 +1,4 @@
-class RemovePriorityFromTopics < ActiveRecord::Migration
+class RemovePriorityFromTopics < ActiveRecord::Migration[5.1]
   def up
     remove_column :topics, :priority
   end

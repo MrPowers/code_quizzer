@@ -1,4 +1,4 @@
-class CreateSectionQuestions < ActiveRecord::Migration
+class CreateSectionQuestions < ActiveRecord::Migration[5.1]
   def change
     create_table :section_questions do |t|
       t.text :body
