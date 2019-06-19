@@ -3,22 +3,26 @@
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
-
-    <%= f.label :email, class: "sr-only" %>
-    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email address" %>
-
-    <%= f.label :username, class: "sr-only" %>
-    <%= f.text_field :username, autocomplete: "off", class: "form-control", placeholder: "Username" %>
-
-    <%= f.label :password, class: "sr-only" %>
-    <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "New password (optional)" %>
-
-    <%= f.label :password_confirmation, class: "sr-only" %>
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "New password confirmation (optional)" %>
-
-    <%= f.label :current_password, class: "sr-only" %>
-    <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "Current password (required)" %>
-
+    <div class="form-group">
+      <%= f.label :email, class: "sr-only" %>
+      <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email address" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :username, class: "sr-only" %>
+      <%= f.text_field :username, autocomplete: "off", class: "form-control", placeholder: "Username" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password, class: "sr-only" %>
+      <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "New password (optional)" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation, class: "sr-only" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "New password confirmation (optional)" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :current_password, class: "sr-only" %>
+      <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "Current password (required)" %>
+    </div>
     <div class="actions">
       <%= f.submit "Update", class: "btn btn-lg btn-primary btn-block" %>
     </div>

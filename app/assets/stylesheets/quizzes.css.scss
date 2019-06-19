@@ -21,7 +21,7 @@ td.user-answer {
 
 input.btn.btn-success.correct-answer,
 input.btn.btn-danger.incorrect-answer {
-  min-width: 50%;
+  width: 100%;
 }
 
 /************************
@@ -31,8 +31,9 @@ TABLE PROGRAMMING CHALLENGES
   text-align: center;
 }
 
-table {
+table.table.table-bordered {
   border-collapse: collapse;
+  margin-top: 1em;
 }
 
 td {
