@@ -6,6 +6,18 @@
 
 I created quizzes for myself when I was learning to program and decided to create CodeQuizzes as my first Rails application to share these quizzes with the world.  The site is now used by hundreds of people a day!
 
+## Model heirarchy
+
+```
+Family (learn_programming)
+  Subject (ruby, golang, git)
+    Topic (beginner, intermediate, advanced)
+      Quiz
+        Question
+```
+
+A family `has_many` subjects, a subject `has_man` topics,  a topic `has_many` quizzes, a quiz `has_many` questions.
+
 ## JavaScript Book
 
 **This is an open souce book.**  Please submit pull requests if you have any suggestions to make the book better!
