@@ -1,0 +1,137 @@
+Scala
+Intermediate
+Either, Right, Left
+
+
+1.
+What does the following code print?
+
+```scala
+def myDivider(x: Int, y: Int): Either[String, Int] = {
+  if (y == 0) Left("You can't divide by zero")
+  else Right(x / y)
+}
+
+println(myDivider(5, 0))
+```
+
+
+
+`Left(You can't divide by zero)` is printed.
+
+The `myDivider` function returns an `Either[String, Int]`.
+
+If `Either[A, B]` contains an `A` object, it'll return a `Left`.
+
+If `Either[A, B]` contains a `B` object, it'll return a `Right`.
+
+`myDivider(5, 0)` returns a `String`, so `Either[String, Int]` will return a `Left`.
+
+
+
+
+
+2.
+What does the following code print?
+
+```scala
+def myDivider(x: Int, y: Int): Either[String, Int] = {
+  if (y == 0) Left("You can't divide by zero")
+  else Right(x / y)
+}
+
+println(myDivider(10, 2))
+```
+
+
+
+`Right(5)` is printed.
+
+Ten divided by two returns an integer, so a method with the `Either[String, Int]` type signature will return a `Right` value.
+
+
+
+
+
+3.
+What does the following code print?
+
+```scala
+import scala.io.Source
+
+def getProtocol(url: java.net.URL): Either[String, Source] =
+  if (url.getProtocol == "http")
+    Left("Please use https")
+  else
+    Right(Source.fromURL(url))
+
+val url = new java.net.URL("http://www.codequizzes.com")
+println(getProtocol(url))
+```
+
+
+
+`Left("Please use https")` is printed.
+
+The `getProtocol` method went left because the URL protocol supplied used http.
+
+
+
+
+4.
+What does the following code print?
+
+```scala
+import scala.io.Source
+
+def getProtocol(url: java.net.URL): Either[String, Source] =
+  if (url.getProtocol == "http")
+    Left("Please use https")
+  else
+    Right(Source.fromURL(url))
+
+val url = new java.net.URL("https://www.mungingdata.com")
+println(getProtocol(url))
+```
+
+
+
+`Right(<iterator>)` is printed.
+
+`getProtocol` goes right when the URL uses the https protocol.
+
+
+
+
+
+5.
+what does the following code print?
+
+```scala
+Left("hi").getOrElse("whatever")
+```
+
+
+
+`whatever` is printed.
+
+`getOrElse` will use the `else` value when being called on a `Left` value.
+
+
+
+
+
+6.
+what does the following code print?
+
+```scala
+Right("hi").getOrElse("whatever")
+```
+
+
+
+`hi` is printed.
+
+`getOrElse` will return the value encapsulated by `Right` when called on a `Right` value.
+
+
