@@ -1,0 +1,231 @@
+6.
+What does the following code print?
+
+```scala
+val something = null
+def getLength(x: String): Int = x.length
+println(getLength(something))
+```
+
+
+
+This code returns a `java.lang.NullPointerException`.
+
+This code ends up calling `null.length` which isn't a valid operation.
+
+The Scala Some / Option / None classes exist so you can avoid `NullPointerExceptions` in your code.
+
+`null` should be avoided in Scala code.  You should never set a variable to `null`.
+
+
+
+
+7.
+What does the following code print?
+
+```scala
+val something = null
+
+def crappyGetLength(x: String): Any =
+  if (x != null) x.length else null
+
+println(crappyGetLength(something) == null)
+```
+
+
+
+This code prints `null`.
+
+The `crappyGetLength` function is terrible.  You should never explicitly reference `null` in a Scala function.  This function is a huge Scala anti-pattern.
+
+Some, Option, and None exist so you can avoid writing code that directly references `null`.
+
+
+
+
+
+8.
+What does the following code print?
+
+```scala
+def betterGetLength(x: Option[String]): Option[Int] =
+  if (x.isDefined) Some(x.get.length) else None
+
+println(betterGetLength(None))
+println(betterGetLength(Some("puppy")))
+```
+
+
+
+`betterGetLength(None)` returns `None` and `betterGetLength(Some("puppy"))` returns `Some(5)`.
+
+This is better than using `null` directly, but it's not idiomatic Scala code.  Avoid writing code like this.
+
+
+
+
+
+9.
+What does the following code print?
+
+```scala
+def goodGetLength(x: Option[String]): Option[Int] =
+  x.map(_.length)
+
+println(goodGetLength(None))
+println(goodGetLength(Some("puppy")))
+```
+
+
+
+`goodGetLength(None)` returns `None` and `goodGetLength(Some("puppy"))` returns `Some(5)`.
+
+This is an idiomatic way to deal with optional values in Scala.
+
+You're probably used to seeing the `map` method when iterating over lists, so it's weird to see `map` being used for optional values.
+
+Think of optional values as lists that can contain one or no values.  Think of it like iterating over an empty list or iterating over a list that contains one value.  When you think of optional values like lists, the `map` syntax makes more sense.
+
+
+
+
+
+10.
+Let's write some code that'll create a collection of dogs, will fetch one of the dogs, and will print an attribute of the dog.
+
+What does the following code print?
+
+```scala
+case class Dog(
+  id: Int,
+  firstName: String,
+  nickName: Option[String])
+
+val dog1 = Dog(1, "Spot", Some("foofie"))
+val dog2 = Dog(2, "Luna", None)
+
+val dogs = Map(
+  1 -> dog1,
+  2 -> dog2)
+
+def findById(dogs: Map[Int, Dog], id: Int): Option[Dog] =
+  dogs.get(id)
+
+val d1 = findById(dogs, 1)
+println(d1.map(_.nickName))
+```
+
+
+
+`Some(Some("foofie"))` is printed.
+
+`d1` is assigned to `Some(Dog(1, "Spot", Some("foofie")))` and `dog1.nickName` is assigned to `Some("foofie")`, so `d1.map` returns a nested `Some()` value.
+
+You don't typically want to write code that returns nested `Some` values.
+
+
+
+
+
+11.
+How can you finish this code to return `Some("foofie")`?
+
+```scala
+case class Dog(
+                id: Int,
+                firstName: String,
+                nickName: Option[String])
+
+val dog1 = Dog(1, "Spot", Some("foofie"))
+val dog2 = Dog(2, "Luna", None)
+
+val dogs = Map(
+  1 -> dog1,
+  2 -> dog2)
+
+def findById(dogs: Map[Int, Dog], id: Int): Option[Dog] =
+  dogs.get(id)
+
+val d1 = findById(dogs, 1)
+```
+
+
+
+This code `d1.flatMap(_.nickName)` will return `Some("foofie")`.
+
+Notice that we're using `flatMap` instead of `map`.  The `flatMap` method is designed to avoid returning nested values.
+
+
+
+
+
+
+12.
+What does the following code print?
+
+```scala
+case class Cat(name: String, age: Int)
+val darla = Some(Cat("darla", 12))
+println(darla.filter(_.age > 10))
+```
+
+
+
+`Some(Cat("darla", 12))` is printed.
+
+You can also filter optional values.  Scala returns the value if the predicate evaluates to true and false otherwise.  In this case, the `age > 10` predicate evalutes to true.
+
+
+
+
+
+13.
+What does the following code print?
+
+```scala
+case class Cat(name: String, age: Int)
+val chunkers = Some(Cat("chunkers", 4))
+println(chunkers.filter(_.age > 10))
+```
+
+
+
+
+`None` is printed.
+
+When you filter over an optional values and the predicate evaluates to false, Scala returns `None`.
+
+
+
+
+14.
+What does the following code print?
+
+```scala
+case class Cat(name: String, age: Int)
+val nala: Option[Cat] = None
+println(nala.filter(_.age > 10))
+```
+
+
+
+`None` is printed.
+
+The `filter` method does not blow up when it filters over a `None` value.  It gracefully returns `None`.
+
+You should start to be seeing how Scala's option handling methods like `filter` help you sidestep the `NullPointerException` errors you'd be facing if you were using `null` directly in your code.
+
+
+
+
+15.
+Why should `null` be avoided in Scala?
+
+
+
+The Scala community discourages using `null` because it helps you avoid null pointer exceptions and encourages a safer type of functional programming.  See Alvin Alexander's [full writeup here](http://alvinalexander.com/scala/scala-null-values-option-uninitialized-variables).
+
+
+
+
+

@@ -1,0 +1,228 @@
+Scala
+Intermediate
+Try
+
+1.
+What does the following code return?
+
+```scala
+new java.net.URL("this is invalid")
+```
+
+
+
+`java.net.MalformedURLException: no protocol: this is invalid` is returned.
+
+The `java.net.URL` constructor throws an error when the input string is an invalid URL.
+
+
+
+
+2.
+What does the following code return?
+
+```scala
+new java.net.URL("https://mungingdata.com/")
+```
+
+
+
+This returns a `java.net.URL` argument.  The input supplied to the constructor is valid, so the object is created, without any errors.
+
+
+
+
+
+3.
+What does the following code return?
+
+```scala
+import scala.util.Try
+
+Try(new java.net.URL("this is invalid"))
+```
+
+
+
+
+`Failure(java.net.MalformedURLException: no protocol: this is invalid)` is returned.
+
+`Failure` is a Scala class that lets errors be handled in a functional way.  Notice that the program does not blow up with an exception when `new java.net.URL("this is invalid")` is wrapped in `Try`.
+
+`Try` let's you deal with an error like any other value, so it can be handled with functional code.
+
+
+
+
+4.
+What does the following code return?
+
+```scala
+import scala.util.Try
+
+Try(new java.net.URL("https://www.mungingdata.com"))
+```
+
+
+
+`Success(https://www.mungingdata.com)` is returned.
+
+`Success` is a Scala class that is returned when the argument passed to `Try` does not throw an exception.
+
+`new java.net.URL("https://www.mungingdata.com")` does not throw an exception, so a `Success` is returned.
+
+
+
+
+
+5.
+What does the following code print?
+
+```scala
+val url = Try(new java.net.URL("https://www.blah.com"))
+val res = if (url.isSuccess) "we have a URL" else "where to go?"
+println(res)
+```
+
+
+
+`we have a URL` is printed.
+
+You can call `isSuccess` on instances of the `Try` class.
+
+There is also an `isFailure` method.
+
+
+
+
+
+6.
+What does the following code print?
+
+```scala
+val url = Try(new java.net.URL("blah"))
+println(url.getOrElse("I am broken"))
+```
+
+
+
+
+`I am broken` is printed.
+
+The `getOrElse` methods can be called on instances of the `Try` class, so these return values can be handled in a functional way.
+
+
+
+
+
+7.
+What does the following code print?
+
+```scala
+val url = Try(new java.net.URL("blah"))
+println(url.map(_.getProtocol))
+```
+
+
+
+`Failure(java.net.MalformedURLException: no protocol: blah)` is returned.
+
+The URL cannot be parsed and we're calling the `getProtocol` method on a value that we couldn't parse.
+
+If we weren't using Scala's functional error handling, this code would error out.  Scala is saving us from having to deal with an error, by wrapping the error in a return value that does not blow up the code.
+
+
+
+
+
+
+8.
+What does the following code print?
+
+```scala
+val url = Try(new java.net.URL("https://www.mungingdata.com"))
+println(url.map(_.getProtocol))
+```
+
+
+
+`Success(https)` is printed.
+
+The URL is successfully parsed in this example and we can grab the protocol in a functional manner.
+
+
+
+
+
+9.
+What does the following code print?
+
+```scala
+def toInt(s: String): Try[Int] =
+    Try(Integer.parseInt(s.trim))
+
+println(toInt("80"))
+```
+
+
+
+`Success(80)` is printed.
+
+The `toInt` function takes a string argument and returns a `Try[Int]` value.  The string "80" can be parsed to an integer, so a Success value is returned.
+
+
+
+
+10.
+What does the following code print?
+
+```scala
+def toInt(s: String): Try[Int] =
+    Try(Integer.parseInt(s.trim))
+
+println(toInt("hello"))
+```
+
+
+
+`Failure(java.lang.NumberFormatException: For input string: "hello")` is printed.
+
+The string "hello" cannot be parsed into an integer.
+
+
+
+
+11.
+What does the following code print?
+
+```scala
+def toInt(s: String): Option[Int] = {
+  try {
+    Some(Integer.parseInt(s.trim))
+  } catch {
+    case e: Exception => None
+  }
+}
+
+println(toInt("55"))
+println(toInt("hello"))
+```
+
+
+
+
+`toInt("55")` returns `55`.
+
+`toInt("hello")` returns `None`.
+
+We can deal with exceptions in a functional manner with Option / Some / None, but it's awkward.
+
+It's better to deal with exceptions in a functional manner using Try / Success / Failure.
+
+
+
+
+
+12.
+
+
