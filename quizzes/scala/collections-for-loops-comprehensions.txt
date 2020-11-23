@@ -1,0 +1,177 @@
+Scala
+Collections
+For loops and comprehensions
+
+
+1.
+Use a for loop to sum all the items in the following collection.
+
+```scala
+var total = 0
+val items = Array(1, 10, 100, 1000)
+```
+
+
+
+
+`for (item <- items) total += item`
+
+The result should be 1111.
+
+
+
+
+
+
+
+2.
+Use a for loop to sum the numbers from 1 to 4 (the result should be 10).
+
+
+
+
+```scala
+var total = 0
+for (i <- Range(0, 5)) {
+  total = total + i
+}
+```
+
+`Range(0, 5)` returns a `scala.collection.immutable.Range.Exclusive` object.
+
+You can inspect the content of the range with `Range(0, 5).toList` and see it contains `List(0, 1, 2, 3, 4)`.
+
+
+
+
+
+3.
+Use a for loop to sum all the numbers in the nested arrays (result should be 21).
+
+```scala
+val multi = Array(Array(1, 2), Array(3, 4), Array(5, 6))
+```
+
+
+
+
+
+```scala
+var total = 0
+for (arr <- multi; i <- arr) total = total + i
+```
+
+
+
+
+
+4.
+Use a for loop to sum all of the even numbers in the following nested arrays.
+
+```scala
+val multi = Array(Array(1, 2), Array(3, 4), Array(5, 6))
+```
+
+
+
+
+```scala
+var total = 0
+for (arr <- multi; i <- arr; if i % 2 == 0) total = total + i
+```
+
+Scala for loops allow you to express nested loop iteration on a single line.
+
+
+
+
+
+5.
+Use a for loop to square all of the elements in the following array.
+
+```scala
+val a = Array(1, 2, 3, 4)
+```
+
+
+
+
+```scala
+for (i <- a) yield i * i
+```
+
+
+
+
+
+6.
+Use a for loop to convert `Array(1, 2, 3, 4)` to `Array("hi 1", "hi 2", "hi 3", "hi 4")`.
+
+
+
+
+
+```scala
+val a = Array(1, 2, 3, 4)
+for (i <- a) yield "hi " + i
+```
+
+
+
+
+7.
+use a for loop to convert `Array(1, 2, 3, 4)` to `Array("hi 2", "hi 4")`.  Filter out all the values that are odd.
+
+
+
+
+```scala
+val a = Array(1, 2, 3, 4)
+for (i <- a if i % 2 == 0) yield "hi " + i
+```
+
+
+
+
+
+8.
+Use a for loop to flatten the following two arrays into a single array.
+
+```scala
+val a = Array(1, 2)
+val b = Array("hello", "world")
+// add your code here
+// desired result: Array("hello1", "world1", "hello2", "world2")
+```
+
+
+
+
+```scala
+for (i <- a; s <- b) yield s + i
+```
+
+
+
+
+
+9.
+Use a multi-line for loop to flatten the following two arrays into a single array.
+
+```scala
+val a = Array(1, 2)
+val b = Array("hello", "world")
+// add your code here
+// desired result: Array("hello1", "world1", "hello2", "world2")
+```
+
+
+
+```scala
+for {
+  i <- a
+  s <- b
+} yield s + i
+```
+
+
