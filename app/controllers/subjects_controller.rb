@@ -20,11 +20,12 @@ class SubjectsController < ApplicationController
       "Golang",
       "Python",
       "Ruby",
-      "JavaScript",
-      "Git",
-      "Computer Science",
-      "Scala",
       "Bash",
+      "Scala",
+      "Spark"
+      "JavaScript",
+      "Computer Science",
+      "Git",
       "Rails",
       "Challenges"
     ]
