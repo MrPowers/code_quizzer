@@ -120,7 +120,7 @@ for (i <- a) yield "hi " + i
 
 
 7.
-use a for loop to convert `Array(1, 2, 3, 4)` to `Array("hi 2", "hi 4")`.  Filter out all the values that are odd.
+Use a for loop to convert `Array(1, 2, 3, 4)` to `Array("hi 2", "hi 4")`.  Filter out all the values that are odd.
 
 
 

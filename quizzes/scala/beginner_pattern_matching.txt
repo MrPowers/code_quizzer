@@ -1,0 +1,260 @@
+Scala
+Beginner
+Pattern Matching
+
+
+1.
+What does the following code print?
+
+```scala
+def dayOfWeek(x: Int) = x match {
+  case 1 => "Mon"
+  case 2 => "Tue"
+  case 3 => "Wed"
+  case _ => "Unknown"
+}
+println(dayOfWeek(2))
+println(dayOfWeek(-1))
+```
+
+
+
+
+`dayOfWeek(2)` returns `"Tue"`.
+
+`dayOfWeek(-1)` returns `"Unknown"`.
+
+This example is pattern matching on different integer values.
+
+
+
+
+
+
+2.
+What does the following code print?
+
+```scala
+def indexOfDay(d: String) = d match {
+  case "Mon" => 1
+  case "Tue" => 2
+  case "Wed" => 3
+  case _ => -1
+}
+println(indexOfDay("Wed"))
+println(indexOfDay("Whatever"))
+```
+
+
+
+
+`indexOfDay("Wed")` returns `1`.
+
+`indexOfDay("Whatever")` returns `-1`.
+
+This example shows how to pattern match different string values.
+
+
+
+
+
+3.
+What does the following code print?
+
+```scala
+def fizzBuzz(num: Int) = (num % 3, num % 5) match {
+  case (0, 0) => "FizzBuzz"
+  case (0, _) => "Fizz"
+  case (_, 0) => "Buzz"
+  case _ => ""
+}
+println(fizzBuzz(3))
+println(fizzBuzz(15))
+```
+
+
+
+
+
+`fizzBuzz(3)` returns `"Fizz"`.
+
+`fizzBuzz(15)` returns `"FizzBuzz"`.
+
+This example shows how to pattern match tuples.
+
+
+
+
+
+4.
+What does the following code print?
+
+```scala
+case class Point(x: Int, y: Int)
+def direction(p: Point) = p match {
+  case Point(0, 0) => "origin"
+  case Point(_, 0) => "horizontal"
+  case Point(0, _) => "vertical"
+  case _ => "diagonal"
+}
+println(direction(Point(10, 0)))
+println(direction(Point(0, 5)))
+println(direction(Point(2, 2)))
+```
+
+
+
+`direction(Point(10, 0))` returns `"horizontal"`.
+
+`direction(Point(0, 5))` returns `"vertical"`.
+
+`direction(Point(2, 2))` returns `"diagonal"`.
+
+This example shows how to pattern match on different type of case class objects.
+
+
+
+
+
+5.
+What does the following code print?
+
+```scala
+def americanDate(s: String) = s match {
+  case s"$day-$month-$year" => s"$month/$day/$year"
+  case _ => "not a date"
+}
+println(americanDate("22-1-1965"))
+println(americanDate("10-1988"))
+```
+
+
+
+
+`americanDate("22-1-1965")` returns `"1/22/1965"`.
+
+`americanDate("10-1988")` returns `"not a date"`.
+
+This example shows how to pattern match on string patterns.
+
+
+
+
+
+6.
+What does the following code print?
+
+```scala
+case class Person(name: String, title: String)
+def greet(p: Person) = p match {
+  case Person(s"$firstName $lastName", title) => s"Hello $title $lastName"
+  case Person(name, title) => s"Hello $title $name"
+}
+println(greet(Person("ron", "mac")))
+println(greet(Person("Matthew Powers", "Mr")))
+```
+
+
+
+`greet(Person("ron", "mac"))` returns `"ron mac"`.
+
+`greet(Person("Matthew Powers", "Mr"))` returns `"Mr Powers"`.
+
+This example demonstrates how to perform nested pattern matching.
+
+
+
+
+7.
+What does the following code print?
+
+```scala
+val a = Array[(Int, String)]((1, "one"), (2, "two"), (3, "three"))
+val res = for ((i, s) <- a) yield(s + i)
+println(res) 
+```
+
+
+
+`Array("one1", "two2", "three3")` is printed.
+
+This example shows how to pattern match in a for loop.
+
+
+
+
+
+
+
+8.
+What does the following code print?
+
+```scala
+case class Coffee(origin: String, roast: String)
+val lomaverde = Coffee("Colombia", "medium")
+val Coffee(a, b) = lomaverde
+println(a)
+println(b)
+```
+
+
+
+println(a) prints `"Colombia"`.
+
+println(b) prints `"medium"`.
+
+This example shows to to pattern match in val statements.
+
+
+
+
+
+9.
+What does the following code print?
+
+```scala
+def typeFinder(something: Any) = something match {
+  case i: Int => "I am an integer"
+  case s: String => "I am a string"
+  case _ => "Not sure what type I am"
+}
+println(typeFinder(56))
+println(typeFinder("hello"))
+```
+
+
+
+
+`typeFinder(56)` returns `"I am an integer"`.
+
+`typeFinder("hello")` returns `"I am a string"`.
+
+This example shows how pattern matching makes it easy to handle various types of input data.
+
+
+
+
+
+10.
+What does the following code print?
+
+```scala
+case class Player(name: String, score: Int)
+
+def message(player: Player) = player match {
+  case Player(_, score) if score > 100000 => "Get a job"
+  case Player(name, _) => "Hey " + name + ", nice to see you again!"
+}
+message(Player("bob", 10))
+message(Player("carolina", 500000))
+```
+
+
+
+
+`message(Player("bob", 10))` returns `"Hey bob, nice to see you again!"`.
+
+`message(Player("carolina", 500000))` returns `"Get a job"`.
+
+This example shows how to pattern match on objects with different values.
+
