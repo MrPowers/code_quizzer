@@ -219,10 +219,3 @@ We can deal with exceptions in a functional manner with Option / Some / None, bu
 
 It's better to deal with exceptions in a functional manner using Try / Success / Failure.
 
-
-
-
-
-12.
-
-
