@@ -203,7 +203,7 @@ println(a) prints `"Colombia"`.
 
 println(b) prints `"medium"`.
 
-This example shows to to pattern match in val statements.
+This example shows how to pattern match in val statements.
 
 
 
