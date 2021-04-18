@@ -6,7 +6,7 @@ Ruby can be learned with books, online, in a classroom, or with a mentor.  A com
 
 ## Books
 
-### [The Well Grounded Rubyist 2nd Edition](http://www.amazon.com/Well-Grounded-Rubyist-David-Black/dp/1617291692) (10/10)
+### The Well Grounded Rubyist 2nd Edition (10/10)
 
 The Well Grounded Rubyist is the best book to learn about objects and message sending.  [Messages are more important that objects](http://lists.squeakfoundation.org/pipermail/squeak-dev/1998-October/017019.html) and David Black gives messages the attention they deserve.
 
@@ -16,15 +16,15 @@ The Well Grounded Rubyist is the best way to level up from a beginner to an inte
 
 Make sure to read The Well Grounded Rubyist before Practical Object Oriented Design in Ruby and Metaprogramming Ruby.
 
-### [Practical Object Oriented Design in Ruby](https://www.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley-ebook/dp/B0096BYG7C/%CC%81) (10/10)
+### Practical Object Oriented Design in Ruby (10/10)
 
 Practical Object Oriented Design in Ruby (POODR) is a masterfully written book on object oriented design.
 
 Programmers cannot predict the future, but we can design code so it can easily be adapted to incorporate future feature requests.  POODR explains how to write well designed code that is easy to change.
 
-POODR talks about message sending a lot so make sure to read [The Well Grounded Rubyist](http://www.amazon.com/Well-Grounded-Rubyist-David-Black/dp/1617291692) first.
+POODR talks about message sending a lot so make sure to read The Well Grounded Rubyist first.
 
-### [Metaprogramming Ruby, Second Edition](https://www.amazon.com/Metaprogramming-Ruby-Program-Like-Facets-ebook/dp/B00N9I0RMQ/) (10/10)
+### Metaprogramming Ruby, Second Edition (10/10)
 
 Metaprogramming Ruby continues where The Well Grounded Rubyist leaves off.
 
@@ -38,7 +38,7 @@ Before you know it, you will be writing a domain specific language with Ruby!
 
 You will be a Ruby expert after reading this book.
 
-### [Programming Ruby 1.9 & 2.0, 4th Edition](http://www.amazon.com/Programming-Ruby-1-9-2-0-Programmers/dp/1937785491) (8/10)
+### Programming Ruby 1.9 & 2.0, 4th Edition (8/10)
 
 The Programming Ruby book is often referred to as the "PickAxe book" and offers a comprehensive overview of the Ruby programming language.  The PickAxe book is credited with popularizing Ruby outsize of Japan.
 
@@ -46,7 +46,7 @@ PickAxe inspired core Ruby developers like [Jim Weirich](https://en.wikipedia.or
 
 PickAxe is a great book if you've had experience programming in other object oriented languages.  This is not a beginner book.
 
-### [Beginning Ruby](http://www.amazon.com/Beginning-Ruby-Novice-Professional-Experts/dp/1430223634) (7/10)
+### Beginning Ruby (7/10)
 
 Beginning Ruby was written in 2011 by [Peter Cooper](http://peterc.org/), an influental member of the Ruby community.
 
@@ -77,7 +77,7 @@ Parts of Codecademy are great and other parts are terrifying and should be skipp
 
 ### Learn Ruby the Hard Way (8/10)
 
-Learn Ruby the Hard Way is written by the controversial author Zed Shaw.  He wrote [Rails is a Ghetto](http://harmful.cat-v.org/software/ruby/rails/is-a-ghetto) in 2007 and [people didn't really like it](https://news.ycombinator.com/item?id=93984).  Nonetheless, people seem to love his books ([Amazon link](https://www.amazon.com/Learn-Ruby-Hard-Way-Computational/dp/032188499X/ref=sr_1_1?ie=UTF8&qid=1465492271&sr=8-1&keywords=learn+ruby)).
+Learn Ruby the Hard Way is written by the controversial author Zed Shaw.  He wrote [Rails is a Ghetto](http://harmful.cat-v.org/software/ruby/rails/is-a-ghetto) in 2007 and [people didn't really like it](https://news.ycombinator.com/item?id=93984).  Nonetheless, people seem to love his books.
 
 Zed is right that learning to program requires a lot of [practice and persistence](http://learnrubythehardway.org/book/intro.html#a-note-on-practice-and-persistence).  Repetition is how you learn.
 
