@@ -22,7 +22,7 @@ class SubjectsController < ApplicationController
       "Ruby",
       "Bash",
       "Scala",
-      "Spark"
+      "Spark",
       "JavaScript",
       "Computer Science",
       "Git",
