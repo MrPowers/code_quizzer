@@ -169,7 +169,7 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.8)
     titleize (1.4.1)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
